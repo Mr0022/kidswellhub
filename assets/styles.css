@@ -1524,19 +1524,6 @@ body.page-plain.topic-page {
   color: var(--ink-soft); font-size: 12.5px; text-align: center;
 }
 
-/* سطر دوم عنوان اصلی؛ چون خودِ H1 متن را با گرادیان برش می‌زند،
-   رنگ این سطر باید صریح بازنشانی شود */
-.hero-title__sub {
-  display: block;
-  margin-top: .18em;
-  font-size: clamp(15px, 2.05vw, 24px);
-  font-weight: 700;
-  letter-spacing: 0;
-  color: var(--ink-soft);
-  -webkit-text-fill-color: var(--ink-soft);
-  background: none;
-}
-
 /* پیوندهای متنی داخل بخش‌های صفحه‌ی اصلی */
 .hero-lead a, .end-wrap p a {
   color: color-mix(in srgb, var(--a) 70%, #000 30%);
