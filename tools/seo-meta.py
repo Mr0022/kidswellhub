@@ -299,7 +299,7 @@ def head_block(slug, p, src):
 <meta name="twitter:description" content="{esc(p['desc'])}" />
 <meta name="twitter:image" content="{OG_IMAGE}" />
 <meta name="twitter:image:alt" content="{esc(p['imgalt'])}" />
-<link rel="manifest" href="/site.webmanifest" />
+<link rel="manifest" href="site.webmanifest" />
 <script type="application/ld+json">
 {ld}
 </script>
