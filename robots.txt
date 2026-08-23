@@ -1,0 +1,9 @@
+# مرکز مغز و شناخت کودکان — کاردرمانی ذهنی کودکان
+User-agent: *
+Allow: /
+
+# خزنده‌های موتورهای جست‌وجوی داخلی
+User-agent: Yandexbot
+Allow: /
+
+Sitemap: https://kidswellhub.ir/sitemap.xml

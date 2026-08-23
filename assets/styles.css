@@ -1457,3 +1457,108 @@ body.page-plain.topic-page {
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   پرسش‌های متداول
+   هر پرسش یک <details> است تا بدون جاوااسکریپت هم باز و بسته شود
+   و متن پاسخ همیشه در سورس صفحه برای موتور جست‌وجو موجود باشد
+   ========================================================= */
+.faq { display: grid; gap: 10px; }
+.faq__item {
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  padding: 4px 16px; overflow: hidden;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.faq__item[open] { border-color: color-mix(in srgb, var(--a) 34%, var(--line)); box-shadow: var(--shadow-sm); }
+.faq__item summary {
+  position: relative; cursor: pointer; list-style: none;
+  padding: 13px 34px 13px 0;
+  font-size: 15.5px; font-weight: 800; color: var(--ink); line-height: 1.8;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 16px; font-weight: 900; color: #fff;
+  background: linear-gradient(140deg, var(--a), var(--b));
+  transition: transform .25s ease;
+}
+.faq__item[open] summary::after { content: "−"; transform: translateY(-50%) rotate(180deg); }
+.faq__item summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--a) 45%, transparent); outline-offset: 3px; border-radius: 10px; }
+.faq__a { padding: 0 0 14px; border-top: 1px solid var(--line); margin-top: 2px; }
+.faq__a p { margin: 12px 0 0; color: var(--ink-soft); font-size: 14.5px; }
+.faq__a > :last-child { margin-bottom: 0; }
+
+/* پیوند داخل کارت حیطه‌ها و داخل پاسخ‌ها */
+.acard h3 a, .faq__a a {
+  color: color-mix(in srgb, var(--a) 74%, #000 26%);
+  text-decoration: none; border-bottom: 2px solid color-mix(in srgb, var(--a) 30%, transparent);
+  transition: border-color .2s ease, color .2s ease;
+}
+.acard h3 a:hover, .faq__a a:hover { border-bottom-color: var(--a); }
+.faq__a .phone-link { font-weight: 800; white-space: nowrap; }
+
+/* =========================================================
+   پاورقی مشترک صفحه‌های داخلی؛ مسیر خزش را برای موتور جست‌وجو کوتاه می‌کند
+   ========================================================= */
+.site-foot {
+  border-top: 1px solid var(--line);
+  margin-top: clamp(28px, 5vw, 52px);
+  padding: clamp(22px, 3.4vw, 34px) clamp(16px, 4vw, 40px) 30px;
+  background: rgba(255, 255, 255, .58);
+  backdrop-filter: blur(6px);
+}
+.site-foot__grid {
+  max-width: 1080px; margin-inline: auto;
+  display: grid; gap: clamp(16px, 2.6vw, 30px);
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.site-foot h2 { font-size: 15px; margin: 0 0 .7em; color: var(--ink); }
+.site-foot ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.site-foot a { color: var(--ink-soft); text-decoration: none; font-size: 14px; transition: color .2s ease; }
+.site-foot a:hover { color: color-mix(in srgb, var(--a) 72%, #000 28%); }
+.site-foot p { color: var(--ink-soft); font-size: 13.5px; margin: 0 0 .7em; }
+.site-foot__legal {
+  max-width: 1080px; margin: clamp(18px, 2.6vw, 26px) auto 0;
+  padding-top: 16px; border-top: 1px solid var(--line);
+  color: var(--ink-soft); font-size: 12.5px; text-align: center;
+}
+
+/* سطر دوم عنوان اصلی؛ چون خودِ H1 متن را با گرادیان برش می‌زند،
+   رنگ این سطر باید صریح بازنشانی شود */
+.hero-title__sub {
+  display: block;
+  margin-top: .18em;
+  font-size: clamp(15px, 2.05vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--ink-soft);
+  -webkit-text-fill-color: var(--ink-soft);
+  background: none;
+}
+
+/* پیوندهای متنی داخل بخش‌های صفحه‌ی اصلی */
+.hero-lead a, .end-wrap p a {
+  color: color-mix(in srgb, var(--a) 70%, #000 30%);
+  text-decoration: none; font-weight: 700;
+  border-bottom: 2px solid color-mix(in srgb, var(--a) 32%, transparent);
+  transition: border-color .2s ease;
+}
+.hero-lead a:hover, .end-wrap p a:hover { border-bottom-color: var(--a); }
+
+/* پیوندهای متنی داخل صفحه‌های کامل */
+.tsec p a, .tsec li a, .topic__cta p a, .topic__lead a, .rcard p a {
+  color: color-mix(in srgb, var(--a) 72%, #000 28%);
+  text-decoration: none; font-weight: 700;
+  border-bottom: 2px solid color-mix(in srgb, var(--a) 30%, transparent);
+  transition: border-color .2s ease;
+}
+.tsec p a:hover, .tsec li a:hover, .topic__cta p a:hover,
+.topic__lead a:hover, .rcard p a:hover { border-bottom-color: var(--a); }
+
+/* یادداشت کوتاه زیر دکمه‌های فراخوان صفحه‌های کامل */
+.topic__cta-note {
+  margin: 14px 0 0;
+  font-size: 13.5px; line-height: 1.9;
+  color: var(--ink-soft);
+}
