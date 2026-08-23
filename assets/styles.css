@@ -1,5 +1,5 @@
 /* =========================================================
-   کاردرمانی ذهنی کودکان | مهرناز افشار
+   مرکز مغز و شناخت کودکان
    تک‌صفحه‌ای، راست‌چین، اسکرول بخش‌به‌بخش
    ========================================================= */
 
@@ -108,6 +108,7 @@ button, input { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 0 clamp(14px, 4vw, 40px);
   background: rgba(255, 255, 255, .62);
   backdrop-filter: blur(14px);
@@ -323,15 +324,14 @@ button, input { font: inherit; color: inherit; }
 /* ---------------- بخش خانه ---------------- */
 
 .sec--hero { text-align: center; }
-.hero-wrap { width: min(920px, 100%); }
+/* عرض و اندازه‌ی تیتر روی نام مرکز تنظیم شده تا در دسکتاپ یک سطری بماند */
+.hero-wrap { width: min(1060px, 100%); }
 .hero-title {
-  font-size: clamp(34px, 7.4vw, 82px); margin-bottom: .25em;
+  font-size: clamp(34px, 6.3vw, 76px); margin-bottom: .25em;
   background: linear-gradient(120deg, var(--a), var(--b) 65%, var(--a));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-lead { font-size: clamp(15px, 1.9vw, 20px); color: var(--ink-soft); margin-inline: auto; max-width: 60ch; }
-.hero-sign { font-size: clamp(16px, 2.1vw, 22px); font-weight: 700; color: var(--ink); }
-.hero-sign b { color: var(--a); }
 .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 20px 0 26px; }
 .hero-chips span {
   font-size: 13px; font-weight: 700; padding: 7px 15px; border-radius: 999px;
@@ -744,7 +744,8 @@ body.page-plain {
   .rcard { padding: 18px 16px; gap: 8px; }
   .rcard__ico { width: 54px; height: 54px; font-size: 26px; border-radius: 18px; }
   .rcard p { font-size: 13.5px; }
-  .back-btn { padding: 8px 16px; font-size: 13px; }
+  /* برچسب دکمه در یک سطر می‌ماند؛ نام مرکز اگر لازم شد دو سطری می‌شود */
+  .back-btn { padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
 }
 
 /* ---------------- صفحه‌ی کامل هر بخش ---------------- */
@@ -962,6 +963,161 @@ body.page-plain.topic-page {
   .topic__sign { margin-top: 20px; font-size: 13px; }
 }
 
+/* ---------------- صفحه‌ی درباره‌ی ما ---------------- */
+
+/* معرفی: عکس کنار متن؛ در عرض کم عکس بالا می‌رود و متن وسط‌چین می‌شود */
+.about__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 370px) minmax(0, 1fr);
+  gap: clamp(20px, 3.4vw, 40px);
+  align-items: center;
+  margin-bottom: clamp(24px, 4vw, 38px);
+}
+
+/* عکس بدون پس‌زمینه و بدون قاب، مستقیم روی خود صفحه می‌نشیند */
+.about__photo { margin: 0; }
+.about__photo img { display: block; width: 100%; height: auto; }
+
+.about__intro h1 { font-size: clamp(28px, 4.6vw, 44px); margin-bottom: .15em; }
+
+.about__role {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+  font-size: clamp(15px, 1.7vw, 18px); font-weight: 800;
+  color: color-mix(in srgb, var(--a) 72%, #000 28%);
+  margin: 0 0 .7em;
+}
+
+/* کد نظام پزشکی؛ نشانِ مستقل تا در معرفی گم نشود */
+.about__cred {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin: 0 0 15px; padding: 6px 15px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; line-height: 2; color: var(--ink-soft);
+  background: rgba(255, 255, 255, .88);
+  border: 1px solid color-mix(in srgb, var(--a) 26%, transparent);
+}
+.about__cred b {
+  color: color-mix(in srgb, var(--a) 74%, #000 26%);
+  font-weight: 900; letter-spacing: .02em; white-space: nowrap;
+}
+
+.about__lead {
+  color: var(--ink-soft); font-size: clamp(14.5px, 1.5vw, 17px);
+  margin: 0 0 18px; max-width: 54ch;
+}
+
+/* عددهای کوتاه معرفی؛ هر خانه یک عدد و یک توضیح */
+.about__stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px; margin: 0 0 20px; padding: 0; list-style: none;
+}
+.about__stats li {
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.about__stats b {
+  display: block; font-size: clamp(21px, 2.6vw, 27px); font-weight: 900; line-height: 1.4;
+  background: linear-gradient(120deg, var(--a), color-mix(in srgb, var(--b) 70%, var(--a)));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.about__stats span {
+  display: block; font-size: 12.6px; line-height: 1.75; color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+/* دکمه‌ها در معرفی از لبه‌ی متن شروع می‌شوند، نه وسط */
+.contact--start { justify-content: flex-start; margin: 0; }
+
+/* نشانِ گوینده‌ی هر بخش: «سخن موسس» یا «از زبان تیم ما» */
+.voice-tag {
+  display: inline-block; margin: 0 0 9px; padding: 5px 13px;
+  border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .04em;
+  color: color-mix(in srgb, var(--a) 76%, #000 24%);
+  background: color-mix(in srgb, var(--a) 13%, #fff);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--a) 22%, transparent);
+}
+.voice-tag--founder { background: #fff; }
+
+/* بخش موسس؛ پس‌زمینه‌ی متفاوت تا خواننده بفهمد صدا عوض شده است */
+.tsec.founder {
+  background: linear-gradient(150deg, color-mix(in srgb, var(--a) 9%, #fff), color-mix(in srgb, var(--b) 22%, #fff));
+  border-color: color-mix(in srgb, var(--a) 20%, transparent);
+}
+.founder__fig { margin: 0; }
+.founder__quote { margin: 0; }
+/* متن موسس پررنگ‌تر از متن معمول است تا شخصی‌تر خوانده شود */
+.tsec .founder__quote p { color: var(--ink); font-size: clamp(14.6px, 1.42vw, 16.8px); }
+.tsec .founder__quote p:last-child { margin-bottom: 0; }
+.founder__quote b { font-weight: 800; }
+
+.founder__sign {
+  display: flex; align-items: center; gap: 13px;
+  margin-top: 18px; padding-top: 15px;
+  border-top: 1px dashed color-mix(in srgb, var(--a) 30%, transparent);
+}
+.founder__ava {
+  flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%;
+  object-fit: cover; object-position: 50% 16%;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px color-mix(in srgb, var(--a) 32%, transparent);
+}
+.founder__who { display: grid; gap: 1px; min-width: 0; }
+.founder__who b { font-size: 15.5px; font-weight: 900; line-height: 1.7; }
+.founder__who small { font-size: 12.6px; line-height: 1.75; color: var(--ink-soft); }
+
+/* حوزه‌های تخصصی */
+.about__areas {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: clamp(12px, 1.8vw, 16px);
+  margin-top: 16px;
+}
+.acard {
+  position: relative; overflow: hidden;
+  background: #fff; border: 1px solid var(--line); border-radius: 20px;
+  padding: clamp(16px, 2.2vw, 22px);
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease;
+}
+.acard:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.acard__ico {
+  display: grid; place-items: center;
+  width: 50px; height: 50px; border-radius: 17px; font-size: 24px; margin-bottom: 10px;
+  background: linear-gradient(140deg, color-mix(in srgb, var(--a) 20%, #fff), color-mix(in srgb, var(--b) 42%, #fff));
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--a) 20%, transparent);
+}
+.acard h3 { font-size: 17px; margin: 0 0 .45em; }
+/* ویژگی‌گر با .tsec بالا می‌رود تا اندازه‌ی قلمِ «.tsec p» را رد کند */
+.tsec .acard p { font-size: 13.6px; line-height: 1.9; color: var(--ink-soft); margin: 0; }
+
+@media (max-width: 860px) {
+  .about__hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .about__photo { width: min(320px, 76vw); }
+  .about__role { justify-content: center; }
+  .about__lead { margin-inline: auto; }
+  .contact--start { justify-content: center; }
+}
+
+@media (max-width: 760px) {
+  .about__hero { gap: 18px; margin-bottom: 20px; }
+  .about__photo { width: min(265px, 68vw); }
+  .about__stats { grid-template-columns: 1fr; gap: 8px; }
+  .about__stats li { display: flex; align-items: baseline; justify-content: center; gap: 8px; padding: 9px 12px; }
+  .about__stats b { font-size: 19px; }
+  .about__stats span { font-size: 12.2px; }
+  .about__areas { grid-template-columns: 1fr; }
+  .acard { padding: 15px 14px; border-radius: 18px; }
+  .acard__ico { width: 44px; height: 44px; font-size: 21px; border-radius: 14px; }
+  .acard h3 { font-size: 15.5px; }
+  .tsec .acard p { font-size: 13px; }
+  .about__cred { font-size: 12.2px; padding: 5px 12px; margin-bottom: 13px; }
+  .voice-tag { font-size: 11.3px; padding: 4px 11px; }
+  .tsec .founder__quote p { font-size: 13.6px; }
+  .founder__sign { gap: 10px; margin-top: 14px; padding-top: 12px; }
+  .founder__ava { width: 48px; height: 48px; }
+  .founder__who b { font-size: 14.2px; }
+  .founder__who small { font-size: 11.8px; }
+}
+
 /* ---------------- صفحه‌ی بازی تعاملی ---------------- */
 
 /* پیوند بازی روی کارت هر تمرین در صفحه‌ی دست‌ورزی */
@@ -1151,6 +1307,14 @@ body.page-plain.topic-page {
   :root { --head-h: 62px; }
   body { line-height: 1.8; }
 
+  /* نام مرکز بلندتر از آن است که با زیرعنوان کنار دکمه‌ی بازگشت جا شود؛
+     روی موبایل فقط نام می‌ماند و اگر لازم شد در دو سطر می‌نشیند */
+  .brand { gap: 8px; }
+  .brand__mark { width: 38px; height: 38px; border-radius: 12px; }
+  .brand__text { line-height: 1.3; }
+  .brand__text strong { font-size: 13.5px; }
+  .brand__text small { display: none; }
+
   .dots { display: none; }
   .sec { padding: calc(var(--head-h) + 10px) 16px 16px; }
   .grid { grid-template-columns: 1fr; gap: 11px; }
@@ -1219,6 +1383,13 @@ body.page-plain.topic-page {
   .contact { margin: 16px 0 12px; }
 }
 
+/* گوشی‌های خیلی باریک: هدر باید جای نام مرکز و دکمه‌ی بازگشت را با هم داشته باشد */
+@media (max-width: 360px) {
+  .brand__mark { width: 34px; height: 34px; }
+  .brand__text strong { font-size: 12px; }
+  .back-btn { padding: 7px 11px; font-size: 11.5px; }
+}
+
 /* گوشی‌های کوچک‌تر: فشرده‌سازی بیشتر تا هر بخش یک صفحه بماند.
    مرز ۸۲۰ است تا گوشی‌های ۸۱۲ پیکسلی (آیفون X و هم‌خانواده‌اش) را هم بگیرد */
 @media (max-width: 980px) and (max-height: 820px) {
@@ -1254,10 +1425,8 @@ body.page-plain.topic-page {
   .tasks button { padding: 5px 11px 5px 30px; font-size: 12px; }
   .stars { font-size: 16px; margin-top: 6px; min-height: 22px; }
 
-  /* نام و کد نظام پزشکی روی گوشی یک سطر بیشتر می‌گیرد؛
-     فاصله‌های بخش خانه جمع می‌شود تا دکمه روی راهنمای اسکرول نیفتد */
+  /* فاصله‌های بخش خانه جمع می‌شود تا دکمه روی راهنمای اسکرول نیفتد */
   .hero-lead { margin-bottom: .5em; }
-  .hero-sign { line-height: 1.7; margin-bottom: .3em; }
   .hero-chips { margin: 10px 0 14px; }
 }
 
@@ -1265,6 +1434,12 @@ body.page-plain.topic-page {
    جا ندارد (روی این ارتفاع‌ها زیر دکمه‌ی «بزن بریم» می‌افتاد) */
 @media (max-width: 980px) and (max-height: 700px) {
   .stars { display: none; }
+  .scroll-hint { display: none; }
+}
+
+/* همین قاعده روی دسکتاپِ کوتاه (مثلاً نمایشگر ۷۶۸ پیکسلی با نوار مرورگر):
+   راهنمای اسکرول زیر دکمه‌ی «بزن بریم» می‌افتاد */
+@media (min-width: 981px) and (max-height: 680px) {
   .scroll-hint { display: none; }
 }
 
