@@ -1,9 +1,14 @@
 # Cloudflare Pages — سرایندهای امنیتی و کش
+# قاعده‌ها به ترتیب اعمال می‌شوند و قاعده‌ی بعدی، سرایند هم‌نام را بازنویسی می‌کند.
+# نشانی صفحه‌ها بی‌پسوند سرو می‌شود (/about نه /about.html)، پس الگوی *.html
+# هرگز با درخواست واقعی جور درنمی‌آید؛ پیش‌فرض روی /* گذاشته شده و فقط
+# مسیرهای دارایی از آن جدا می‌شوند.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Cache-Control: public, max-age=0, must-revalidate
 
 # فایل‌های ایستا نسخه‌دار هستند (?v=N) و می‌توانند طولانی کش شوند
 /assets/*
@@ -11,10 +16,6 @@
 
 /logo/*
   Cache-Control: public, max-age=2592000
-
-# صفحه‌ها باید تازه بمانند تا ویرایش محتوا زود دیده شود
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
 
 /sitemap.xml
   Cache-Control: public, max-age=3600

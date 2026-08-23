@@ -140,7 +140,14 @@ WEBSITE_ID= SITE + "/#website"
 PERSON_ID = SITE + "/#mehrnaz"
 
 def url_of(slug):
-    return SITE + "/" if slug == "index.html" else SITE + "/" + slug
+    """نشانی عمومی هر صفحه.
+
+    کلودفلر پیجز فایل about.html را روی /about سرو می‌کند و درخواستِ
+    /about.html را با ۳۰۸ به همان‌جا می‌فرستد؛ پس نشانی بی‌پسوند تنها
+    شکلی است که خودش تغییرمسیر نمی‌دهد و باید در canonical، og:url،
+    شناسه‌های JSON-LD و نقشه‌ی سایت همان استفاده شود.
+    """
+    return SITE + "/" if slug == "index.html" else SITE + "/" + slug[:-len(".html")]
 
 def esc(t):
     return html.escape(t, quote=True)
@@ -195,7 +202,7 @@ def org_graph():
          "jobTitle": "کاردرمانگر ذهنی کودکان",
          "description": "موسس " + BRAND + " و کاردرمانگر ذهنی کودکان با بیش از هفت سال سابقه‌ی کار "
                         "با کودکان اوتیسم، ADHD و اختلالات یادگیری.",
-         "url": SITE + "/about.html",
+         "url": SITE + "/about",
          "image": SITE + "/logo/mehrnaz-afshar-cutout.webp",
          "worksFor": {"@id": ORG_ID},
          "knowsAbout": [KW1, "اوتیسم", "ADHD", "اختلالات یادگیری", "کاردرمانی کودکان"],
@@ -207,7 +214,7 @@ def breadcrumb(slug, p):
     items = [{"@type": "ListItem", "position": 1, "name": "خانه", "item": SITE + "/"}]
     if slug.startswith("fine-motor-game-"):
         items.append({"@type": "ListItem", "position": 2, "name": "دست‌ورزی و ترسیم",
-                      "item": SITE + "/fine-motor.html"})
+                      "item": url_of("fine-motor.html")})
         items.append({"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url_of(slug)})
     else:
         items.append({"@type": "ListItem", "position": 2, "name": p["crumb"], "item": url_of(slug)})
