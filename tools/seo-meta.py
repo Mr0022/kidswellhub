@@ -21,7 +21,7 @@ AUTHOR = "مهرناز افشار"
 PHONE = "+989011922823"
 OG_IMAGE = SITE + "/logo/og-cover.png"
 
-# slug -> dict(title, desc, ogtype, crumb, imgalt)
+# slug -> dict(title, desc, ogtype, crumb, imgalt[, author])
 PAGES = {
 "index.html": dict(
   title="کاردرمانی ذهنی کودکان حضوری و آنلاین | " + BRAND,
@@ -36,10 +36,10 @@ PAGES = {
   imgalt="کاردرمانی ذهنی کودکان آنلاین در مرکز مغز و شناخت کودکان"),
 
 "about.html": dict(
-  title="مهرناز افشار، کاردرمانگر ذهنی کودکان | درباره‌ی ما",
-  desc="مهرناز افشار، موسس مرکز مغز و شناخت کودکان و کاردرمانگر ذهنی کودکان با بیش از ۷ سال سابقه‌ی کار با کودکان اوتیسم، ADHD و اختلالات یادگیری.",
-  ogtype="profile", crumb="درباره‌ی ما",
-  imgalt="مهرناز افشار، کاردرمانگر ذهنی کودکان"),
+  title="درباره‌ی ما | " + BRAND,
+  desc="مرکز مغز و شناخت کودکان را گروهی از کاردرمانگران دلسوز در حوزه‌ی کودکان بنیان گذاشته‌اند؛ کاردرمانی ذهنی کودکان اوتیسم، ADHD و اختلالات یادگیری، حضوری و آنلاین.",
+  ogtype="website", crumb="درباره‌ی ما", author=BRAND,
+  imgalt="مرکز مغز و شناخت کودکان — کاردرمانی ذهنی کودکان"),
 
 "reserve.html": dict(
   title="رزرو نوبت کاردرمانی ذهنی کودکان (حضوری و آنلاین)",
@@ -276,7 +276,7 @@ def head_block(slug, p, src):
     return f"""{BLOCK_START}
 <link rel="canonical" href="{u}" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="author" content="{esc(AUTHOR)}" />
+<meta name="author" content="{esc(p.get('author', AUTHOR))}" />
 <meta property="og:type" content="{p['ogtype']}" />
 <meta property="og:site_name" content="{esc(BRAND)}" />
 <meta property="og:locale" content="fa_IR" />
@@ -313,7 +313,7 @@ for slug, p in PAGES.items():
     src = DESC_RE.sub(lambda m: '<meta name="description" content="' + esc(p['desc']) + '" />',
                       src, count=1)
     src = src.replace('</head>', block + '\n</head>', 1)
-    src = src.replace('styles.css?v=2', 'styles.css?v=3')
+    src = src.replace('styles.css?v=2', 'styles.css?v=4').replace('styles.css?v=3', 'styles.css?v=4')
     src = src.replace('app.js?v=2', 'app.js?v=3').replace('games.js?v=2', 'games.js?v=3')
 
     io.open(slug, 'w', encoding='utf-8').write(src)
