@@ -1,9 +1,12 @@
 # مرکز مغز و شناخت کودکان — کاردرمانی ذهنی کودکان
 User-agent: *
 Allow: /
+# ابزارهای ساخت سایت (اسکریپت‌ها و منبع تصویر اشتراک‌گذاری) صفحه‌ی خواندنی نیستند
+Disallow: /tools/
 
 # خزنده‌های موتورهای جست‌وجوی داخلی
 User-agent: Yandexbot
 Allow: /
+Disallow: /tools/
 
 Sitemap: https://kidswellhub.ir/sitemap.xml

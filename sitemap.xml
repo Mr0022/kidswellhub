@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://kidswellhub.ir/</loc>
     <lastmod>2026-10-29</lastmod>
@@ -87,32 +88,32 @@
   <url>
     <loc>https://kidswellhub.ir/services/fine-motor-game-1</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://kidswellhub.ir/services/fine-motor-game-2</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://kidswellhub.ir/services/fine-motor-game-3</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://kidswellhub.ir/services/fine-motor-game-4</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://kidswellhub.ir/services/fine-motor-game-5</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/</loc>
@@ -125,41 +126,62 @@
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/pediatric-ot-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/occupational-therapy-signs</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/ot-signs-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/fine-motor-activities</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/fine-motor-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/pencil-grip-handwriting</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/pencil-grip-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/dressing-skills</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/dressing-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/feeding-skills</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/feeding-cover.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kidswellhub.ir/articles/visual-schedule</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kidswellhub.ir/images/articles/visual-schedule-cover.png</image:loc>
+    </image:image>
   </url>
 </urlset>
