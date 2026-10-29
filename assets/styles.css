@@ -887,8 +887,6 @@ body.page-plain {
 
 .phone { font-size: clamp(19px, 1.9vw, 22px); letter-spacing: .05em; font-weight: 900; }
 
-.reserve__sign { color: var(--ink-soft); font-size: 14px; margin: 0; }
-.reserve__sign b { color: var(--a); }
 
 @media (max-width: 760px) {
   .reserve { justify-content: flex-start; padding-top: calc(var(--head-h) + 20px); gap: 16px; }
@@ -1082,9 +1080,6 @@ body.page-plain.topic-page {
 .tnav strong { font-size: 15px; font-weight: 800; }
 .tnav--next { text-align: left; }
 
-.topic__sign { color: var(--ink-soft); font-size: 14px; text-align: center; margin: 26px 0 0; }
-.topic__sign b { color: var(--a); }
-
 @media (max-width: 760px) {
   .topic { padding: calc(var(--head-h) + 18px) 16px 36px; }
   .topic__head { margin-bottom: 20px; }
@@ -1110,7 +1105,6 @@ body.page-plain.topic-page {
   .topic__cta { padding: 22px 16px; border-radius: 20px; }
   .topic__nav { grid-template-columns: 1fr; }
   .tnav--next { text-align: right; }
-  .topic__sign { margin-top: 20px; font-size: 13px; }
 }
 
 /* ---------------- صفحه‌ی درباره‌ی ما ---------------- */
@@ -1651,6 +1645,23 @@ body.page-plain.topic-page {
 }
 .acard h3 a:hover, .faq__a a:hover { border-bottom-color: var(--a); }
 .faq__a .phone-link { font-weight: 800; white-space: nowrap; }
+
+/* صفحه‌ی سوالات متداول: پیوند به هر دسته، به رنگ همان دسته (--a روی خود پیوند) */
+.faq-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 22px; }
+.faq-nav a {
+  font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px;
+  background: rgba(255, 255, 255, .8); border: 1px solid var(--line); color: var(--ink-soft);
+  text-decoration: none;
+  transition: transform .28s cubic-bezier(.34, 1.56, .64, 1), color .2s, border-color .2s;
+}
+.faq-nav a:hover, .faq-nav a:focus-visible {
+  transform: translateY(-3px);
+  color: color-mix(in srgb, var(--a) 72%, #000 28%); border-color: color-mix(in srgb, var(--a) 45%, transparent);
+}
+@media (max-width: 760px) {
+  .faq-nav { gap: 6px; margin-top: 16px; }
+  .faq-nav a { font-size: 12px; padding: 4px 11px; }
+}
 
 /* =========================================================
    پاورقی مشترک صفحه‌های داخلی؛ مسیر خزش را برای موتور جست‌وجو کوتاه می‌کند

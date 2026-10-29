@@ -41,6 +41,12 @@ PAGES = {
   ogtype="profile", crumb="درباره‌ی ما",
   imgalt="مهرناز افشار، کاردرمانگر ذهنی کودکان"),
 
+"faq.html": dict(
+  title="سوالات متداول رشد کودک و کاردرمانی ذهنی کودکان",
+  desc="پاسخ پرسش‌های رایج والدین درباره‌ی کاردرمانی ذهنی کودکان، رشد و تکامل، صفحه‌نمایش و خواب، مدرسه و تکالیف، رفتار و احساسات کودک و نحوه‌ی رزرو نوبت.",
+  ogtype="article", crumb="سوالات متداول",
+  imgalt="سوالات متداول درباره‌ی رشد کودک و کاردرمانی ذهنی کودکان"),
+
 "reserve.html": dict(
   title="رزرو نوبت کاردرمانی ذهنی کودکان (حضوری و آنلاین)",
   desc="رزرو نوبت کاردرمانی ذهنی کودکان؛ جلسه‌ی حضوری در کلینیک توانبخشی رشد و مشاوره و درمان آنلاین در سراسر ایران با کاردرمانگر مهرناز افشار.",
@@ -139,6 +145,9 @@ ORG_ID    = SITE + "/#organization"
 WEBSITE_ID= SITE + "/#website"
 PERSON_ID = SITE + "/#mehrnaz"
 
+# صفحه‌هایی که خدمت درمانی نیستند (بازی‌های دست‌ورزی هم جداگانه کنار گذاشته می‌شوند)
+NOT_SERVICE = ("index.html", "about.html", "reserve.html", "faq.html")
+
 def url_of(slug):
     return SITE + "/" if slug == "index.html" else SITE + "/" + slug
 
@@ -189,7 +198,7 @@ def org_graph():
                      "serviceType": KW1, "provider": {"@id": ORG_ID},
                      "areaServed": {"@type": "Country", "name": "ایران"}}}
                  for slug, p in PAGES.items()
-                 if slug not in ("index.html", "about.html", "reserve.html")
+                 if slug not in NOT_SERVICE
                  and not slug.startswith("fine-motor-game-")]}},
         {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR,
          "jobTitle": "کاردرمانگر ذهنی کودکان",
@@ -259,7 +268,7 @@ def build_jsonld(slug, p, src):
     graph.append(webpage(slug, p, src))
     if slug != "index.html":
         graph.append(breadcrumb(slug, p))
-    if slug not in ("index.html", "about.html", "reserve.html") and not slug.startswith("fine-motor-game-"):
+    if slug not in NOT_SERVICE and not slug.startswith("fine-motor-game-"):
         graph.append(service_node(slug, p))
     f = faq_node(slug, src)
     if f:
