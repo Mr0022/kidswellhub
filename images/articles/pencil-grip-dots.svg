@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3ff"/>
+      <stop offset="1" stop-color="#f6f2ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="700" cy="80" r="170" fill="#9ec2ff" opacity=".25"/>
+
+  <!-- مداد بزرگ؛ نوک در (0,0) -->
+  <g transform="translate(110 300) rotate(-16) scale(1.45)">
+    <rect x="4" y="-12" width="430" height="34" rx="17" fill="#1e2a6b" opacity=".08" transform="translate(4 16)"/>
+    <path d="M0 0L64-19V19Z" fill="#f6d3a1"/>
+    <path d="M0 0L20-6V6Z" fill="#3a3550"/>
+    <rect x="62" y="-19" width="320" height="38" fill="#ffc24b"/>
+    <rect x="62" y="-19" width="320" height="12" fill="#ffd779"/>
+    <rect x="62" y="7" width="320" height="12" fill="#f0a92a"/>
+    <rect x="380" y="-20" width="30" height="40" fill="#b8c0d2"/>
+    <path d="M388-20v40M398-20v40" stroke="#959eb4" stroke-width="3"/>
+    <path d="M408-20h22a14 14 0 0 1 14 14v12a14 14 0 0 1-14 14h-22Z" fill="#ff8fb3"/>
+    <!-- محدوده‌ی جای انگشت‌ها: دو تا سه سانتی‌متر بالای نوک -->
+    <rect x="58" y="-30" width="96" height="60" rx="14" fill="none" stroke="#7c5cff" stroke-width="2.5" stroke-dasharray="7 6"/>
+    <!-- سه نقطه‌ی رنگی: میانی (زیر)، شست (وسط)، اشاره (رو) -->
+    <circle cx="82" cy="14" r="11" fill="#16a34a" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="104" cy="0" r="11" fill="#ff7043" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="128" cy="-14" r="11" fill="#3f6cff" stroke="#ffffff" stroke-width="3"/>
+  </g>
+
+  <!-- ابزار کوتاه: مداد کوتاه و مدادشمعی شکسته -->
+  <g transform="translate(470 410) rotate(-6)">
+    <path d="M0 0L34-12V12Z" fill="#f6d3a1"/>
+    <path d="M0 0L11-4V4Z" fill="#3a3550"/>
+    <rect x="33" y="-12" width="120" height="24" fill="#3f6cff"/>
+    <rect x="33" y="-12" width="120" height="8" fill="#6b8cff"/>
+  </g>
+  <g transform="translate(640 420) rotate(10)">
+    <rect x="0" y="-14" width="78" height="28" rx="8" fill="#ff7043"/>
+    <rect x="14" y="-14" width="12" height="28" fill="#e2552c"/>
+    <path d="M78-12l24 12-24 12Z" fill="#e2552c"/>
+  </g>
+</svg>

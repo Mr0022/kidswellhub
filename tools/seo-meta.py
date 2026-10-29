@@ -136,6 +136,42 @@ PAGES = {
   desc="بازی تعاملی پله‌ی پنج دست‌ورزی؛ بازساختن الگوی خط‌ها روی شبکه‌ی نقطه‌ها — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۵ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
+
+"articles.html": dict(
+  title="مقالات کاردرمانی ذهنی کودکان | راهنمای والدین",
+  desc="مقاله‌های آموزشی مرکز مغز و شناخت کودکان برای والدین: کاردرمانی کودکان، فعالیت‌های دست‌ورزی، گرفتن مداد و دست‌خط، و آموزش لباس پوشیدن به کودک.",
+  ogtype="website", crumb="مقالات",
+  imgalt="مقاله‌های آموزشی کاردرمانی ذهنی کودکان برای والدین"),
+
+# مقاله‌ها: published تاریخ انتشار است و image تصویر اشتراک‌گذاری خودِ مقاله
+# (همان تصویر شاخص، به PNG؛ چون شبکه‌های اجتماعی SVG را نشان نمی‌دهند)
+"pediatric-occupational-therapy.html": dict(
+  title="کاردرمانی کودکان چیست؟ راهنمای کامل برای والدین",
+  desc="کاردرمانی کودکان چیست، برای چه کودکانی لازم است و جلسه‌ها چطور پیش می‌رود؟ راهنمای کامل والدین: حیطه‌های درمان، نشانه‌های هر سن، ارزیابی و تمرین در خانه.",
+  ogtype="article", crumb="کاردرمانی کودکان چیست؟", parent="articles.html", published="2026-10-29",
+  image="images/articles/pediatric-ot-cover.png",
+  imgalt="وسایل اتاق کاردرمانی کودکان: توپ درمانی، مکعب، پازل و مهره"),
+
+"fine-motor-activities.html": dict(
+  title="۱۵ فعالیت کاردرمانی برای تقویت مهارت‌های حرکتی ظریف کودک",
+  desc="۱۵ فعالیت ساده‌ی کاردرمانی با وسایل خانه برای تقویت قدرت دست، گرفتن دقیق و آمادگی نوشتن کودک؛ از خمیربازی و گیره‌ی لباس تا قیچی‌کاری و سینی نمک.",
+  ogtype="article", crumb="۱۵ فعالیت برای مهارت‌های حرکتی ظریف", parent="articles.html", published="2026-10-29",
+  image="images/articles/fine-motor-cover.png",
+  imgalt="وسایل تمرین دست‌ورزی کودک: گیره‌ی لباس، خمیر بازی، قیچی و انبرک"),
+
+"pencil-grip-handwriting.html": dict(
+  title="چگونه گرفتن مداد و دست‌خط کودک را بهتر کنیم؟",
+  desc="مراحل رشد گرفتن مداد، نشانه‌های مشکل و راه‌های عملی کاردرمانی برای بهتر شدن دست‌خط کودک: ابزار کوتاه، ترفند نیشگون و چرخش، نشستن ۹۰-۹۰-۹۰ و سطح شیب‌دار.",
+  ogtype="article", crumb="گرفتن مداد و دست‌خط کودک", parent="articles.html", published="2026-10-29",
+  image="images/articles/pencil-grip-cover.png",
+  imgalt="دفتر باز با دست‌خط و مداد با رابط مثلثی"),
+
+"dressing-skills.html": dict(
+  title="چگونه به کودک یاد بدهیم خودش لباس بپوشد؟ راهنمای کاردرمانی",
+  desc="آموزش لباس پوشیدن به کودک با روش‌های کاردرمانی: انتظار هر سن، یاد دادن از قدم آخر، ترفند تی‌شرت و کاپشن، تمرین دکمه، زیپ و بند کفش و نکته‌های صبح‌های شلوغ.",
+  ogtype="article", crumb="آموزش لباس پوشیدن به کودک", parent="articles.html", published="2026-10-29",
+  image="images/articles/dressing-cover.png",
+  imgalt="لباس‌های کودک روی بند رخت و یک جفت کفش بنددار"),
 }
 
 
@@ -145,11 +181,20 @@ ORG_ID    = SITE + "/#organization"
 WEBSITE_ID= SITE + "/#website"
 PERSON_ID = SITE + "/#mehrnaz"
 
-# صفحه‌هایی که خدمت درمانی نیستند (بازی‌های دست‌ورزی هم جداگانه کنار گذاشته می‌شوند)
-NOT_SERVICE = ("index.html", "about.html", "reserve.html", "faq.html")
+# صفحه‌هایی که خدمت درمانی نیستند (بازی‌های دست‌ورزی و مقاله‌ها هم جداگانه کنار گذاشته می‌شوند)
+NOT_SERVICE = ("index.html", "about.html", "reserve.html", "faq.html", "articles.html")
+
+ARTICLES = [slug for slug, p in PAGES.items() if p.get("published")]
+
+def is_service(slug):
+    return (slug not in NOT_SERVICE and slug not in ARTICLES
+            and not slug.startswith("fine-motor-game-"))
 
 def url_of(slug):
     return SITE + "/" if slug == "index.html" else SITE + "/" + slug
+
+def image_of(p):
+    return SITE + "/" + p["image"] if p.get("image") else OG_IMAGE
 
 def esc(t):
     return html.escape(t, quote=True)
@@ -198,8 +243,7 @@ def org_graph():
                      "serviceType": KW1, "provider": {"@id": ORG_ID},
                      "areaServed": {"@type": "Country", "name": "ایران"}}}
                  for slug, p in PAGES.items()
-                 if slug not in NOT_SERVICE
-                 and not slug.startswith("fine-motor-game-")]}},
+                 if is_service(slug)]}},
         {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR,
          "jobTitle": "کاردرمانگر ذهنی کودکان",
          "description": "موسس " + BRAND + " و کاردرمانگر ذهنی کودکان با بیش از هفت سال سابقه‌ی کار "
@@ -218,21 +262,40 @@ def breadcrumb(slug, p):
         items.append({"@type": "ListItem", "position": 2, "name": "دست‌ورزی و ترسیم",
                       "item": SITE + "/fine-motor.html"})
         items.append({"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url_of(slug)})
+    elif p.get("parent"):
+        items.append({"@type": "ListItem", "position": 2, "name": PAGES[p["parent"]]["crumb"],
+                      "item": url_of(p["parent"])})
+        items.append({"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url_of(slug)})
     else:
         items.append({"@type": "ListItem", "position": 2, "name": p["crumb"], "item": url_of(slug)})
     return {"@type": "BreadcrumbList", "@id": url_of(slug) + "#breadcrumb", "itemListElement": items}
 
 def webpage(slug, p, src):
-    page_type = {"about.html": "AboutPage", "reserve.html": "ContactPage"}.get(slug, "WebPage")
+    page_type = {"about.html": "AboutPage", "reserve.html": "ContactPage",
+                 "articles.html": "CollectionPage"}.get(slug, "WebPage")
     if slug == "index.html":
         page_type = "WebPage"
     node = {"@type": page_type, "@id": url_of(slug) + "#webpage", "url": url_of(slug),
             "name": p["title"], "description": p["desc"], "inLanguage": "fa-IR",
             "isPartOf": {"@id": WEBSITE_ID}, "about": {"@id": ORG_ID},
-            "primaryImageOfPage": {"@type": "ImageObject", "url": OG_IMAGE}}
+            "primaryImageOfPage": {"@type": "ImageObject", "url": image_of(p)}}
     if slug != "index.html":
         node["breadcrumb"] = {"@id": url_of(slug) + "#breadcrumb"}
+    if slug == "articles.html":
+        node["mainEntity"] = {"@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": k, "url": url_of(a), "name": PAGES[a]["title"]}
+            for k, a in enumerate(ARTICLES, 1)]}
     return node
+
+def article_node(slug, p):
+    return {"@type": "BlogPosting", "@id": url_of(slug) + "#article",
+            "headline": p["title"], "description": p["desc"], "inLanguage": "fa-IR",
+            "image": image_of(p), "datePublished": p["published"],
+            "dateModified": p.get("modified", p["published"]),
+            "author": {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR, "url": SITE + "/about.html"},
+            "publisher": {"@id": ORG_ID},
+            "mainEntityOfPage": {"@id": url_of(slug) + "#webpage"},
+            "isPartOf": {"@id": url_of(p["parent"]) + "#webpage"}}
 
 def service_node(slug, p):
     if slug == "online.html":
@@ -268,8 +331,10 @@ def build_jsonld(slug, p, src):
     graph.append(webpage(slug, p, src))
     if slug != "index.html":
         graph.append(breadcrumb(slug, p))
-    if slug not in NOT_SERVICE and not slug.startswith("fine-motor-game-"):
+    if is_service(slug):
         graph.append(service_node(slug, p))
+    if slug in ARTICLES:
+        graph.append(article_node(slug, p))
     f = faq_node(slug, src)
     if f:
         graph.append(f)
@@ -281,7 +346,10 @@ BLOCK_END   = "<!-- پایان سئو -->"
 
 def head_block(slug, p, src):
     u = url_of(slug)
+    img = image_of(p)
     ld = json.dumps(build_jsonld(slug, p, src), ensure_ascii=False, indent=2)
+    published = (f'\n<meta property="article:published_time" content="{p["published"]}" />'
+                 if p.get("published") else "")
     return f"""{BLOCK_START}
 <link rel="canonical" href="{u}" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -291,15 +359,15 @@ def head_block(slug, p, src):
 <meta property="og:locale" content="fa_IR" />
 <meta property="og:url" content="{u}" />
 <meta property="og:title" content="{esc(p['title'])}" />
-<meta property="og:description" content="{esc(p['desc'])}" />
-<meta property="og:image" content="{OG_IMAGE}" />
+<meta property="og:description" content="{esc(p['desc'])}" />{published}
+<meta property="og:image" content="{img}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="{esc(p['imgalt'])}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{esc(p['title'])}" />
 <meta name="twitter:description" content="{esc(p['desc'])}" />
-<meta name="twitter:image" content="{OG_IMAGE}" />
+<meta name="twitter:image" content="{img}" />
 <meta name="twitter:image:alt" content="{esc(p['imgalt'])}" />
 <link rel="manifest" href="/site.webmanifest" />
 <script type="application/ld+json">

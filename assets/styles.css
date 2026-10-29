@@ -1727,3 +1727,157 @@ body.page-plain.topic-page {
   font-size: 13.5px; line-height: 1.9;
   color: var(--ink-soft);
 }
+
+/* =========================================================
+   مقالات
+   فهرست مقاله‌ها (articles.html) و صفحه‌ی هر مقاله.
+   رنگ هر کارت و هر صفحه از --a/--b همان مقاله می‌آید، مثل صفحه‌ی هر بخش
+   ========================================================= */
+
+/* فهرست: کارت‌ها دوتادو؛ پیوند روی عنوان است و ::after آن کل کارت را می‌پوشاند،
+   تا هم کل کارت کلیک‌پذیر باشد و هم صفحه‌خوان فقط یک پیوند (عنوان) بخواند */
+.post-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2.4vw, 22px); margin: 0; padding: 0; list-style: none;
+}
+.post-card {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column;
+  background: #fff; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .9); box-shadow: var(--shadow-sm);
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease;
+}
+.post-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.post-card:has(a:focus-visible) { outline: 3px solid color-mix(in srgb, var(--a) 50%, transparent); outline-offset: 3px; }
+.post-card__img {
+  display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630;
+  background: var(--bg1);
+}
+.post-card__body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 16px 20px 18px; }
+.post-card__tag {
+  align-self: flex-start; margin: 0; padding: 2px 11px; border-radius: 999px;
+  font-size: 12px; font-weight: 800; line-height: 1.9;
+  color: color-mix(in srgb, var(--a) 72%, #000 28%);
+  background: color-mix(in srgb, var(--a) 12%, #fff);
+}
+.post-card h2 { font-size: clamp(17px, 1.9vw, 19.5px); line-height: 1.65; margin: 0; text-wrap: balance; }
+.post-card h2 a { color: inherit; text-decoration: none; outline: none; }
+.post-card h2 a::after { content: ""; position: absolute; inset: 0; }
+.post-card__excerpt { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.9; }
+.post-card__meta {
+  margin: auto 0 0; padding-top: 8px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  font-size: 12.5px; color: var(--ink-soft);
+}
+.post-card__go { font-weight: 800; color: color-mix(in srgb, var(--a) 74%, #000 26%); white-space: nowrap; }
+/* پیکان در راست‌چین رو به چپ است */
+.post-card__go i { font-style: normal; display: inline-block; transition: transform .25s ease; }
+.post-card:hover .post-card__go i { transform: translateX(-4px); }
+
+/* صفحه‌ی مقاله: تاریخ و زمان مطالعه زیر عنوان */
+.post-meta {
+  margin: 14px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
+  font-size: 13px; color: var(--ink-soft);
+}
+.post-meta span {
+  padding: 3px 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, .78); border: 1px solid var(--line);
+}
+
+/* تصویر شاخص مقاله و تصویرهای داخل متن */
+.post-cover {
+  margin: 0 0 clamp(16px, 2.6vw, 22px); border-radius: var(--radius); overflow: hidden;
+  background: #fff; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 255, 255, .9);
+}
+.post-cover img { display: block; width: 100%; height: auto; }
+.post-fig { margin: 18px 0; }
+.post-fig img {
+  display: block; width: 100%; height: auto;
+  border-radius: 20px; border: 1px solid var(--line); background: #fff;
+}
+.post-fig figcaption {
+  margin: 10px auto 0; max-width: 60ch; text-align: center; text-wrap: balance;
+  font-size: 13.2px; line-height: 1.9; color: var(--ink-soft);
+}
+/* راهنمای رنگ‌های یک تصویر؛ هر نقطه رنگش را از --c می‌گیرد */
+.post-fig .swatch {
+  display: inline-block; width: 11px; height: 11px; margin-inline: 2px 5px;
+  border-radius: 50%; background: var(--c); vertical-align: -1px;
+}
+
+/* فهرست همین مقاله */
+.post-toc {
+  margin: 0 0 clamp(14px, 2.2vw, 20px); padding: 14px 18px 16px;
+  border-radius: 20px; background: rgba(255, 255, 255, .72); border: 1px solid var(--line);
+}
+.post-toc h2 { font-size: 14px; margin: 0 0 10px; color: var(--ink-soft); }
+.post-toc ol { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.post-toc a {
+  display: inline-block; font-size: 13px; font-weight: 700; line-height: 1.8;
+  padding: 4px 13px; border-radius: 999px; text-decoration: none;
+  background: #fff; border: 1px solid var(--line); color: var(--ink-soft);
+  transition: transform .28s cubic-bezier(.34, 1.56, .64, 1), color .2s, border-color .2s;
+}
+.post-toc a:hover, .post-toc a:focus-visible {
+  transform: translateY(-3px);
+  color: color-mix(in srgb, var(--a) 72%, #000 28%); border-color: color-mix(in srgb, var(--a) 45%, transparent);
+}
+
+.tsec h3 { font-size: clamp(16px, 1.7vw, 18px); margin: 1.1em 0 .5em; }
+/* متنی که بعد از فهرست می‌آید به آن نچسبد (فهرست‌ها حاشیه‌ی پایین ندارند) */
+.tsec :is(.tlist, .steps, .acts) + p { margin-top: 14px; }
+
+/* فعالیت‌های شماره‌دار؛ شماره‌ها با رقم فارسی و در چند فهرست پشت سر هم ادامه پیدا می‌کنند
+   (فهرست دوم و بعدی با style="counter-reset: act N" از شماره‌ی درست شروع می‌شود) */
+.acts {
+  display: grid; gap: 11px; counter-reset: act;
+  margin: 0; padding: 0; list-style: none;
+}
+.acts > li {
+  position: relative; padding: 14px 60px 14px 16px;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+}
+.acts > li::before {
+  counter-increment: act; content: counter(act, persian);
+  position: absolute; right: 14px; top: 14px;
+  width: 32px; height: 32px; border-radius: 11px;
+  display: grid; place-items: center; font-size: 14.5px; font-weight: 900; color: #fff;
+  background: linear-gradient(140deg, var(--a), var(--b));
+}
+.tsec .acts h3 { font-size: 16px; margin: 2px 0 4px; }
+.tsec .acts p { font-size: 14px; line-height: 1.9; margin: 0 0 6px; }
+.tsec .acts p:last-child { margin-bottom: 0; }
+.tsec .acts .act__why {
+  padding: 6px 11px; border-radius: 12px; font-size: 13px;
+  background: color-mix(in srgb, var(--b) 16%, #fff);
+}
+.act__why b { color: var(--ink); font-weight: 800; }
+
+/* یادداشت پایان مقاله: جای ارزیابی تخصصی را نمی‌گیرد */
+.tsec .post-note {
+  margin: 0; padding: 12px 15px; border-radius: 16px;
+  border: 1px dashed color-mix(in srgb, var(--a) 30%, transparent);
+  font-size: 13.4px; line-height: 1.9; color: var(--ink-soft);
+}
+
+@media (max-width: 760px) {
+  .post-grid { grid-template-columns: 1fr; gap: 14px; }
+  .post-card { border-radius: 20px; }
+  .post-card:hover { transform: none; }
+  .post-card__body { padding: 14px 15px 15px; gap: 6px; }
+  .post-card h2 { font-size: 16.5px; }
+  .post-card__excerpt { font-size: 13.4px; }
+  .post-meta { font-size: 12px; margin-top: 10px; }
+  .post-cover { border-radius: 20px; }
+  .post-fig { margin: 14px 0; }
+  .post-fig img { border-radius: 16px; }
+  .post-fig figcaption { font-size: 12.5px; }
+  .post-toc { padding: 12px 13px 13px; }
+  .post-toc a { font-size: 12px; padding: 3px 10px; }
+  .acts > li { padding: 12px 50px 12px 13px; }
+  .acts > li::before { width: 28px; height: 28px; right: 12px; top: 12px; font-size: 13px; border-radius: 10px; }
+  .tsec .acts h3 { font-size: 15px; }
+  .tsec .acts p { font-size: 13.4px; }
+  .tsec .acts .act__why { font-size: 12.5px; }
+  .tsec .post-note { font-size: 12.7px; padding: 10px 12px; border-radius: 14px; }
+}

@@ -12,6 +12,9 @@
 /logo/*
   Cache-Control: public, max-age=2592000
 
+/images/*
+  Cache-Control: public, max-age=2592000
+
 # صفحه‌ها باید تازه بمانند تا ویرایش محتوا زود دیده شود
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
