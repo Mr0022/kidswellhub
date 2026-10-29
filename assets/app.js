@@ -14,9 +14,11 @@
 
   const scroller = $('#scroller');
   const sections = $$('.sec');
+  // نوار ناوبری بالا و منوی تمام‌صفحه در site.js‌اند (پیش از این فایل بار می‌شود)
+  const site = window.kidsSite;
 
   /* ---------------------------------------------------------
-     موتور پیمایش: نوار پیشرفت، نقطه‌ها، منو، صفحه‌کلید
+     موتور پیمایش: نوار پیشرفت، نقطه‌ها، صفحه‌کلید
 
      همه‌ی جابه‌جایی‌های عمودی از همین‌جا انجام می‌شود و در حالت
      کنترل‌شده، اسنپِ خودِ مرورگر خاموش است؛ هم‌زمانی اسنپ و اسکرول نرمِ
@@ -183,9 +185,8 @@
   const fromHash = hashIndex();
   if (fromHash > 0) jumpTo(fromHash);
 
-  // ناوبری نقطه‌ای + منوی تمام‌صفحه
+  // ناوبری نقطه‌ای
   const dots = $('#dots');
-  const menuList = $('#menuList');
   sections.forEach((sec, i) => {
     const label = sec.dataset.title || sec.id;
 
@@ -195,16 +196,6 @@
     dot.setAttribute('aria-label', label);
     dot.addEventListener('click', () => goTo(sec.id));
     dots.appendChild(dot);
-
-    const li = document.createElement('li');
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = label;
-    // شماره‌ی منو با رقم فارسی و دو رقمی: ۰۱ … ۱۱
-    btn.dataset.num = fa(String(i + 1).padStart(2, '0'));
-    btn.addEventListener('click', () => { closeMenu(); goTo(sec.id); });
-    li.appendChild(btn);
-    menuList.appendChild(li);
 
     sec.dataset.index = String(i);
   });
@@ -217,6 +208,8 @@
       const i = Number(entry.target.dataset.index);
       sections.forEach((s, k) => s.classList.toggle('is-active', k === i));
       dotEls.forEach((d, k) => d.classList.toggle('is-active', k === i));
+      // پیوند همین بخش در نوار ناوبری (مثلاً «خدمات» برای بخش‌های درمانی) جاری می‌شود
+      site.setActive(entry.target.id);
       const cs = getComputedStyle(entry.target);
       document.documentElement.style.setProperty('--a', cs.getPropertyValue('--a'));
       document.documentElement.style.setProperty('--b', cs.getPropertyValue('--b'));
@@ -234,20 +227,17 @@
   }, { root: scroller, rootMargin: '-45% 0px -45% 0px', threshold: 0 });
   sections.forEach((s) => activeObserver.observe(s));
 
-  // منو
-  const menuBtn = $('#menuBtn');
-  const menuPanel = $('#menuPanel');
-  const openMenu  = () => { menuPanel.classList.add('is-open'); menuBtn.setAttribute('aria-expanded', 'true'); };
-  const closeMenu = () => { menuPanel.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); };
-  menuBtn.addEventListener('click', () =>
-    menuPanel.classList.contains('is-open') ? closeMenu() : openMenu()
-  );
+  // دکمه‌ها و پیوندهای پرش، از جمله پیوندهای نوار ناوبری و منوی تمام‌صفحه
+  $$('[data-goto]').forEach((el) => el.addEventListener('click', (e) => {
+    if (!sections.some((s) => s.id === el.dataset.goto)) return;
+    e.preventDefault();
+    site.closeMenu();
+    site.closeSub();
+    goTo(el.dataset.goto);
+  }));
 
-  // دکمه‌های پرش
-  $$('[data-goto]').forEach((b) => b.addEventListener('click', () => goTo(b.dataset.goto)));
-
-  // پیوندهای درون‌صفحه‌ای (مثل نشان بالای صفحه) هم از همین موتور رد شوند
-  $$('a[href^="#"]').forEach((a) => {
+  // پیوندهای درون‌صفحه‌ای دیگر هم از همین موتور رد شوند
+  $$('a[href^="#"]:not([data-goto])').forEach((a) => {
     const id = a.getAttribute('href').slice(1);
     if (!id || !sections.some((s) => s.id === id)) return;
     a.addEventListener('click', (e) => { e.preventDefault(); goTo(id); });
@@ -417,7 +407,8 @@
   // صفحه‌کلید
   document.addEventListener('keydown', (e) => {
     if (e.target.matches('input, textarea, canvas')) return;
-    if (e.key === 'Escape') return closeMenu();
+    // Escape، و کلیدهای جهت درون زیرمنوی خدمات، کار site.js است؛ با منوی باز هم بخش‌ها جابه‌جا نمی‌شوند
+    if (e.defaultPrevented || site.menuOpen()) return;
     if (!controlled) return;
     if (e.key === 'Home' || e.key === 'End') {
       e.preventDefault();

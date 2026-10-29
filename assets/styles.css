@@ -18,6 +18,10 @@
   --bg1: #f7f5ff;
   --bg2: #fff2f8;
   --head-h: 74px;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --nav-glass: rgba(255, 255, 255, .74);  /* زمینه‌ی شیشه‌ای نوار ناوبری */
+  --nav-pop: #ffffff;                     /* زیرمنو */
+  --nav-shadow: 0 14px 40px -22px rgba(29, 27, 46, .38), 0 1px 3px rgba(29, 27, 46, .06);
 }
 
 html, body { margin: 0; padding: 0; height: 100%; }
@@ -128,6 +132,18 @@ button, input { font: inherit; color: inherit; }
 .brand__text strong { font-size: 15px; font-weight: 900; }
 .brand__text small { font-size: 11.5px; color: var(--ink-soft); }
 
+/* آیکون‌های خطی نوار ناوبری (فلش زیرمنو و دکمه‌ی رزرو) */
+.nav-ico {
+  width: 1.2em; height: 1.2em; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.head-actions { display: flex; align-items: center; gap: 10px; }
+.head-cta { padding: 9px 20px; font-size: 14px; white-space: nowrap; }
+/* دکمه‌ی رزرو روی صفحه‌ی «رزرو نوبت» نشان می‌دهد که همین صفحه است */
+.head-cta[aria-current="page"] { box-shadow: 0 0 0 4px color-mix(in srgb, var(--a) 26%, transparent); }
+
 .menu-btn {
   width: 46px; height: 46px; border: 0; border-radius: 14px; cursor: pointer;
   background: #fff; box-shadow: var(--shadow-sm);
@@ -143,12 +159,13 @@ button, input { font: inherit; color: inherit; }
 .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-/* منوی تمام‌صفحه */
+/* منوی تمام‌صفحه (گوشی و تبلت): همان پیوندهای نوار ناوبری بالا که site.js از روی آن می‌سازد؛
+   «خدمات» گروهی است که باز و بسته می‌شود و دکمه‌ی رزرو نوبت در پایان می‌آید */
 .menu-panel {
   position: fixed; inset: 0; z-index: 39;
+  overflow-y: auto; overscroll-behavior: contain;
   background: rgba(255, 255, 255, .93);
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-  display: grid; place-items: center;
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity .3s ease, visibility 0s linear .3s;
 }
@@ -156,18 +173,152 @@ button, input { font: inherit; color: inherit; }
   opacity: 1; visibility: visible; pointer-events: auto;
   transition: opacity .3s ease, visibility 0s;
 }
-.menu-panel ol { padding: 0 20px; max-height: 80dvh; overflow: auto; }
-.menu-panel button {
-  background: none; border: 0; cursor: pointer; padding: 8px 0;
-  font-size: clamp(19px, 3.6vw, 30px); font-weight: 900; color: var(--ink-soft);
-  display: flex; align-items: baseline; gap: 14px;
-  transition: color .2s ease, transform .25s ease;
+.menu-panel__inner {
+  width: min(520px, 100%); margin: 0 auto;
+  padding: calc(var(--head-h) + 12px) 20px calc(28px + env(safe-area-inset-bottom));
 }
-/* شماره از JS می‌آید تا با رقم فارسی و دو رقمی نمایش داده شود */
-.menu-panel button::before {
-  content: attr(data-num); font-size: .5em; font-weight: 700; opacity: .45;
+/* با باز شدن منو، ردیف‌ها یکی‌یکی از پایین بالا می‌آیند (--k ترتیب ردیف است) */
+.menu-panel__list > li, .menu-panel .menu-panel__cta {
+  opacity: 0; translate: 0 14px;
+  transition: opacity .35s ease, translate .5s var(--ease-out), background .25s ease, box-shadow .25s ease;
 }
-.menu-panel button:hover, .menu-panel button:focus-visible { color: var(--ink); transform: translateX(-8px); }
+.menu-panel.is-open .menu-panel__list > li, .menu-panel.is-open .menu-panel__cta {
+  opacity: 1; translate: 0 0;
+  transition-delay: calc(60ms + var(--k, 0) * 35ms);
+}
+.menu-panel__list > li { border-bottom: 1px solid var(--line); }
+.menu-panel__link {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 4px 0; padding: 12px 14px; border: 0; border-radius: 14px; background: none; cursor: pointer;
+  font-size: clamp(19px, 5vw, 22px); font-weight: 800; line-height: 1.6; text-align: start;
+  color: var(--ink); text-decoration: none;
+  transition: color .2s ease, background .2s ease;
+}
+.menu-panel__link:hover { background: color-mix(in srgb, var(--a) 9%, transparent); }
+.menu-panel__link.is-active {
+  color: color-mix(in srgb, var(--a) 72%, #000 28%);
+  background: color-mix(in srgb, var(--a) 10%, transparent);
+}
+.menu-panel__toggle .nav-ico {
+  width: 22px; height: 22px; stroke-width: 2.2; color: var(--ink-soft);
+  transition: rotate .35s var(--ease-out), color .2s ease;
+}
+.menu-panel__toggle[aria-expanded="true"] .nav-ico { rotate: 180deg; color: var(--a); }
+/* باز و بسته شدن نرم گروه: ردیف شبکه از صفر تا اندازه‌ی محتوا */
+.menu-panel__group {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows .4s var(--ease-out);
+}
+.menu-panel__toggle[aria-expanded="true"] + .menu-panel__group { grid-template-rows: 1fr; }
+.menu-panel__group > ul { min-height: 0; overflow: hidden; }
+.menu-panel__group li:last-child { padding-bottom: 10px; }
+.menu-panel__sublink {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 12px; border-radius: 12px;
+  font-size: 16px; font-weight: 700; line-height: 1.6; color: var(--ink-soft); text-decoration: none;
+  transition: color .2s ease, background .2s ease;
+}
+.menu-panel__sublink:hover { color: var(--ink); background: color-mix(in srgb, var(--a) 9%, transparent); }
+.menu-panel__sublink[aria-current] {
+  color: color-mix(in srgb, var(--a) 72%, #000 28%);
+  background: color-mix(in srgb, var(--a) 10%, transparent);
+}
+.menu-panel__sublink .topnav__sub-ico { width: 36px; height: 36px; border-radius: 11px; font-size: 18px; }
+/* حلقه‌ی فوکوس صفحه‌کلید درون ردیف، با همان گردی ردیف */
+.menu-panel__link:focus-visible { outline-offset: -2px; border-radius: 14px; }
+.menu-panel__sublink:focus-visible { outline-offset: -2px; border-radius: 12px; }
+.menu-panel__cta { width: 100%; margin-top: 22px; }
+.menu-panel__cta[aria-current="page"] { box-shadow: 0 0 0 4px color-mix(in srgb, var(--a) 26%, transparent); }
+
+/* ---------------- ناوبری بالا ----------------
+   کپسول شیشه‌ای وسط هدر؛ زبانه‌ای به رنگ بخش جاری زیر پیوند جاری می‌لغزد.
+   روی صفحه‌های باریک‌تر جا نمی‌شود و منوی تمام‌صفحه جایش را می‌گیرد. */
+
+.topnav {
+  position: absolute; left: 50%; translate: -50% 0;
+  display: none; padding: 5px; border-radius: 999px;
+  background: var(--nav-glass); border: 1px solid var(--line); box-shadow: var(--nav-shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
+}
+@media (min-width: 1201px) {
+  .topnav { display: block; }
+  .menu-btn { display: none; }
+}
+.topnav__list { position: relative; z-index: 1; display: flex; align-items: center; gap: 2px; }
+.topnav__link {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 15px; border: 0; border-radius: 999px; background: none; cursor: pointer;
+  font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--ink-soft);
+  text-decoration: none; white-space: nowrap;
+  transition: color .25s ease, background .25s ease;
+}
+.topnav__link:not(.is-active):hover { color: var(--ink); background: color-mix(in srgb, var(--a) 9%, transparent); }
+.topnav__link.is-active { color: #fff; }
+.topnav__caret {
+  width: 14px; height: 14px; stroke-width: 2.2; margin-inline-start: -2px;
+  transition: rotate .3s var(--ease-out);
+}
+.topnav__has-sub.is-open .topnav__caret { rotate: 180deg; }
+
+/* زبانه‌ی زیر پیوند جاری، با همان گرادیان دکمه‌های سایت؛ site.js جا و اندازه‌اش را می‌دهد (--x، --y، --w، --h) */
+.topnav__ind {
+  position: absolute; z-index: 0; left: 0; top: 0;
+  width: var(--w, 0); height: var(--h, 0); translate: var(--x, 0) var(--y, 0);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--a), var(--b));
+  box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--a) 60%, transparent);
+  pointer-events: none;
+}
+.topnav__ind.is-ready {
+  transition: translate .55s var(--ease-out), width .55s var(--ease-out), height .55s var(--ease-out), opacity .3s ease;
+}
+
+/* زیرمنوی خدمات: هر گزینه رنگ بخش خودش را دارد (--a روی همان پیوند) */
+.topnav__has-sub { position: relative; }
+.topnav__sub {
+  position: absolute; top: calc(100% + 14px); left: 50%; translate: -50% 8px;
+  width: 580px; padding: 10px;
+  border-radius: 20px; background: var(--nav-pop); border: 1px solid var(--line); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden;
+  transition: opacity .2s ease, translate .35s var(--ease-out), visibility 0s linear .35s;
+}
+/* پل نامرئی میان دکمه و زیرمنو تا نشانگر در راه، زیرمنو را نبندد */
+.topnav__sub::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 18px; }
+.topnav__has-sub.is-open .topnav__sub {
+  opacity: 1; visibility: visible; translate: -50% 0;
+  transition: opacity .2s ease, translate .35s var(--ease-out), visibility 0s;
+}
+.topnav__sub-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.topnav__sub-list a {
+  height: 100%;
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 12px; border-radius: 14px;
+  color: var(--ink); text-decoration: none;
+  transition: background .2s ease;
+}
+.topnav__sub-list a:hover, .topnav__sub-list a:focus-visible { background: color-mix(in srgb, var(--a) 9%, transparent); }
+.topnav__sub-list a[aria-current] { background: color-mix(in srgb, var(--a) 10%, transparent); }
+.topnav__sub-list a[aria-current] b { color: color-mix(in srgb, var(--a) 72%, #000 28%); }
+.topnav__sub-ico {
+  width: 38px; height: 38px; flex: none; display: grid; place-items: center; border-radius: 11px;
+  font-size: 19px; line-height: 1;
+  background: color-mix(in srgb, var(--a) 12%, #fff); border: 1px solid color-mix(in srgb, var(--a) 28%, transparent);
+}
+.topnav__sub-text { display: flex; flex-direction: column; line-height: 1.6; }
+.topnav__sub-text b { font-size: 14px; font-weight: 800; }
+.topnav__sub-text small { font-size: 12px; color: var(--ink-soft); }
+/* کارت رزرو نوبت، تمام‌عرض در پایان زیرمنو */
+.topnav__sub-wide { grid-column: 1 / -1; }
+.topnav__sub-list .topnav__sub-cta {
+  align-items: center; justify-content: space-between;
+  background: color-mix(in srgb, var(--a) 8%, #fff); border: 1px dashed color-mix(in srgb, var(--a) 34%, transparent);
+}
+.topnav__sub-go {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  font-size: 13px; font-weight: 800; color: color-mix(in srgb, var(--a) 72%, #000 28%);
+}
+.topnav__sub-go .nav-ico { width: 15px; height: 15px; transition: translate .25s var(--ease-out); }
+.topnav__sub-cta:hover .topnav__sub-go .nav-ico { translate: -3px 0; }
 
 /* ---------------- نوار پیشرفت و نقطه‌ها ---------------- */
 
@@ -644,7 +795,8 @@ body.page-plain {
     linear-gradient(160deg, #f7f5ff, #eef8ff);
 }
 
-.back-btn { padding: 9px 20px; font-size: 14px; }
+/* لنگرها (مثل about.html#faq و fine-motor.html#drill-1) زیر هدر ثابت پنهان نمانند */
+.page-plain [id] { scroll-margin-top: calc(var(--head-h) + 16px); }
 
 /* در این صفحه، لکه‌ها فقط یک پس‌زمینه‌ی محو گوشه‌ها هستند */
 .reserve .blobs i {
@@ -744,8 +896,6 @@ body.page-plain {
   .rcard { padding: 18px 16px; gap: 8px; }
   .rcard__ico { width: 54px; height: 54px; font-size: 26px; border-radius: 18px; }
   .rcard p { font-size: 13.5px; }
-  /* برچسب دکمه در یک سطر می‌ماند؛ نام مرکز اگر لازم شد دو سطری می‌شود */
-  .back-btn { padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
 }
 
 /* ---------------- صفحه‌ی کامل هر بخش ---------------- */
@@ -1307,7 +1457,7 @@ body.page-plain.topic-page {
   :root { --head-h: 62px; }
   body { line-height: 1.8; }
 
-  /* نام مرکز بلندتر از آن است که با زیرعنوان کنار دکمه‌ی بازگشت جا شود؛
+  /* نام مرکز بلندتر از آن است که با زیرعنوان کنار دکمه‌های هدر جا شود؛
      روی موبایل فقط نام می‌ماند و اگر لازم شد در دو سطر می‌نشیند */
   .brand { gap: 8px; }
   .brand__mark { width: 38px; height: 38px; border-radius: 12px; }
@@ -1383,11 +1533,15 @@ body.page-plain.topic-page {
   .contact { margin: 16px 0 12px; }
 }
 
-/* گوشی‌های خیلی باریک: هدر باید جای نام مرکز و دکمه‌ی بازگشت را با هم داشته باشد */
+/* گوشی: دکمه‌ی رزرو نوبت در منوی تمام‌صفحه هست و هدر فقط نام مرکز و دکمه‌ی منو را نگه می‌دارد */
+@media (max-width: 600px) {
+  .head-cta { display: none; }
+}
+
+/* گوشی‌های خیلی باریک */
 @media (max-width: 360px) {
   .brand__mark { width: 34px; height: 34px; }
   .brand__text strong { font-size: 12px; }
-  .back-btn { padding: 7px 11px; font-size: 11.5px; }
 }
 
 /* گوشی‌های کوچک‌تر: فشرده‌سازی بیشتر تا هر بخش یک صفحه بماند.
