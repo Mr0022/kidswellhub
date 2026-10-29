@@ -3,7 +3,7 @@
 """
 ساخت بخش «مقاله‌های پیشنهادی» پایین هر مقاله.
 
-کارت هر مقاله فقط یک جا نوشته می‌شود — در فهرست articles.html — و این اسکریپت از
+کارت هر مقاله فقط یک جا نوشته می‌شود — در فهرست articles/index.html — و این اسکریپت از
 همان کارت‌ها برای پایین هر مقاله سه کارت کوچک می‌سازد و میان دو نشانه‌ی
 «مقاله‌های پیشنهادی» می‌گذارد. از ریشه‌ی مخزن اجرا کنید:
 
@@ -12,16 +12,19 @@
 بلوک قبلی جایگزین می‌شود، پس اجرای دوباره چیزی را تکرار نمی‌کند.
 
 انتخاب ثابت است، نه تصادفی: هر مقاله مقاله‌ی بعدی، دو تا بعدی و قبلی خودش را در
-ترتیب articles.html پیشنهاد می‌کند (فهرست دوری است؛ بعد از آخری، اولی می‌آید). دلیلش:
+ترتیب articles/index.html پیشنهاد می‌کند (فهرست دوری است؛ بعد از آخری، اولی می‌آید). دلیلش:
 - پیوندها میان دو بار خزیدن موتور جست‌وجو عوض نمی‌شوند؛
 - هر مقاله دقیقاً از سه مقاله‌ی دیگر پیوند می‌گیرد و هیچ مقاله‌ای بی‌پیوند نمی‌ماند؛
-- کارت‌های articles.html بر اساس موضوع کنار هم چیده شده‌اند، پس همسایه‌ها به هم
-  مرتبط‌ترند. برای عوض کردن پیشنهادها، ترتیب کارت‌ها را در articles.html عوض کنید.
+- کارت‌های articles/index.html بر اساس موضوع کنار هم چیده شده‌اند، پس همسایه‌ها به هم
+  مرتبط‌ترند. برای عوض کردن پیشنهادها، ترتیب کارت‌ها را در articles/index.html عوض کنید.
+
+پیوند کارت‌ها نشانی بی‌پسوند مقاله است (‎/articles/<نام>) و فایلش articles/<نام>.html.
 """
 
 import io, re
 
-INDEX = "articles.html"
+INDEX = "articles/index.html"
+INDEX_URL = "/articles/"
 COUNT = 3
 START = "<!-- مقاله‌های پیشنهادی -->"
 END   = "<!-- پایان مقاله‌های پیشنهادی -->"
@@ -74,7 +77,7 @@ def render(cards, ks):
   <section class="post-related" aria-labelledby="related-title">
     <div class="post-related__head">
       <h2 id="related-title">مقاله‌های پیشنهادی</h2>
-      <a class="post-related__all" href="{INDEX}">همه‌ی مقاله‌ها <i aria-hidden="true">←</i></a>
+      <a class="post-related__all" href="{INDEX_URL}">همه‌ی مقاله‌ها <i aria-hidden="true">←</i></a>
     </div>
     <ul class="post-grid post-grid--related">
 {items}    </ul>
@@ -83,17 +86,18 @@ def render(cards, ks):
 '''
 
 cards = read_cards()
-assert len(cards) > 1, "در articles.html کمتر از دو کارت مقاله پیدا شد"
+assert len(cards) > 1, "در " + INDEX + " کمتر از دو کارت مقاله پیدا شد"
 inbound = {c["href"]: 0 for c in cards}
 
 for i, c in enumerate(cards):
     ks = picks(cards, i)
     for k in ks:
         inbound[cards[k]["href"]] += 1
-    src = io.open(c["href"], encoding="utf-8").read()
-    assert BLOCK_RE.search(src), c["href"] + ": نشانه‌های «مقاله‌های پیشنهادی» پیدا نشد"
+    path = c["href"].lstrip("/") + ".html"
+    src = io.open(path, encoding="utf-8").read()
+    assert BLOCK_RE.search(src), path + ": نشانه‌های «مقاله‌های پیشنهادی» پیدا نشد"
     src = BLOCK_RE.sub(lambda m: render(cards, ks), src, count=1)
-    io.open(c["href"], "w", encoding="utf-8").write(src)
+    io.open(path, "w", encoding="utf-8").write(src)
     print("ok", c["href"], "←", "، ".join(cards[k]["href"] for k in ks))
 
 # هر مقاله باید دست‌کم از یک مقاله‌ی دیگر پیوند بگیرد

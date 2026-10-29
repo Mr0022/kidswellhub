@@ -1,0 +1,53 @@
+# Cloudflare Pages — انتقال دائمی نشانی‌های قدیمی به نشانی‌های تازه
+# صفحه‌های ریشه (/about.html → /about) را خودِ Pages بی‌پسوند می‌کند و این‌جا لازم نیستند.
+
+# پوشه‌ی services صفحه‌ی فهرست ندارد؛ فهرست خدمات همان صفحه‌ی اصلی است
+/services   /   302
+/services/  /   302
+
+# صفحه‌ی هر بخش درمانی و بازی‌های دست‌ورزی (پیش‌تر در ریشه)
+/fine-motor.html  /services/fine-motor  301
+/fine-motor  /services/fine-motor  301
+/cognitive.html  /services/cognitive  301
+/cognitive  /services/cognitive  301
+/visual-perception.html  /services/visual-perception  301
+/visual-perception  /services/visual-perception  301
+/auditory-processing.html  /services/auditory-processing  301
+/auditory-processing  /services/auditory-processing  301
+/social-skills.html  /services/social-skills  301
+/social-skills  /services/social-skills  301
+/play-therapy.html  /services/play-therapy  301
+/play-therapy  /services/play-therapy  301
+/perceptual-motor.html  /services/perceptual-motor  301
+/perceptual-motor  /services/perceptual-motor  301
+/school-readiness.html  /services/school-readiness  301
+/school-readiness  /services/school-readiness  301
+/behavioral-therapy.html  /services/behavioral-therapy  301
+/behavioral-therapy  /services/behavioral-therapy  301
+/fine-motor-game-1.html  /services/fine-motor-game-1  301
+/fine-motor-game-1  /services/fine-motor-game-1  301
+/fine-motor-game-2.html  /services/fine-motor-game-2  301
+/fine-motor-game-2  /services/fine-motor-game-2  301
+/fine-motor-game-3.html  /services/fine-motor-game-3  301
+/fine-motor-game-3  /services/fine-motor-game-3  301
+/fine-motor-game-4.html  /services/fine-motor-game-4  301
+/fine-motor-game-4  /services/fine-motor-game-4  301
+/fine-motor-game-5.html  /services/fine-motor-game-5  301
+/fine-motor-game-5  /services/fine-motor-game-5  301
+
+# مقاله‌ها (پیش‌تر در ریشه)
+/articles.html  /articles/  301
+/pediatric-occupational-therapy.html  /articles/pediatric-occupational-therapy  301
+/pediatric-occupational-therapy  /articles/pediatric-occupational-therapy  301
+/occupational-therapy-signs.html  /articles/occupational-therapy-signs  301
+/occupational-therapy-signs  /articles/occupational-therapy-signs  301
+/fine-motor-activities.html  /articles/fine-motor-activities  301
+/fine-motor-activities  /articles/fine-motor-activities  301
+/pencil-grip-handwriting.html  /articles/pencil-grip-handwriting  301
+/pencil-grip-handwriting  /articles/pencil-grip-handwriting  301
+/dressing-skills.html  /articles/dressing-skills  301
+/dressing-skills  /articles/dressing-skills  301
+/feeding-skills.html  /articles/feeding-skills  301
+/feeding-skills  /articles/feeding-skills  301
+/visual-schedule.html  /articles/visual-schedule  301
+/visual-schedule  /articles/visual-schedule  301

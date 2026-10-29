@@ -9,10 +9,11 @@
     python3 tools/sync-nav.py
 
 - هدر: از <header class="site-head"> تا منوی تمام‌صفحه (<nav class="menu-panel">).
-  پیوندهای درون‌صفحه‌ای صفحه‌ی اصلی (href="#tamas" data-goto="tamas") به
-  index.html#tamas تبدیل می‌شوند و #hero به خود index.html.
-- 404.html را Cloudflare Pages در هر نشانی ناموجودی نشان می‌دهد، پس همه‌ی
-  نشانی‌های هدرش از ریشه‌ی دامنه‌اند (/reserve.html، و / برای صفحه‌ی اصلی).
+  همه‌ی نشانی‌های سایت از ریشه‌ی دامنه و بی‌پسوندند (/reserve، /services/cognitive،
+  /articles/)، پس هدر در هر پوشه‌ای همان است. فقط پیوندهای درون‌صفحه‌ای صفحه‌ی اصلی
+  (href="#tamas" data-goto="tamas") به /#tamas تبدیل می‌شوند و #hero به خود /.
+- صفحه‌ها: همه‌ی HTMLهای ریشه، articles/ و services/ (404.html هم، که Cloudflare Pages
+  در هر نشانی ناموجودی نشانش می‌دهد).
 - در reserve.html دکمه‌ی «رزرو نوبت» هدر aria-current="page" می‌گیرد.
 - assets/site.js اگر در صفحه‌ای بار نشده باشد، پیش از نخستین اسکریپت پایان صفحه
   (یا پیش از </body>) اضافه می‌شود، و نشانه‌ی نسخه‌ی styles.css و site.js همه‌ی
@@ -33,23 +34,13 @@ HEAD = re.compile(
     r'<header class="site-head">.*?</header>'
     r'(?:\n\n<!-- منوی تمام‌صفحه[^\n]*-->\n<nav class="menu-panel"[^>]*></nav>)?', re.S)
 ASSET = re.compile(r'(/?assets/(?:styles\.css|site\.js))\?v=\d+')
-# نشانی نسبی: نه طرح‌دار (https:، tel:)، نه #…، نه از ریشه‌ی دامنه (/…)
-LOCAL = re.compile(r'((?:href|src)=")(?![a-z][a-z0-9+.-]*:|#|/)([^"]+)(")')
+FOLDERS = ('articles', 'services')
 
 
 def page_head(head):
     """هدر صفحه‌ی اصلی، برای صفحه‌های دیگر"""
-    head = re.sub(r'href="#hero" data-goto="hero"', 'href="index.html"', head)
-    return re.sub(r'href="#([\w-]+)" data-goto="\1"', r'href="index.html#\1"', head)
-
-
-def from_root(head):
-    """همه‌ی نشانی‌های نسبی از ریشه‌ی دامنه (برای 404.html)"""
-    def fix(m):
-        url = m.group(2)
-        url = '/' + url[len('index.html'):] if url.startswith('index.html') else '/' + url
-        return m.group(1) + url + m.group(3)
-    return LOCAL.sub(fix, head)
+    head = re.sub(r'href="#hero" data-goto="hero"', 'href="/"', head)
+    return re.sub(r'href="#([\w-]+)" data-goto="\1"', r'href="/#\1"', head)
 
 
 def main():
@@ -59,19 +50,20 @@ def main():
     if set(versions) != {'assets/styles.css', 'assets/site.js'}:
         sys.exit('index.html باید styles.css و site.js را با نشانه‌ی نسخه (?v=N) بار کند')
 
-    for name in sorted(f for f in os.listdir('.') if f.endswith('.html') and f != 'index.html'):
+    names = [f for f in os.listdir('.') if f.endswith('.html') and f != 'index.html']
+    names += [os.path.join(d, f) for d in FOLDERS for f in os.listdir(d) if f.endswith('.html')]
+    for name in sorted(names):
         src = io.open(name, encoding='utf-8').read()
-        root = '/' if name == '404.html' else ''
-        mine = from_root(head) if root else head
+        mine = head
         if name == 'reserve.html':
-            mine = mine.replace('class="btn head-cta" href="reserve.html"',
-                                'class="btn head-cta" href="reserve.html" aria-current="page"')
+            mine = mine.replace('class="btn head-cta" href="/reserve"',
+                                'class="btn head-cta" href="/reserve" aria-current="page"')
         if not HEAD.search(src):
             sys.exit(name + ': هدر <header class="site-head"> پیدا نشد')
         out = HEAD.sub(lambda m: mine, src, count=1)
 
         if 'assets/site.js' not in out:
-            tag = '<script src="' + root + 'assets/site.js?v=0"></script>\n'
+            tag = '<script src="/assets/site.js?v=0"></script>\n'
             k = out.find('<script src=', out.find('</main>'))
             k = k if k >= 0 else out.find('</body>')
             out = out[:k] + tag + out[k:]

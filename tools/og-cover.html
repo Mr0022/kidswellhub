@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+  منبع تصویر اشتراک‌گذاری logo/og-cover.png (۱۲۰۰×۶۳۰). پس از ویرایش، از ریشه‌ی مخزن:
+  chromium --headless --hide-scrollbars --window-size=1200,630 --virtual-time-budget=4000 --screenshot=logo/og-cover.png tools/og-cover.html
+-->
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex" />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700;900&family=Poppins:wght@700&display=block" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    color: #1d1b2e;
+    background:
+      radial-gradient(620px 420px at 100% 0%, rgba(255, 122, 182, .22), transparent 70%),
+      radial-gradient(520px 380px at 0% 100%, rgba(124, 92, 255, .2), transparent 70%),
+      linear-gradient(160deg, #f6f2ff, #fff3f8);
+  }
+  .dot { position: absolute; border-radius: 50%; }
+  .d1 { width: 200px; height: 200px; top: -48px; left: 150px; background: rgba(124, 92, 255, .1); }
+  .d2 { width: 112px; height: 112px; top: 150px; left: -50px; background: rgba(14, 165, 233, .1); }
+  .d3 { width: 150px; height: 150px; bottom: -70px; left: 720px; background: rgba(255, 122, 182, .12); }
+  .wrap { position: absolute; inset: 58px 80px 0; }
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .brand svg { width: 68px; height: 68px; filter: drop-shadow(0 6px 14px rgba(22, 100, 92, .25)); }
+  .brand b { font-size: 30px; font-weight: 900; }
+  h1 {
+    margin: 78px 0 0; font-size: 84px; font-weight: 900; line-height: 1.25;
+    background: linear-gradient(110deg, #7c5cff, #ff7ab6 70%, #b46cff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub { margin: 6px 0 0; font-size: 31px; font-weight: 500; color: #55516e; }
+  .chips { display: flex; gap: 14px; margin-top: 36px; }
+  .chips span {
+    font-size: 21px; font-weight: 700; padding: 9px 22px; border-radius: 999px;
+    background: rgba(255, 255, 255, .86); border: 1px solid rgba(29, 27, 46, .09);
+  }
+  .foot {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 108px;
+    border-top: 1px solid rgba(29, 27, 46, .1);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .foot p { margin: 0; font-size: 22px; color: #55516e; }
+  .foot p b { color: #1d1b2e; }
+  .foot .url { font-family: Poppins, sans-serif; font-weight: 700; font-size: 23px; color: #1d1b2e; direction: ltr; }
+</style>
+</head>
+<body>
+  <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="2" y="2" width="96" height="96" rx="26" fill="#16645C"></rect>
+        <path d="M36 25 L36 75" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" fill="none"></path>
+        <path d="M37 53 L61 75" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" fill="none"></path>
+        <path d="M37 53 L59 31" stroke="#34A46E" stroke-width="9" stroke-linecap="round" fill="none"></path>
+        <circle cx="62" cy="28" r="6.5" fill="#34A46E"></circle>
+      </svg>
+      <b>مرکز مغز و شناخت کودکان</b>
+    </div>
+    <h1>کاردرمانی ذهنی کودکان</h1>
+    <p class="sub">آنلاین، در سراسر ایران</p>
+    <div class="chips">
+      <span>دست‌ورزی</span><span>شناختی</span><span>ادراک بینایی</span><span>پردازش شنیداری</span><span>رفتاردرمانی</span>
+    </div>
+    <div class="foot">
+      <p>تیم <b>کاردرمانگران ذهنی کودکان</b> — رزرو نوبت آنلاین</p>
+      <span class="url">kidswellhub.ir</span>
+    </div>
+  </div>
+</body>
+</html>
