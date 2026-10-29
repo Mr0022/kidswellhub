@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0f8"/>
+      <stop offset="1" stop-color="#f3efff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="250" r="150" fill="#ffa8d5" opacity=".18"/>
+
+  <!-- پیوند کودک با شش حیطه‌ی روزمره -->
+  <g stroke="#e9c6dc" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12">
+    <path d="M400 250L400 92M400 250L628 170M400 250L628 330M400 250L400 408M400 250L172 330M400 250L172 170"/>
+  </g>
+
+  <!-- کودک -->
+  <ellipse cx="400" cy="328" rx="60" ry="9" fill="#831843" opacity=".1"/>
+  <path d="M362 270Q366 236 400 236Q434 236 438 270L446 322H354Z" fill="#e0409b"/>
+  <path d="M368 252L338 290M432 252L462 290" stroke="#e0409b" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="400" cy="202" r="30" fill="#ffb38a"/>
+  <path d="M370 196Q372 168 400 168Q428 168 430 196Q414 182 400 186Q386 182 370 196Z" fill="#55516e"/>
+
+  <!-- بالا: لباس پوشیدن -->
+  <g transform="translate(400 92)">
+    <circle r="54" fill="#ffffff" stroke="#3f6cff" stroke-width="6"/>
+    <g transform="translate(0 -30) scale(.25)">
+      <path d="M-42 0Q0 30 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#3f6cff" stroke="#3f6cff" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M0 26V250" stroke="#2c4fd8" stroke-width="10"/>
+      <g fill="#ffffff"><circle cx="18" cy="80" r="13"/><circle cx="18" cy="150" r="13"/><circle cx="18" cy="220" r="13"/></g>
+    </g>
+  </g>
+
+  <!-- راست‌ـ‌بالا: نوشتن -->
+  <g transform="translate(628 170)">
+    <circle r="54" fill="#ffffff" stroke="#ffb020" stroke-width="6"/>
+    <g transform="rotate(40) scale(.86)">
+      <rect x="-9" y="-40" width="18" height="56" rx="4" fill="#ffc24b"/>
+      <rect x="-9" y="-48" width="18" height="12" rx="4" fill="#ff7ab6"/>
+      <path d="M-9 16H9L0 32Z" fill="#f3d3a6"/>
+      <path d="M-3 26L0 32L3 26Z" fill="#3a3550"/>
+    </g>
+  </g>
+
+  <!-- راست‌ـ‌پایین: غذا خوردن -->
+  <g transform="translate(628 330)">
+    <circle r="54" fill="#ffffff" stroke="#16a34a" stroke-width="6"/>
+    <path d="M8-6L24-30" stroke="#16a34a" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-4" rx="32" ry="7" fill="#ffd36b"/>
+    <path d="M-32-4H32Q30 26 0 28Q-30 26-32-4Z" fill="#ff7043"/>
+  </g>
+
+  <!-- پایین: بازی -->
+  <g transform="translate(400 408)">
+    <circle r="54" fill="#ffffff" stroke="#7c5cff" stroke-width="6"/>
+    <rect x="-30" y="0" width="28" height="28" rx="6" fill="#ffc24b"/>
+    <rect x="2" y="0" width="28" height="28" rx="6" fill="#3f6cff"/>
+    <rect x="-14" y="-30" width="28" height="28" rx="6" fill="#7c5cff"/>
+  </g>
+
+  <!-- چپ‌ـ‌پایین: هماهنگی حرکتی -->
+  <g transform="translate(172 330)">
+    <circle r="54" fill="#ffffff" stroke="#ff7043" stroke-width="6"/>
+    <circle r="28" fill="#ff7043"/>
+    <path d="M-26-8Q0-20 26-8M-26 10Q0 22 26 10" fill="none" stroke="#ffffff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- چپ‌ـ‌بالا: روال روزانه -->
+  <g transform="translate(172 170)">
+    <circle r="54" fill="#ffffff" stroke="#0f9d8a" stroke-width="6"/>
+    <circle r="30" fill="#e6f7f3" stroke="#0f9d8a" stroke-width="5"/>
+    <path d="M0-18V0L13 8" fill="none" stroke="#3a3550" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle r="4" fill="#3a3550"/>
+  </g>
+</svg>

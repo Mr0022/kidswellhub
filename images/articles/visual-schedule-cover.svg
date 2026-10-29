@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8e6"/>
+      <stop offset="1" stop-color="#fff0e0"/>
+    </linearGradient>
+    <!-- کارت تصویری خالی؛ گوشه‌ی بالا‌ـ‌چپ در (0,0)، ۱۷۰×۲۱۰ -->
+    <g id="card">
+      <rect width="170" height="210" rx="22" fill="#ffffff"/>
+      <rect x="65" y="-6" width="40" height="14" rx="5" fill="#e4d6b8"/>
+      <rect x="45" y="176" width="80" height="10" rx="5" fill="#ece4d4"/>
+    </g>
+    <!-- تیک «انجام شد» -->
+    <g id="done">
+      <circle r="22" fill="#16a34a"/>
+      <path d="M-10 0L-3 8L11-8" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1090" cy="40" r="230" fill="#ffd88a" opacity=".35"/>
+  <circle cx="80" cy="610" r="240" fill="#f59e0b" opacity=".1"/>
+  <ellipse cx="600" cy="584" rx="560" ry="28" fill="#b45309" opacity=".07"/>
+
+  <!-- تخته‌ی برنامه روی دیوار؛ ترتیب کارت‌ها از راست به چپ است -->
+  <rect x="88" y="132" width="1040" height="300" rx="32" fill="#b45309" opacity=".1"/>
+  <rect x="80" y="120" width="1040" height="300" rx="32" fill="#fff4dc"/>
+  <rect x="80" y="120" width="1040" height="300" rx="32" fill="none" stroke="#ffd88a" stroke-width="6"/>
+
+  <!-- ۱: بیدار شدن (انجام شد) -->
+  <g transform="translate(907 165)">
+    <use href="#card"/>
+    <g transform="translate(85 92)" opacity=".55">
+      <g stroke="#ffb020" stroke-width="8" stroke-linecap="round">
+        <path d="M0-58V-44M0 44V58M-58 0H-44M44 0H58M-41-41L-31-31M31 31L41 41M-41 41L-31 31M31-31L41-41"/>
+      </g>
+      <circle r="30" fill="#ffc24b"/>
+    </g>
+    <use href="#done" x="150" y="12"/>
+  </g>
+
+  <!-- ۲: مسواک (انجام شد) -->
+  <g transform="translate(711 165)">
+    <use href="#card"/>
+    <g transform="translate(85 96) rotate(-24)" opacity=".55">
+      <rect x="-58" y="-7" width="76" height="14" rx="7" fill="#3f6cff"/>
+      <rect x="12" y="-9" width="44" height="18" rx="7" fill="#3f6cff"/>
+      <g fill="#ffffff" stroke="#9ec2ff" stroke-width="3">
+        <rect x="16" y="-30" width="9" height="22" rx="3"/>
+        <rect x="28" y="-30" width="9" height="22" rx="3"/>
+        <rect x="40" y="-30" width="9" height="22" rx="3"/>
+      </g>
+      <path d="M14-34Q22-48 34-40Q44-50 54-38Q50-30 14-34Z" fill="#8fe3d3"/>
+    </g>
+    <use href="#done" x="150" y="12"/>
+  </g>
+
+  <!-- ۳: لباس پوشیدن (کار فعلی) -->
+  <g transform="translate(515 165)">
+    <use href="#card"/>
+    <rect width="170" height="210" rx="22" fill="none" stroke="#f59e0b" stroke-width="7"/>
+    <g transform="translate(85 54) scale(.42)">
+      <path d="M-42 0Q0 30 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#0f9d8a" stroke="#0f9d8a" stroke-width="10" stroke-linejoin="round"/>
+      <path d="M-92 150H92V178H-92Z" fill="#ffffff" opacity=".85"/>
+      <path d="M-42 0Q0 30 42 0Q0 46-42 0Z" fill="#0b7a6b"/>
+    </g>
+  </g>
+  <!-- نشانگر «الان این» بالای کارت فعلی -->
+  <path d="M582 82H618L600 108Z" fill="#f59e0b" stroke="#f59e0b" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- ۴: صبحانه -->
+  <g transform="translate(319 165)">
+    <use href="#card"/>
+    <g transform="translate(85 104)">
+      <path d="M58-58L14-8" stroke="#9aa3b8" stroke-width="9" stroke-linecap="round"/>
+      <ellipse cx="62" cy="-62" rx="10" ry="14" transform="rotate(42 62 -62)" fill="#9aa3b8"/>
+      <ellipse cx="0" cy="-6" rx="54" ry="12" fill="#ffd36b"/>
+      <path d="M-54-6H54Q50 44 0 46Q-50 44-54-6Z" fill="#ff7043"/>
+      <path d="M-40 14H40" stroke="#ffffff" stroke-opacity=".5" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ۵: کوله‌پشتی مدرسه -->
+  <g transform="translate(123 165)">
+    <use href="#card"/>
+    <g transform="translate(85 98)">
+      <path d="M-22-56Q0-80 22-56" fill="none" stroke="#5b3fd6" stroke-width="8" stroke-linecap="round"/>
+      <rect x="-46" y="-56" width="92" height="114" rx="26" fill="#7c5cff"/>
+      <rect x="-32" y="4" width="64" height="40" rx="12" fill="#5b3fd6"/>
+      <rect x="-32" y="-40" width="64" height="12" rx="6" fill="#ffffff" opacity=".35"/>
+      <circle cx="0" cy="16" r="5" fill="#ffc24b"/>
+    </g>
+  </g>
+
+  <!-- ساعت شنی کنار تخته -->
+  <ellipse cx="1010" cy="582" rx="70" ry="10" fill="#b45309" opacity=".14"/>
+  <g transform="translate(1010 510)">
+    <rect x="-56" y="-78" width="112" height="16" rx="8" fill="#c9a27a"/>
+    <rect x="-56" y="62" width="112" height="16" rx="8" fill="#c9a27a"/>
+    <path d="M-40-62H40Q40-22 6 0Q40 22 40 62H-40Q-40 22-6 0Q-40-22-40-62Z" fill="#ffffff" stroke="#e4d6b8" stroke-width="5"/>
+    <path d="M-22-36H22Q16-18 0-6Q-16-18-22-36Z" fill="#f59e0b"/>
+    <path d="M-30 58Q0 24 30 58Z" fill="#f59e0b"/>
+    <path d="M0-4V40" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4 6"/>
+  </g>
+
+  <!-- مکعب‌ها و توپ روی زمین -->
+  <ellipse cx="250" cy="584" rx="150" ry="12" fill="#b45309" opacity=".12"/>
+  <rect x="140" y="510" width="70" height="70" rx="12" fill="#3f6cff"/>
+  <rect x="216" y="510" width="70" height="70" rx="12" fill="#ff7ab6"/>
+  <rect x="178" y="434" width="70" height="70" rx="12" fill="#ffc24b"/>
+  <circle cx="352" cy="546" r="36" fill="#16a34a"/>
+  <path d="M324 534Q352 520 380 534M324 558Q352 572 380 558" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="6" stroke-linecap="round"/>
+
+  <use href="#spark" transform="translate(470 520) scale(1.2)" fill="#f59e0b"/>
+  <use href="#spark" transform="translate(760 540) scale(.9)" fill="#7c5cff"/>
+  <use href="#spark" transform="translate(150 70) scale(1)" fill="#ff7043"/>
+  <use href="#spark" transform="translate(860 70) scale(.8)" fill="#0f9d8a"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eefbf0"/>
+      <stop offset="1" stop-color="#fff6e8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="700" cy="90" r="160" fill="#9ae6a1" opacity=".25"/>
+  <rect y="440" width="800" height="60" fill="#d5f2da"/>
+
+  <!-- صندلی -->
+  <rect x="150" y="166" width="16" height="150" rx="8" fill="#9ec2ff"/>
+  <rect x="150" y="300" width="138" height="16" rx="8" fill="#9ec2ff"/>
+  <rect x="156" y="316" width="12" height="124" rx="5" fill="#7aa7f5"/>
+  <rect x="270" y="316" width="12" height="124" rx="5" fill="#7aa7f5"/>
+
+  <!-- زیرپایی -->
+  <rect x="286" y="402" width="120" height="38" rx="8" fill="#ffc24b"/>
+  <rect x="286" y="402" width="120" height="10" rx="5" fill="#ffd779"/>
+
+  <!-- میز به بلندی آرنج -->
+  <rect x="300" y="236" width="360" height="16" rx="6" fill="#e7b98a"/>
+  <rect x="628" y="252" width="16" height="188" rx="6" fill="#d4a274"/>
+
+  <!-- لیوان روی میز -->
+  <path d="M532 172H576L571 230Q570 236 564 236H544Q538 236 537 230Z" fill="#ffffff"/>
+  <path d="M535 196H573L571 230Q570 236 564 236H544Q538 236 537 230Z" fill="#7cc8ff"/>
+  <ellipse cx="554" cy="172" rx="22" ry="5" fill="none" stroke="#dbe9e0" stroke-width="3"/>
+
+  <!-- قاشق؛ پیش از کاسه کشیده می‌شود تا سرش داخل کاسه بماند -->
+  <path d="M356 212L406 200" stroke="#16a34a" stroke-width="11" stroke-linecap="round"/>
+  <path d="M404 201L424 204" stroke="#9aa3b8" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="434" cy="208" rx="14" ry="8" fill="#9aa3b8"/>
+
+  <!-- کاسه -->
+  <ellipse cx="450" cy="210" rx="46" ry="9" fill="#ffd36b"/>
+  <path d="M404 210H496Q492 236 450 236Q408 236 404 210Z" fill="#7c5cff"/>
+  <path d="M418 222H482" stroke="#ffffff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- سه زاویه‌ی قائمه: لگن، زانو، مچ پا -->
+  <g fill="#16a34a" fill-opacity=".22" stroke="#16a34a" stroke-width="4" stroke-linejoin="round">
+    <path d="M194 286L198.8 236.2A50 50 0 0 1 244 286Z"/>
+    <path d="M318 286L268 286A50 50 0 0 0 318 336Z"/>
+    <path d="M318 388L318 338A50 50 0 0 1 368 388Z"/>
+  </g>
+
+  <!-- کودک (نمای کناری، به شکل نشانک) -->
+  <g stroke="#ff7043" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M194 286L204 182"/>
+    <path d="M194 286H318V388H364"/>
+    <path d="M206 186L242 222H344"/>
+  </g>
+  <circle cx="210" cy="128" r="32" fill="#ff7043"/>
+  <circle cx="352" cy="216" r="15" fill="#ff7043"/>
+</svg>

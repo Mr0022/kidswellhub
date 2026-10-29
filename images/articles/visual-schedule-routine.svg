@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaec"/>
+      <stop offset="1" stop-color="#fff1e4"/>
+    </linearGradient>
+    <!-- کارت افقی؛ گوشه‌ی بالا‌ـ‌چپ در (0,0)، ۱۹۰×۸۴؛ تصویر سمت راست و جای کلمه سمت چپ -->
+    <g id="card">
+      <rect width="190" height="84" rx="16" fill="#ffffff"/>
+      <rect x="22" y="30" width="64" height="9" rx="4.5" fill="#ece4d4"/>
+      <rect x="22" y="46" width="42" height="9" rx="4.5" fill="#ece4d4"/>
+    </g>
+    <g id="sun">
+      <g stroke="#ffb020" stroke-width="8" stroke-linecap="round">
+        <path d="M0-58V-44M0 44V58M-58 0H-44M44 0H58M-41-41L-31-31M31 31L41 41M-41 41L-31 31M31-31L41-41"/>
+      </g>
+      <circle r="30" fill="#ffc24b"/>
+    </g>
+    <g id="brush">
+      <g transform="rotate(-24)">
+        <rect x="-58" y="-7" width="76" height="14" rx="7" fill="#3f6cff"/>
+        <rect x="12" y="-9" width="44" height="18" rx="7" fill="#3f6cff"/>
+        <g fill="#ffffff" stroke="#9ec2ff" stroke-width="3">
+          <rect x="16" y="-30" width="9" height="22" rx="3"/>
+          <rect x="28" y="-30" width="9" height="22" rx="3"/>
+          <rect x="40" y="-30" width="9" height="22" rx="3"/>
+        </g>
+        <path d="M14-34Q22-48 34-40Q44-50 54-38Q50-30 14-34Z" fill="#8fe3d3"/>
+      </g>
+    </g>
+    <g id="shirt">
+      <g transform="translate(0 -52) scale(.42)">
+        <path d="M-42 0Q0 30 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#0f9d8a" stroke="#0f9d8a" stroke-width="10" stroke-linejoin="round"/>
+        <path d="M-92 150H92V178H-92Z" fill="#ffffff" opacity=".85"/>
+        <path d="M-42 0Q0 30 42 0Q0 46-42 0Z" fill="#0b7a6b"/>
+      </g>
+    </g>
+    <g id="bowl">
+      <path d="M58-58L14-8" stroke="#9aa3b8" stroke-width="9" stroke-linecap="round"/>
+      <ellipse cx="62" cy="-62" rx="10" ry="14" transform="rotate(42 62 -62)" fill="#9aa3b8"/>
+      <ellipse cx="0" cy="-6" rx="54" ry="12" fill="#ffd36b"/>
+      <path d="M-54-6H54Q50 44 0 46Q-50 44-54-6Z" fill="#ff7043"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="90" cy="70" r="150" fill="#ffd88a" opacity=".3"/>
+  <rect y="458" width="800" height="42" fill="#ffe9c2"/>
+
+  <!-- نوار عمودی برنامه‌ی صبح؛ از بالا به پایین خوانده می‌شود -->
+  <rect x="478" y="34" width="240" height="414" rx="28" fill="#b45309" opacity=".1"/>
+  <rect x="470" y="24" width="240" height="414" rx="28" fill="#ffffff"/>
+  <rect x="470" y="24" width="240" height="414" rx="28" fill="none" stroke="#ffd88a" stroke-width="5"/>
+  <rect x="580" y="12" width="20" height="20" rx="10" fill="#f59e0b"/>
+
+  <!-- جای خالی کارت اول که برداشته شده -->
+  <rect x="495" y="48" width="190" height="84" rx="16" fill="#fff8ea" stroke="#ecd9b3" stroke-width="3" stroke-dasharray="8 7"/>
+  <rect x="580" y="84" width="20" height="12" rx="4" fill="#e4d6b8"/>
+
+  <!-- کار فعلی: مسواک -->
+  <g transform="translate(495 146)">
+    <rect x="-6" y="-6" width="202" height="96" rx="20" fill="#fff4dc"/>
+    <use href="#card"/>
+    <rect width="190" height="84" rx="16" fill="none" stroke="#f59e0b" stroke-width="5"/>
+    <use href="#brush" transform="translate(146 46) scale(.56)"/>
+  </g>
+  <g transform="translate(495 246)">
+    <rect width="190" height="84" rx="16" fill="#fbf5ea"/>
+    <use href="#card"/>
+    <use href="#shirt" transform="translate(146 44) scale(.62)"/>
+  </g>
+  <g transform="translate(495 344)">
+    <use href="#card"/>
+    <use href="#bowl" transform="translate(146 48) scale(.56)"/>
+  </g>
+  <!-- سایه‌ی ملایم زیر کارت‌ها -->
+  <g fill="none" stroke="#f0e6d2" stroke-width="2">
+    <rect x="495" y="246" width="190" height="84" rx="16"/>
+    <rect x="495" y="344" width="190" height="84" rx="16"/>
+  </g>
+
+  <!-- پیکان: کارت انجام‌شده به جیب «تمام شد» می‌رود -->
+  <path d="M478 92C390 92 330 120 300 214" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/>
+  <path d="M284 196L298 226L318 200" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- جیب «تمام شد» با کارت خورشید داخلش -->
+  <ellipse cx="270" cy="458" rx="140" ry="10" fill="#b45309" opacity=".12"/>
+  <g transform="translate(190 236) rotate(-6 95 42)">
+    <use href="#card"/>
+    <use href="#sun" transform="translate(146 44) scale(.5)" opacity=".7"/>
+  </g>
+  <path d="M140 286H400V420Q400 444 376 444H164Q140 444 140 420Z" fill="#16a34a"/>
+  <path d="M140 286L270 350L400 286" fill="none" stroke="#12863d" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="270" cy="392" r="26" fill="#ffffff"/>
+  <path d="M258 392L266 401L283 383" fill="none" stroke="#16a34a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

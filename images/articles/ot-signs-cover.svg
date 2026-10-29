@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0f8"/>
+      <stop offset="1" stop-color="#f3efff"/>
+    </linearGradient>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="80" r="240" fill="#ffa8d5" opacity=".25"/>
+  <circle cx="110" cy="580" r="230" fill="#c9b4ff" opacity=".22"/>
+  <ellipse cx="600" cy="590" rx="560" ry="26" fill="#831843" opacity=".06"/>
+
+  <!-- پیراهن دکمه‌دار -->
+  <g transform="translate(230 168) scale(.62)">
+    <path d="M-42 0Q0 30 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#3f6cff" stroke="#3f6cff" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M-42 0Q0 30 42 0Q0 46-42 0Z" fill="#2c4fd8"/>
+    <path d="M0 26V250" stroke="#2c4fd8" stroke-width="8"/>
+    <g fill="#ffffff"><circle cx="16" cy="70" r="10"/><circle cx="16" cy="130" r="10"/><circle cx="16" cy="190" r="10"/></g>
+  </g>
+
+  <!-- قیچی -->
+  <g transform="translate(470 136) rotate(-20)">
+    <path d="M0 0L118-26M0 0L118 26" stroke="#a7b0c4" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="-30" cy="-20" r="22" fill="none" stroke="#ff7043" stroke-width="12"/>
+    <circle cx="-30" cy="20" r="22" fill="none" stroke="#ff7043" stroke-width="12"/>
+    <circle r="6" fill="#55516e"/>
+  </g>
+
+  <!-- کاغذ با خط لرزان و مداد -->
+  <g transform="translate(310 470) rotate(-6)">
+    <rect x="-140" y="-80" width="280" height="170" rx="14" fill="#ffffff"/>
+    <path d="M-110-40H110M-110 0H110M-110 40H110" stroke="#ece6ff" stroke-width="3"/>
+    <path d="M-104-6C-84-30-74 16-56-8S-30-34-14-4S12 20 28-10S54-30 66 0S90 14 104-8" fill="none" stroke="#e0409b" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(110 52) rotate(-40)">
+      <rect x="-14" y="-110" width="28" height="100" rx="5" fill="#ffc24b"/>
+      <path d="M-14-10H14L0 18Z" fill="#f3d3a6"/>
+      <path d="M-5 8L0 18L5 8Z" fill="#3a3550"/>
+      <rect x="-14" y="-124" width="28" height="18" rx="5" fill="#ff7ab6"/>
+    </g>
+  </g>
+
+  <!-- مکعب‌ها زیر ذره‌بین -->
+  <ellipse cx="600" cy="420" rx="120" ry="12" fill="#831843" opacity=".1"/>
+  <rect x="520" y="330" width="80" height="80" rx="14" fill="#ffc24b"/>
+  <rect x="604" y="330" width="80" height="80" rx="14" fill="#16a34a"/>
+  <rect x="560" y="246" width="80" height="80" rx="14" fill="#7c5cff" transform="rotate(-10 600 286)"/>
+
+  <!-- ذره‌بین -->
+  <path d="M730 424L806 500" stroke="#9a6b4f" stroke-width="30" stroke-linecap="round"/>
+  <path d="M702 396L734 428" stroke="#55516e" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="602" cy="296" r="128" fill="#ffffff" opacity=".3"/>
+  <circle cx="602" cy="296" r="128" fill="none" stroke="#e0409b" stroke-width="22"/>
+  <path d="M528 236A92 92 0 0 1 588 200" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+
+  <!-- توپ -->
+  <circle cx="950" cy="190" r="70" fill="#ff7043"/>
+  <path d="M884 170Q950 140 1016 170M884 214Q950 244 1016 214" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="9" stroke-linecap="round"/>
+  <path d="M950 120V260" stroke="#ffffff" stroke-opacity=".35" stroke-width="7"/>
+
+  <!-- کاسه و قاشق -->
+  <ellipse cx="980" cy="520" rx="110" ry="12" fill="#831843" opacity=".1"/>
+  <g transform="translate(980 430)">
+    <path d="M30-30L82-110" stroke="#0f9d8a" stroke-width="18" stroke-linecap="round"/>
+    <path d="M30-30L18-10" stroke="#9aa3b8" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-20" rx="92" ry="18" fill="#ffd36b"/>
+    <path d="M-92-20H92Q86 70 0 74Q-86 70-92-20Z" fill="#e0409b"/>
+    <path d="M-66 10H66" stroke="#ffffff" stroke-opacity=".45" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <use href="#spark" transform="translate(790 110) scale(1.2)" fill="#e0409b"/>
+  <use href="#spark" transform="translate(120 360) scale(1)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(1110 330) scale(.9)" fill="#7c5cff"/>
+  <use href="#spark" transform="translate(760 560) scale(.8)" fill="#3f6cff"/>
+</svg>

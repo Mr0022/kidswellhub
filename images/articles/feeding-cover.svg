@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eefbf0"/>
+      <stop offset="1" stop-color="#fff6e8"/>
+    </linearGradient>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+    <!-- نخود؛ مرکز در (0,0) -->
+    <g id="pea">
+      <circle r="13" fill="#4cbb5f"/>
+      <circle cx="-4" cy="-4" r="4" fill="#ffffff" opacity=".35"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1100" cy="560" r="240" fill="#9ae6a1" opacity=".25"/>
+  <circle cx="90" cy="60" r="210" fill="#ffd36b" opacity=".2"/>
+
+  <!-- زیربشقابی (نمای از بالا) -->
+  <rect x="196" y="88" width="820" height="470" rx="60" fill="#14532d" opacity=".07"/>
+  <rect x="186" y="74" width="820" height="470" rx="60" fill="#dff5e3"/>
+  <rect x="210" y="98" width="772" height="422" rx="44" fill="none" stroke="#9ae6a1" stroke-width="4" stroke-dasharray="14 10"/>
+
+  <!-- بشقاب سه‌قسمتی -->
+  <circle cx="600" cy="320" r="200" fill="#14532d" opacity=".08"/>
+  <circle cx="596" cy="309" r="200" fill="#ffffff"/>
+  <circle cx="596" cy="309" r="172" fill="#f6fbf7"/>
+  <g stroke="#ffffff" stroke-width="16" stroke-linecap="round">
+    <path d="M596 309V137M596 309L745 395M596 309L447 395"/>
+  </g>
+  <g stroke="#e6f1e8" stroke-width="4" stroke-linecap="round">
+    <path d="M596 309V137M596 309L745 395M596 309L447 395"/>
+  </g>
+  <!-- هویج -->
+  <g transform="translate(672 248)">
+    <rect x="-56" y="-11" width="96" height="22" rx="11" fill="#ff7043" transform="rotate(-30)"/>
+    <rect x="-44" y="18" width="92" height="22" rx="11" fill="#ff8a50" transform="rotate(-30)"/>
+    <rect x="-36" y="46" width="80" height="22" rx="11" fill="#ff7043" transform="rotate(-30)"/>
+  </g>
+  <!-- برنج -->
+  <path d="M500 400Q520 344 596 344Q672 344 692 400Q676 452 596 456Q516 452 500 400Z" fill="#ffe08a"/>
+  <g fill="#ffffff" opacity=".85">
+    <ellipse cx="560" cy="384" rx="9" ry="4" transform="rotate(-20 560 384)"/>
+    <ellipse cx="598" cy="372" rx="9" ry="4" transform="rotate(15 598 372)"/>
+    <ellipse cx="636" cy="390" rx="9" ry="4" transform="rotate(-10 636 390)"/>
+    <ellipse cx="578" cy="414" rx="9" ry="4" transform="rotate(25 578 414)"/>
+    <ellipse cx="620" cy="424" rx="9" ry="4" transform="rotate(-25 620 424)"/>
+    <ellipse cx="540" cy="420" rx="9" ry="4" transform="rotate(5 540 420)"/>
+  </g>
+  <!-- نخود -->
+  <use href="#pea" x="512" y="226"/><use href="#pea" x="540" y="214"/><use href="#pea" x="526" y="250"/>
+  <use href="#pea" x="556" y="244"/><use href="#pea" x="492" y="256"/><use href="#pea" x="512" y="282"/>
+  <use href="#pea" x="546" y="276"/><use href="#pea" x="568" y="214"/><use href="#pea" x="478" y="288"/>
+
+  <!-- چنگال کودک (دسته‌ی کلفت) -->
+  <g transform="translate(330 312)">
+    <rect x="-17" y="10" width="34" height="140" rx="17" fill="#16a34a"/>
+    <rect x="-9" y="26" width="8" height="70" rx="4" fill="#ffffff" opacity=".35"/>
+    <path d="M-6 10V-36M6 10V-36" stroke="#9aa3b8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-20-6Q-20 14 0 14Q20 14 20-6" fill="none" stroke="#9aa3b8" stroke-width="8"/>
+    <path d="M-20-6V-70M-7-6V-76M7-6V-76M20-6V-70" stroke="#9aa3b8" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- قاشق کودک (دسته‌ی کلفت) -->
+  <g transform="translate(864 312)">
+    <rect x="-17" y="10" width="34" height="140" rx="17" fill="#3f6cff"/>
+    <rect x="-9" y="26" width="8" height="70" rx="4" fill="#ffffff" opacity=".35"/>
+    <path d="M0 10V-20" stroke="#9aa3b8" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-60" rx="30" ry="42" fill="#9aa3b8"/>
+    <ellipse cx="-6" cy="-66" rx="16" ry="24" fill="#ffffff" opacity=".35"/>
+  </g>
+
+  <!-- لیوان دودسته (نمای از بالا) -->
+  <g transform="translate(1000 138)">
+    <ellipse cx="6" cy="10" rx="96" ry="66" fill="#14532d" opacity=".08"/>
+    <rect x="-96" y="-18" width="46" height="36" rx="18" fill="#ffb020"/>
+    <rect x="50" y="-18" width="46" height="36" rx="18" fill="#ffb020"/>
+    <circle r="64" fill="#ffc24b"/>
+    <circle r="48" fill="#bfe7ff"/>
+    <path d="M-26-16Q-10-30 10-26" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- لقمه‌های کوچک دست‌خور -->
+  <g transform="translate(262 176) scale(1.15)">
+    <rect x="-34" y="-30" width="40" height="40" rx="8" fill="#ffd36b" transform="rotate(12 -14 -10)"/>
+    <circle cx="34" cy="-4" r="22" fill="#4cbb5f"/>
+    <circle cx="34" cy="-4" r="16" fill="#d7f5dc"/>
+    <g fill="#9ad6a4"><circle cx="28" cy="-8" r="2.6"/><circle cx="40" cy="-8" r="2.6"/><circle cx="34" cy="2" r="2.6"/></g>
+    <rect x="-20" y="22" width="34" height="34" rx="7" fill="#ff8a50" transform="rotate(-14 -3 39)"/>
+  </g>
+
+  <use href="#spark" transform="translate(1080 420) scale(1.1)" fill="#16a34a"/>
+  <use href="#spark" transform="translate(120 330) scale(1)" fill="#ff7043"/>
+  <use href="#spark" transform="translate(420 70) scale(.8)" fill="#3f6cff"/>
+</svg>

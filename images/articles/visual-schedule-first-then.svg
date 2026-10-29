@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3e0"/>
+      <stop offset="1" stop-color="#f2fbe6"/>
+    </linearGradient>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="720" cy="440" r="170" fill="#ffd88a" opacity=".28"/>
+  <circle cx="60" cy="60" r="130" fill="#9ae6a1" opacity=".28"/>
+
+  <!-- تخته‌ی «اول ... بعد»: راست = اول، چپ = بعد -->
+  <rect x="98" y="72" width="620" height="356" rx="30" fill="#7c2d12" opacity=".08"/>
+  <rect x="90" y="62" width="620" height="356" rx="30" fill="#ffffff"/>
+  <path d="M400 62V418" stroke="#efe7da" stroke-width="4"/>
+
+  <!-- سرستون‌ها: یک نقطه برای «اول»، دو نقطه برای «بعد» -->
+  <path d="M400 62H680Q710 62 710 92V122H400Z" fill="#f59e0b"/>
+  <path d="M400 62H120Q90 62 90 92V122H400Z" fill="#16a34a"/>
+  <circle cx="555" cy="92" r="11" fill="#ffffff"/>
+  <circle cx="230" cy="92" r="11" fill="#ffffff"/>
+  <circle cx="260" cy="92" r="11" fill="#ffffff"/>
+
+  <!-- اول: جمع کردن اسباب‌بازی در جعبه -->
+  <ellipse cx="555" cy="382" rx="100" ry="10" fill="#7c2d12" opacity=".1"/>
+  <path d="M470 270H640L628 376Q626 384 618 384H492Q484 384 482 376Z" fill="#ff7043"/>
+  <path d="M470 270H640" stroke="#e2552c" stroke-width="10" stroke-linecap="round"/>
+  <path d="M492 312H618" stroke="#ffffff" stroke-opacity=".35" stroke-width="7" stroke-linecap="round"/>
+  <rect x="498" y="232" width="46" height="46" rx="9" fill="#3f6cff" transform="rotate(-12 521 255)"/>
+  <rect x="560" y="214" width="46" height="46" rx="9" fill="#ffc24b" transform="rotate(16 583 237)"/>
+  <rect x="528" y="160" width="40" height="40" rx="8" fill="#ff7ab6" transform="rotate(30 548 180)"/>
+  <circle cx="610" cy="168" r="20" fill="#7c5cff"/>
+  <g stroke="#e4d6b8" stroke-width="5" stroke-linecap="round">
+    <path d="M548 136V150M610 128V142M500 196V210"/>
+  </g>
+
+  <!-- پیکان از «اول» به «بعد» -->
+  <circle cx="400" cy="260" r="34" fill="#ffffff" stroke="#efe7da" stroke-width="4"/>
+  <path d="M418 260H384M396 246L382 260L396 274" fill="none" stroke="#55516e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- بعد: سرسره -->
+  <ellipse cx="240" cy="382" rx="120" ry="10" fill="#14532d" opacity=".1"/>
+  <g stroke="#ffc24b" stroke-width="10" stroke-linecap="round">
+    <path d="M150 380V170M196 380V170"/>
+  </g>
+  <g stroke="#ffc24b" stroke-width="7" stroke-linecap="round">
+    <path d="M150 214H196M150 258H196M150 302H196M150 346H196"/>
+  </g>
+  <path d="M140 170H206" stroke="#ff7ab6" stroke-width="14" stroke-linecap="round"/>
+  <path d="M196 172C250 176 262 244 290 300C306 334 322 362 350 370" fill="none" stroke="#3f6cff" stroke-width="26" stroke-linecap="round"/>
+  <path d="M206 174C252 182 262 240 288 290" fill="none" stroke="#9ec2ff" stroke-width="7" stroke-linecap="round"/>
+  <use href="#spark" transform="translate(300 180) scale(1.1)" fill="#16a34a"/>
+  <use href="#spark" transform="translate(340 236) scale(.7)" fill="#f59e0b"/>
+</svg>
