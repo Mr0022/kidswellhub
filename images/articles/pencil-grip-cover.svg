@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ebf1ff"/>
+      <stop offset="1" stop-color="#f4f0ff"/>
+    </linearGradient>
+    <!-- مداد؛ نوکش در (0,0) و بدنه در جهت x مثبت -->
+    <g id="pencil">
+      <path d="M0 0L64-19V19Z" fill="#f6d3a1"/>
+      <path d="M0 0L20-6V6Z" fill="#3a3550"/>
+      <rect x="62" y="-19" width="320" height="38" fill="#ffc24b"/>
+      <rect x="62" y="-19" width="320" height="12" fill="#ffd779"/>
+      <rect x="62" y="7" width="320" height="12" fill="#f0a92a"/>
+      <rect x="380" y="-20" width="30" height="40" fill="#b8c0d2"/>
+      <path d="M388-20v40M398-20v40" stroke="#959eb4" stroke-width="3"/>
+      <path d="M408-20h22a14 14 0 0 1 14 14v12a14 14 0 0 1-14 14h-22Z" fill="#ff8fb3"/>
+    </g>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1060" cy="60" r="240" fill="#9ec2ff" opacity=".3"/>
+  <circle cx="110" cy="590" r="250" fill="#3f6cff" opacity=".08"/>
+
+  <!-- دفتر باز -->
+  <g transform="rotate(-5 560 350)">
+    <rect x="250" y="148" width="640" height="400" rx="20" fill="#2c4fd8" opacity=".14" transform="translate(10 14)"/>
+    <rect x="250" y="148" width="640" height="400" rx="20" fill="#ffffff"/>
+    <rect x="570" y="148" width="320" height="400" rx="0" fill="#fbfcff"/>
+    <g stroke="#cfdcff" stroke-width="3">
+      <path d="M280 220H550M280 268H550M280 316H550M280 364H550M280 412H550M280 460H550M280 508H550"/>
+      <path d="M592 220H862M592 268H862M592 316H862M592 364H862M592 412H862M592 460H862M592 508H862"/>
+    </g>
+    <path d="M846 180V530" stroke="#ff8fb3" stroke-width="3"/>
+    <path d="M534 180V530" stroke="#ff8fb3" stroke-width="3"/>
+    <!-- خط‌خوردگی‌ها: دست‌خط چکیده، از راست به چپ -->
+    <g fill="none" stroke="#2c3e8f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M836 212c-14 0-14-16-26-16s-8 16-24 16-12-22-28-22-6 22-22 22c-18 0-10-12-30-12s-14 12-34 12-16-18-30-18"/>
+      <path d="M836 260c-20 0-12-20-30-20-14 0-8 20-26 20s-10-14-26-14-12 14-30 14-12-22-30-22-10 22-28 22"/>
+      <path d="M836 308c-16 0-12-18-28-18s-10 18-26 18-14-14-30-14-10 14-28 14-16-20-32-20"/>
+      <path d="M836 356c-14 0-14-14-28-14s-12 14-30 14-12-20-26-20" stroke="#3f6cff"/>
+    </g>
+    <g fill="none" stroke="#2c3e8f" stroke-width="5" stroke-linecap="round" stroke-opacity=".35">
+      <path d="M524 212c-16 0-12-18-28-18s-12 18-28 18-12-14-26-14-14 14-32 14"/>
+      <path d="M524 260c-16 0-14-16-28-16s-12 16-30 16"/>
+    </g>
+    <!-- فنر دفتر -->
+    <g fill="none" stroke="#8f98ad" stroke-width="5">
+      <path d="M560 182a12 12 0 0 1 24 0M560 222a12 12 0 0 1 24 0M560 262a12 12 0 0 1 24 0M560 302a12 12 0 0 1 24 0M560 342a12 12 0 0 1 24 0M560 382a12 12 0 0 1 24 0M560 422a12 12 0 0 1 24 0M560 462a12 12 0 0 1 24 0M560 502a12 12 0 0 1 24 0"/>
+    </g>
+  </g>
+
+  <!-- مداد با رابط مثلثی، نوکش روی پایان سطر -->
+  <g transform="translate(760 342) rotate(34)">
+    <use href="#pencil"/>
+    <path d="M84-25L176-25L182 0L176 25L84 25L78 0Z" fill="#3f6cff"/>
+    <path d="M96-25v50M112-25v50M128-25v50M144-25v50M160-25v50" stroke="#2c4fd8" stroke-width="4"/>
+  </g>
+
+  <!-- مدادشمعی‌های شکسته و پاک‌کن -->
+  <g transform="rotate(-12 170 520)">
+    <rect x="110" y="500" width="70" height="30" rx="8" fill="#ff7043"/>
+    <rect x="124" y="500" width="12" height="30" fill="#e2552c"/>
+    <path d="M180 502l24 13-24 13Z" fill="#e2552c"/>
+  </g>
+  <g transform="rotate(16 150 580)">
+    <rect x="90" y="566" width="62" height="28" rx="8" fill="#16a34a"/>
+    <path d="M152 568l22 12-22 12Z" fill="#0f7a37"/>
+  </g>
+  <g transform="rotate(-8 1040 170)">
+    <rect x="980" y="140" width="120" height="58" rx="14" fill="#ff8fb3"/>
+    <rect x="980" y="140" width="56" height="58" rx="14" fill="#7c5cff"/>
+    <rect x="1022" y="140" width="14" height="58" fill="#7c5cff"/>
+  </g>
+
+  <use href="#spark" transform="translate(190 150) scale(1.3)" fill="#3f6cff"/>
+  <use href="#spark" transform="translate(960 300) scale(.8)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(1130 420) scale(1)" fill="#ff7ab6"/>
+</svg>

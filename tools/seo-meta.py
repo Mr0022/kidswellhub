@@ -17,130 +17,212 @@ SITE = "https://kidswellhub.ir"
 BRAND = "مرکز مغز و شناخت کودکان"
 KW1 = "کاردرمانی ذهنی کودکان"
 KW2 = "کاردرمانی ذهنی کودکان آنلاین"
-AUTHOR = "مهرناز افشار"
+AUTHOR = BRAND
 PHONE = "+989011922823"
-OG_IMAGE = SITE + "/logo/og-cover.png"
+# ?v=N: پس از ساختن دوباره‌ی تصویر یکی بالا ببرید تا شبکه‌های اجتماعی نسخه‌ی تازه را بگیرند
+OG_IMAGE = SITE + "/logo/og-cover.png?v=2"
 
-# slug -> dict(title, desc, ogtype, crumb, imgalt)
+# مسیر فایل -> dict(title, desc, ogtype, crumb, imgalt)
+# نشانی عمومی هر فایل بی‌پسوند است (Cloudflare Pages ‎/about.html را به ‎/about می‌برد): url_of پایین
 PAGES = {
 "index.html": dict(
-  title="کاردرمانی ذهنی کودکان حضوری و آنلاین | " + BRAND,
-  desc="کاردرمانی ذهنی کودکان حضوری و آنلاین زیر نظر مهرناز افشار؛ دست‌ورزی، مهارت‌های شناختی، ادراک بینایی، پردازش شنیداری، بازی‌درمانی و رفتاردرمانی. رزرو نوبت.",
+  title="کاردرمانی ذهنی کودکان آنلاین | " + BRAND,
+  desc="کاردرمانی ذهنی کودکان آنلاین در سراسر ایران؛ دست‌ورزی، مهارت‌های شناختی، ادراک بینایی، پردازش شنیداری، بازی‌درمانی و رفتاردرمانی. رزرو نوبت.",
   ogtype="website", crumb=None,
-  imgalt="مرکز مغز و شناخت کودکان — کاردرمانی ذهنی کودکان حضوری و آنلاین"),
+  imgalt="مرکز مغز و شناخت کودکان — کاردرمانی ذهنی کودکان آنلاین در سراسر ایران"),
 
 "online.html": dict(
   title="کاردرمانی ذهنی کودکان آنلاین | جلسه‌ی آنلاین در سراسر ایران",
-  desc="کاردرمانی ذهنی کودکان آنلاین در سراسر ایران؛ ارزیابی و جلسه‌ی آنلاین با مهرناز افشار — جلسه چطور برگزار می‌شود، برای چه کودکانی مناسب است و چطور نوبت بگیریم.",
+  desc="کاردرمانی ذهنی کودکان آنلاین در سراسر ایران؛ جلسه چطور برگزار می‌شود، برای چه کودکانی مناسب است، چه وسایلی لازم است و چطور نوبت بگیریم.",
   ogtype="article", crumb="کاردرمانی ذهنی کودکان آنلاین",
   imgalt="کاردرمانی ذهنی کودکان آنلاین در مرکز مغز و شناخت کودکان"),
 
 "about.html": dict(
-  title="مهرناز افشار، کاردرمانگر ذهنی کودکان | درباره‌ی ما",
-  desc="مهرناز افشار، موسس مرکز مغز و شناخت کودکان و کاردرمانگر ذهنی کودکان با بیش از ۷ سال سابقه‌ی کار با کودکان اوتیسم، ADHD و اختلالات یادگیری.",
-  ogtype="profile", crumb="درباره‌ی ما",
-  imgalt="مهرناز افشار، کاردرمانگر ذهنی کودکان"),
+  title="درباره‌ی ما | تیم " + BRAND,
+  desc="تیم " + BRAND + "؛ کاردرمانگران ذهنی کودکان با ارزیابی دقیق، برنامه‌ی بازی‌محور و همراهی خانواده، در جلسه‌های آنلاین در سراسر ایران.",
+  ogtype="website", crumb="درباره‌ی ما",
+  imgalt="تیم " + BRAND + " — کاردرمانی ذهنی کودکان"),
+
+"faq.html": dict(
+  title="سوالات متداول رشد کودک و کاردرمانی ذهنی کودکان",
+  desc="پاسخ پرسش‌های رایج والدین درباره‌ی کاردرمانی ذهنی کودکان، رشد و تکامل، صفحه‌نمایش و خواب، مدرسه و تکالیف، رفتار و احساسات کودک و نحوه‌ی رزرو نوبت.",
+  ogtype="article", crumb="سوالات متداول",
+  imgalt="سوالات متداول درباره‌ی رشد کودک و کاردرمانی ذهنی کودکان"),
 
 "reserve.html": dict(
-  title="رزرو نوبت کاردرمانی ذهنی کودکان (حضوری و آنلاین)",
-  desc="رزرو نوبت کاردرمانی ذهنی کودکان؛ جلسه‌ی حضوری در کلینیک توانبخشی رشد و مشاوره و درمان آنلاین در سراسر ایران با کاردرمانگر مهرناز افشار.",
+  title="رزرو نوبت کاردرمانی ذهنی کودکان آنلاین و تماس با ما",
+  desc="رزرو نوبت کاردرمانی ذهنی کودکان آنلاین در سراسر ایران؛ ارزیابی، درمان و مشاوره‌ی والدین از خانه. برای رزرو یا هر پرسشی با ۰۹۰۱ ۱۹۲ ۲۸ ۲۳ تماس بگیرید.",
   ogtype="article", crumb="رزرو نوبت",
-  imgalt="رزرو نوبت کاردرمانی ذهنی کودکان"),
+  imgalt="رزرو نوبت کاردرمانی ذهنی کودکان آنلاین"),
 
-"fine-motor.html": dict(
-  title="دست‌ورزی و ترسیم کودکان | کاردرمانی ذهنی کودکان",
-  desc="دست‌ورزی و ترسیم در کاردرمانی ذهنی کودکان؛ نشانه‌های نیاز به کمک، مسیر جلسه‌ها و پنج تمرین پلکانی خانگی برای آماده‌کردن دست کودک برای نوشتن.",
+"services/fine-motor.html": dict(
+  title="دست‌ورزی و ترسیم کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="دست‌ورزی و ترسیم در کاردرمانی ذهنی کودکان آنلاین؛ نشانه‌های نیاز به کمک، مسیر جلسه‌ها و پنج تمرین پلکانی خانگی برای آماده‌کردن دست کودک برای نوشتن.",
   ogtype="article", crumb="دست‌ورزی و ترسیم",
   imgalt="دست‌ورزی و ترسیم در کاردرمانی ذهنی کودکان"),
 
-"cognitive.html": dict(
-  title="مهارت‌های شناختی کودک | کاردرمانی ذهنی کودکان",
-  desc="توجه، حافظه و حل مسئله در کاردرمانی ذهنی کودکان؛ نشانه‌های نیاز به کمک، مسیر جلسه‌ها و تمرین‌های خانگی برای تقویت کارکردهای اجرایی کودک.",
+"services/cognitive.html": dict(
+  title="مهارت‌های شناختی کودک | کاردرمانی ذهنی کودکان آنلاین",
+  desc="توجه، حافظه و حل مسئله در کاردرمانی ذهنی کودکان آنلاین؛ نشانه‌های نیاز به کمک، مسیر جلسه‌ها و تمرین‌های خانگی برای تقویت کارکردهای اجرایی کودک.",
   ogtype="article", crumb="مهارت‌های شناختی",
   imgalt="مهارت‌های شناختی کودک در کاردرمانی ذهنی کودکان"),
 
-"visual-perception.html": dict(
-  title="ادراک بینایی کودکان | کاردرمانی ذهنی کودکان",
-  desc="ادراک بینایی در کاردرمانی ذهنی کودکان؛ قرینه‌نویسی، جاافتادن در رونویسی و ضعف حافظه‌ی دیداری — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی.",
+"services/visual-perception.html": dict(
+  title="ادراک بینایی کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="ادراک بینایی در کاردرمانی ذهنی کودکان آنلاین؛ قرینه‌نویسی، جاافتادن در رونویسی و ضعف حافظه‌ی دیداری — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی.",
   ogtype="article", crumb="ادراک بینایی",
   imgalt="ادراک بینایی کودکان در کاردرمانی ذهنی کودکان"),
 
-"auditory-processing.html": dict(
-  title="پردازش شنیداری کودکان | کاردرمانی ذهنی کودکان",
-  desc="پردازش شنیداری در کاردرمانی ذهنی کودکان؛ آگاهی واج‌شناختی، حافظه و توالی شنیداری — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی برای پایه‌ی خواندن و املا.",
+"services/auditory-processing.html": dict(
+  title="پردازش شنیداری کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="پردازش شنیداری در کاردرمانی ذهنی کودکان آنلاین؛ آگاهی واج‌شناختی، حافظه و توالی شنیداری — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی برای خواندن و املا.",
   ogtype="article", crumb="پردازش شنیداری",
   imgalt="پردازش شنیداری کودکان در کاردرمانی ذهنی کودکان"),
 
-"social-skills.html": dict(
-  title="مهارت‌های اجتماعی کودکان | کاردرمانی ذهنی کودکان",
-  desc="مهارت‌های اجتماعی کودکان؛ دوست‌یابی، نوبت‌گیری، شناخت هیجان و حل تعارض — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی در کاردرمانی ذهنی کودکان.",
+"services/social-skills.html": dict(
+  title="مهارت‌های اجتماعی کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="مهارت‌های اجتماعی کودکان؛ دوست‌یابی، نوبت‌گیری، شناخت هیجان و حل تعارض — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی در کاردرمانی ذهنی کودکان آنلاین.",
   ogtype="article", crumb="مهارت‌های اجتماعی",
   imgalt="مهارت‌های اجتماعی کودکان در کاردرمانی ذهنی کودکان"),
 
-"play-therapy.html": dict(
-  title="بازی‌درمانی کودکان | کاردرمانی ذهنی کودکان",
-  desc="بازی‌درمانی کودکان؛ تخلیه‌ی هیجانی، کاهش اضطراب و افزایش تحمل شکست — نشانه‌ها، مسیر جلسه‌ها و نکته‌های بازی در خانه.",
+"services/play-therapy.html": dict(
+  title="بازی‌درمانی کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="بازی‌درمانی در کاردرمانی ذهنی کودکان آنلاین؛ تخلیه‌ی هیجانی، کاهش اضطراب و افزایش تحمل شکست — نشانه‌ها، مسیر جلسه‌ها و نکته‌های بازی در خانه.",
   ogtype="article", crumb="بازی‌درمانی",
   imgalt="بازی‌درمانی کودکان در کاردرمانی ذهنی کودکان"),
 
-"perceptual-motor.html": dict(
-  title="مهارت درکی‌ـ‌حرکتی کودکان | کاردرمانی ذهنی کودکان",
-  desc="مهارت درکی‌ـ‌حرکتی کودکان؛ تعادل، هماهنگی دو طرف بدن، طرح‌ریزی حرکتی و جهت‌یابی — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی.",
+"services/perceptual-motor.html": dict(
+  title="مهارت درکی‌ـ‌حرکتی کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="مهارت درکی‌ـ‌حرکتی کودکان؛ تعادل، هماهنگی دو طرف بدن، طرح‌ریزی حرکتی و جهت‌یابی — نشانه‌ها، مسیر جلسه‌ها و تمرین‌های خانگی در کاردرمانی ذهنی کودکان آنلاین.",
   ogtype="article", crumb="مهارت درکی‌ـ‌حرکتی",
   imgalt="مهارت درکی‌ـ‌حرکتی کودکان در کاردرمانی ذهنی کودکان"),
 
-"school-readiness.html": dict(
-  title="سنجش بدو ورود به مدرسه و آمادگی کودک | کاردرمانی ذهنی کودکان",
-  desc="سنجش بدو ورود به مدرسه؛ در سنجش چه چیزی بررسی می‌شود، چطور کودک را آماده کنیم و پس از سنجش چه باید کرد — راهنمای کاردرمانی ذهنی کودکان.",
+"services/school-readiness.html": dict(
+  title="سنجش بدو ورود به مدرسه | کاردرمانی ذهنی کودکان آنلاین",
+  desc="سنجش بدو ورود به مدرسه؛ چه چیزی بررسی می‌شود، چطور کودک را آماده کنیم و پس از سنجش چه باید کرد — راهنمای کاردرمانی ذهنی کودکان آنلاین.",
   ogtype="article", crumb="سنجش مدرسه",
   imgalt="سنجش بدو ورود به مدرسه و آمادگی کودک"),
 
-"behavioral-therapy.html": dict(
-  title="رفتاردرمانی کودکان | کاردرمانی ذهنی کودکان",
-  desc="رفتاردرمانی کودکان؛ پیدا کردن علت رفتار، آموزش رفتار جایگزین، جدول ستاره و نظام تشویق در خانه — نشانه‌ها، مسیر جلسه‌ها و نکته‌های والدین.",
+"services/behavioral-therapy.html": dict(
+  title="رفتاردرمانی کودکان | کاردرمانی ذهنی کودکان آنلاین",
+  desc="رفتاردرمانی کودکان؛ پیدا کردن علت رفتار، رفتار جایگزین، جدول ستاره و تشویق در خانه — نشانه‌ها، مسیر جلسه‌ها و نکته‌های والدین در کاردرمانی ذهنی کودکان آنلاین.",
   ogtype="article", crumb="رفتاردرمانی",
   imgalt="رفتاردرمانی کودکان در کاردرمانی ذهنی کودکان"),
 
-"fine-motor-game-1.html": dict(
+"services/fine-motor-game-1.html": dict(
   title="گلوله را به سبد برسان | تمرین ۱ دست‌ورزی",
   desc="بازی تعاملی پله‌ی یک دست‌ورزی؛ کشیدن گلوله‌های کاغذ به داخل سبد برای تمرین قدرت گرفتن و هدف‌گیری — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۱ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
 
-"fine-motor-game-2.html": dict(
+"services/fine-motor-game-2.html": dict(
   title="گیره را روی رنگش بگذار | تمرین ۲ دست‌ورزی",
   desc="بازی تعاملی پله‌ی دو دست‌ورزی؛ گذاشتن هر گیره روی نوار هم‌رنگش برای تمرین رها کردن دقیق — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۲ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
 
-"fine-motor-game-3.html": dict(
+"services/fine-motor-game-3.html": dict(
   title="مهره‌ها را به ترتیب نخ کن | تمرین ۳ دست‌ورزی",
   desc="بازی تعاملی پله‌ی سه دست‌ورزی؛ گذشتن از مهره‌ها به ترتیب و بدون بلندکردن انگشت — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۳ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
 
-"fine-motor-game-4.html": dict(
+"services/fine-motor-game-4.html": dict(
   title="روی خط ببر | تمرین ۴ دست‌ورزی",
   desc="بازی تعاملی پله‌ی چهار دست‌ورزی؛ حرکت روی خط راست، موجی و دایره با اندازه‌گیری دقت — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۴ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
 
-"fine-motor-game-5.html": dict(
+"services/fine-motor-game-5.html": dict(
   title="الگو را کپی کن | تمرین ۵ دست‌ورزی",
   desc="بازی تعاملی پله‌ی پنج دست‌ورزی؛ بازساختن الگوی خط‌ها روی شبکه‌ی نقطه‌ها — تمرین خانگی کاردرمانی ذهنی کودکان.",
   ogtype="article", crumb="تمرین ۵ دست‌ورزی",
   imgalt="تمرین تعاملی دست‌ورزی کودکان"),
+
+"articles/index.html": dict(
+  title="مقالات کاردرمانی ذهنی کودکان | راهنمای والدین",
+  desc="مقاله‌های آموزشی مرکز مغز و شناخت کودکان برای والدین: کاردرمانی کودکان و نشانه‌های نیاز به آن، دست‌ورزی و دست‌خط، لباس پوشیدن، غذا خوردن و برنامه‌ی تصویری روزانه.",
+  ogtype="website", crumb="مقالات",
+  imgalt="مقاله‌های آموزشی کاردرمانی ذهنی کودکان برای والدین"),
+
+# مقاله‌ها: published تاریخ انتشار است و image تصویر اشتراک‌گذاری خودِ مقاله
+# (همان تصویر شاخص، به PNG؛ چون شبکه‌های اجتماعی SVG را نشان نمی‌دهند).
+# ترتیب مقاله‌ها همان ترتیب کارت‌ها در articles.html است (فهرست ItemList صفحه‌ی مقالات)
+"articles/pediatric-occupational-therapy.html": dict(
+  title="کاردرمانی کودکان چیست؟ راهنمای کامل برای والدین",
+  desc="کاردرمانی کودکان چیست، برای چه کودکانی لازم است و جلسه‌ها چطور پیش می‌رود؟ راهنمای کامل والدین: حیطه‌های درمان، نشانه‌های هر سن، ارزیابی و تمرین در خانه.",
+  ogtype="article", crumb="کاردرمانی کودکان چیست؟", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/pediatric-ot-cover.png",
+  imgalt="وسایل اتاق کاردرمانی کودکان: توپ درمانی، مکعب، پازل و مهره"),
+
+"articles/occupational-therapy-signs.html": dict(
+  title="آیا کودکم به کاردرمانی نیاز دارد؟ نشانه‌هایی که ارزش بررسی دارند",
+  desc="نشانه‌هایی که ممکن است کودک از کاردرمانی سود ببرد: دشواری در لباس پوشیدن، دست‌خط، غذا خوردن، بازی، هماهنگی حرکتی و روال روزانه؛ و چرا یک نشانه به‌تنهایی تشخیص نیست.",
+  ogtype="article", crumb="آیا کودکم به کاردرمانی نیاز دارد؟", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/ot-signs-cover.png",
+  imgalt="وسایل کارهای روزمره‌ی کودک — لباس، مداد، قاشق، توپ و مکعب — زیر ذره‌بین"),
+
+"articles/fine-motor-activities.html": dict(
+  title="۱۵ فعالیت کاردرمانی برای تقویت مهارت‌های حرکتی ظریف کودک",
+  desc="۱۵ فعالیت ساده‌ی کاردرمانی با وسایل خانه برای تقویت قدرت دست، گرفتن دقیق و آمادگی نوشتن کودک؛ از خمیربازی و گیره‌ی لباس تا قیچی‌کاری و سینی نمک.",
+  ogtype="article", crumb="۱۵ فعالیت برای مهارت‌های حرکتی ظریف", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/fine-motor-cover.png",
+  imgalt="وسایل تمرین دست‌ورزی کودک: گیره‌ی لباس، خمیر بازی، قیچی و انبرک"),
+
+"articles/pencil-grip-handwriting.html": dict(
+  title="چگونه گرفتن مداد و دست‌خط کودک را بهتر کنیم؟",
+  desc="مراحل رشد گرفتن مداد، نشانه‌های مشکل و راه‌های عملی کاردرمانی برای بهتر شدن دست‌خط کودک: ابزار کوتاه، ترفند نیشگون و چرخش، نشستن ۹۰-۹۰-۹۰ و سطح شیب‌دار.",
+  ogtype="article", crumb="گرفتن مداد و دست‌خط کودک", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/pencil-grip-cover.png",
+  imgalt="دفتر باز با دست‌خط و مداد با رابط مثلثی"),
+
+"articles/dressing-skills.html": dict(
+  title="چگونه به کودک یاد بدهیم خودش لباس بپوشد؟ راهنمای کاردرمانی",
+  desc="آموزش لباس پوشیدن به کودک با روش‌های کاردرمانی: انتظار هر سن، یاد دادن از قدم آخر، ترفند تی‌شرت و کاپشن، تمرین دکمه، زیپ و بند کفش و نکته‌های صبح‌های شلوغ.",
+  ogtype="article", crumb="آموزش لباس پوشیدن به کودک", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/dressing-cover.png",
+  imgalt="لباس‌های کودک روی بند رخت و یک جفت کفش بنددار"),
+
+"articles/feeding-skills.html": dict(
+  title="مهارت‌های غذا خوردن در کودکان: کاردرمانی چطور می‌تواند کمک کند؟",
+  desc="کاردرمانی تغذیه‌ی کودکان: رشد مهارت خودخوری در هر سن، کار با قاشق و چنگال و لیوان، نشستن درست سر سفره، حساسیت به غذا و اینکه چه وقت باید سراغ پزشک یا کاردرمانگر رفت.",
+  ogtype="article", crumb="مهارت‌های غذا خوردن کودک", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/feeding-cover.png",
+  imgalt="سفره‌ی کودک با بشقاب سه‌قسمتی، قاشق و چنگال دسته‌کلفت و لیوان دودسته"),
+
+"articles/visual-schedule.html": dict(
+  title="برنامه‌ی تصویری برای کودکان: چطور کارهای روزانه را آسان‌تر کنیم؟",
+  desc="برنامه‌ی تصویری روزانه برای کودک: انواع و روش ساخت، تخته‌ی «اول‌ـ‌بعد»، زمان‌سنج دیداری و روال‌های قابل‌پیش‌بینی برای همکاری بیشتر و جابه‌جایی‌های آرام‌تر میان کارها.",
+  ogtype="article", crumb="برنامه‌ی تصویری برای کودکان", parent="articles/index.html", published="2026-10-29",
+  image="images/articles/visual-schedule-cover.png",
+  imgalt="تخته‌ی برنامه‌ی تصویری روزانه‌ی کودک با کارت‌های بیدار شدن، مسواک، لباس، صبحانه و مدرسه"),
 }
 
 
-import io, re, json, html, datetime
+import io, re, json, html, datetime, subprocess
 
 ORG_ID    = SITE + "/#organization"
+# نام‌های دیگری که مردم برند را با آن جست‌وجو می‌کنند (نام سایت در نتیجه‌ی گوگل از این‌ها انتخاب می‌شود)
+ALT_NAMES = ["مرکز مغز و شناخت", "kidswellhub"]
 WEBSITE_ID= SITE + "/#website"
-PERSON_ID = SITE + "/#mehrnaz"
+
+# صفحه‌هایی که خدمت درمانی نیستند (بازی‌های دست‌ورزی و مقاله‌ها هم جداگانه کنار گذاشته می‌شوند)
+NOT_SERVICE = ("index.html", "about.html", "reserve.html", "faq.html", "articles/index.html")
+
+ARTICLES = [slug for slug, p in PAGES.items() if p.get("published")]
+
+def is_service(slug):
+    return (slug not in NOT_SERVICE and slug not in ARTICLES
+            and not slug.startswith("services/fine-motor-game-"))
 
 def url_of(slug):
-    return SITE + "/" if slug == "index.html" else SITE + "/" + slug
+    """index.html → نشانی پوشه با / پایانی؛ بقیه بدون ‎.html (services/cognitive.html → /services/cognitive)"""
+    if slug.endswith("index.html"):
+        return SITE + "/" + slug[:-len("index.html")]
+    return SITE + "/" + slug[:-len(".html")]
+
+def image_of(p):
+    return SITE + "/" + p["image"] if p.get("image") else OG_IMAGE
 
 def esc(t):
     return html.escape(t, quote=True)
@@ -162,11 +244,12 @@ def faq_items(src):
 def org_graph():
     return [
         {"@type": "WebSite", "@id": WEBSITE_ID, "url": SITE + "/", "name": BRAND,
-         "alternateName": "kidswellhub", "inLanguage": "fa-IR",
+         "alternateName": ALT_NAMES, "inLanguage": "fa-IR",
          "publisher": {"@id": ORG_ID}},
         {"@type": ["MedicalBusiness", "ProfessionalService"], "@id": ORG_ID,
-         "name": BRAND, "alternateName": "kidswellhub", "url": SITE + "/",
-         "description": "مرکز تخصصی " + KW1 + "؛ ارزیابی و درمان حضوری و آنلاین در حیطه‌های دست‌ورزی، "
+         "name": BRAND, "alternateName": ALT_NAMES, "url": SITE + "/",
+         "slogan": KW2 + " در سراسر ایران",
+         "description": "مرکز تخصصی " + KW1 + "؛ ارزیابی و درمان آنلاین در سراسر ایران در حیطه‌های دست‌ورزی، "
                         "مهارت‌های شناختی، ادراک بینایی، پردازش شنیداری، مهارت‌های اجتماعی، بازی‌درمانی، "
                         "درکی‌ـ‌حرکتی، سنجش مدرسه و رفتاردرمانی.",
          "logo": {"@type": "ImageObject", "url": SITE + "/logo/kidswellhub-mark.svg"},
@@ -176,8 +259,6 @@ def org_graph():
          "priceRange": "$$",
          "availableLanguage": {"@type": "Language", "name": "فارسی", "alternateName": "fa"},
          "areaServed": {"@type": "Country", "name": "ایران"},
-         "founder": {"@id": PERSON_ID},
-         "employee": {"@id": PERSON_ID},
          "knowsAbout": [KW1, KW2, "کاردرمانی کودکان", "اوتیسم", "ADHD",
                         "اختلالات یادگیری", "ادراک بینایی", "پردازش شنیداری",
                         "دست‌ورزی و ترسیم", "رفتاردرمانی کودکان"],
@@ -189,41 +270,49 @@ def org_graph():
                      "serviceType": KW1, "provider": {"@id": ORG_ID},
                      "areaServed": {"@type": "Country", "name": "ایران"}}}
                  for slug, p in PAGES.items()
-                 if slug not in ("index.html", "about.html", "reserve.html")
-                 and not slug.startswith("fine-motor-game-")]}},
-        {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR,
-         "jobTitle": "کاردرمانگر ذهنی کودکان",
-         "description": "موسس " + BRAND + " و کاردرمانگر ذهنی کودکان با بیش از هفت سال سابقه‌ی کار "
-                        "با کودکان اوتیسم، ADHD و اختلالات یادگیری.",
-         "url": SITE + "/about.html",
-         "image": SITE + "/logo/mehrnaz-afshar-cutout.webp",
-         "worksFor": {"@id": ORG_ID},
-         "knowsAbout": [KW1, "اوتیسم", "ADHD", "اختلالات یادگیری", "کاردرمانی کودکان"],
-         "hasCredential": {"@type": "EducationalOccupationalCredential",
-                           "credentialCategory": "کد نظام پزشکی", "identifier": "ک‑د ۳۲۸۹"}},
+                 if is_service(slug)]}},
     ]
 
 def breadcrumb(slug, p):
     items = [{"@type": "ListItem", "position": 1, "name": "خانه", "item": SITE + "/"}]
-    if slug.startswith("fine-motor-game-"):
+    if slug.startswith("services/fine-motor-game-"):
         items.append({"@type": "ListItem", "position": 2, "name": "دست‌ورزی و ترسیم",
-                      "item": SITE + "/fine-motor.html"})
+                      "item": url_of("services/fine-motor.html")})
+        items.append({"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url_of(slug)})
+    elif p.get("parent"):
+        items.append({"@type": "ListItem", "position": 2, "name": PAGES[p["parent"]]["crumb"],
+                      "item": url_of(p["parent"])})
         items.append({"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url_of(slug)})
     else:
         items.append({"@type": "ListItem", "position": 2, "name": p["crumb"], "item": url_of(slug)})
     return {"@type": "BreadcrumbList", "@id": url_of(slug) + "#breadcrumb", "itemListElement": items}
 
 def webpage(slug, p, src):
-    page_type = {"about.html": "AboutPage", "reserve.html": "ContactPage"}.get(slug, "WebPage")
+    page_type = {"about.html": "AboutPage", "reserve.html": "ContactPage",
+                 "articles/index.html": "CollectionPage"}.get(slug, "WebPage")
     if slug == "index.html":
         page_type = "WebPage"
     node = {"@type": page_type, "@id": url_of(slug) + "#webpage", "url": url_of(slug),
             "name": p["title"], "description": p["desc"], "inLanguage": "fa-IR",
             "isPartOf": {"@id": WEBSITE_ID}, "about": {"@id": ORG_ID},
-            "primaryImageOfPage": {"@type": "ImageObject", "url": OG_IMAGE}}
+            "primaryImageOfPage": {"@type": "ImageObject", "url": image_of(p)}}
     if slug != "index.html":
         node["breadcrumb"] = {"@id": url_of(slug) + "#breadcrumb"}
+    if slug == "articles/index.html":
+        node["mainEntity"] = {"@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": k, "url": url_of(a), "name": PAGES[a]["title"]}
+            for k, a in enumerate(ARTICLES, 1)]}
     return node
+
+def article_node(slug, p):
+    return {"@type": "BlogPosting", "@id": url_of(slug) + "#article",
+            "headline": p["title"], "description": p["desc"], "inLanguage": "fa-IR",
+            "image": image_of(p), "datePublished": p["published"],
+            "dateModified": p.get("modified", p["published"]),
+            "author": {"@type": "Organization", "@id": ORG_ID, "name": BRAND, "url": SITE + "/"},
+            "publisher": {"@id": ORG_ID},
+            "mainEntityOfPage": {"@id": url_of(slug) + "#webpage"},
+            "isPartOf": {"@id": url_of(p["parent"]) + "#webpage"}}
 
 def service_node(slug, p):
     if slug == "online.html":
@@ -259,8 +348,10 @@ def build_jsonld(slug, p, src):
     graph.append(webpage(slug, p, src))
     if slug != "index.html":
         graph.append(breadcrumb(slug, p))
-    if slug not in ("index.html", "about.html", "reserve.html") and not slug.startswith("fine-motor-game-"):
+    if is_service(slug):
         graph.append(service_node(slug, p))
+    if slug in ARTICLES:
+        graph.append(article_node(slug, p))
     f = faq_node(slug, src)
     if f:
         graph.append(f)
@@ -272,7 +363,10 @@ BLOCK_END   = "<!-- پایان سئو -->"
 
 def head_block(slug, p, src):
     u = url_of(slug)
+    img = image_of(p)
     ld = json.dumps(build_jsonld(slug, p, src), ensure_ascii=False, indent=2)
+    published = (f'\n<meta property="article:published_time" content="{p["published"]}" />'
+                 if p.get("published") else "")
     return f"""{BLOCK_START}
 <link rel="canonical" href="{u}" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -282,15 +376,15 @@ def head_block(slug, p, src):
 <meta property="og:locale" content="fa_IR" />
 <meta property="og:url" content="{u}" />
 <meta property="og:title" content="{esc(p['title'])}" />
-<meta property="og:description" content="{esc(p['desc'])}" />
-<meta property="og:image" content="{OG_IMAGE}" />
+<meta property="og:description" content="{esc(p['desc'])}" />{published}
+<meta property="og:image" content="{img}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="{esc(p['imgalt'])}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{esc(p['title'])}" />
 <meta name="twitter:description" content="{esc(p['desc'])}" />
-<meta name="twitter:image" content="{OG_IMAGE}" />
+<meta name="twitter:image" content="{img}" />
 <meta name="twitter:image:alt" content="{esc(p['imgalt'])}" />
 <link rel="manifest" href="/site.webmanifest" />
 <script type="application/ld+json">
@@ -327,22 +421,38 @@ PRIO = {"index.html": ("1.0", "weekly"), "online.html": ("0.9", "monthly"),
 def prio(slug):
     if slug in PRIO:
         return PRIO[slug]
-    if slug.startswith("fine-motor-game-"):
+    if slug.startswith("services/fine-motor-game-"):
         return ("0.4", "yearly")
     return ("0.7", "monthly")
 
+def lastmod(slug):
+    """تاریخ آخرین تغییر واقعی هر صفحه، تا گوگل به lastmod اعتماد کند: اگر فایل تغییر
+    ثبت‌نشده دارد امروز، وگرنه تاریخ آخرین commit همان فایل"""
+    try:
+        git = lambda *a: subprocess.run(("git",) + a, capture_output=True, text=True).stdout.strip()
+        if not git("status", "--porcelain", "--", slug):
+            return git("log", "-1", "--format=%cs", "--", slug) or today
+    except OSError:
+        pass
+    return today
+
 rows = []
-for slug in PAGES:
+for slug, p in PAGES.items():
     pr, cf = prio(slug)
+    img = (f"""
+    <image:image>
+      <image:loc>{image_of(p)}</image:loc>
+    </image:image>""" if p.get("image") else "")
     rows.append(f"""  <url>
     <loc>{url_of(slug)}</loc>
-    <lastmod>{today}</lastmod>
+    <lastmod>{lastmod(slug)}</lastmod>
     <changefreq>{cf}</changefreq>
-    <priority>{pr}</priority>
+    <priority>{pr}</priority>{img}
   </url>""")
 
 io.open('sitemap.xml', 'w', encoding='utf-8').write(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
     + "\n".join(rows) + "\n</urlset>\n")
 print('ok sitemap.xml (%d نشانی)' % len(rows))

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9faf6"/>
+      <stop offset="1" stop-color="#f4f2ff"/>
+    </linearGradient>
+    <marker id="head" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#ff7043"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- روتختی -->
+  <rect x="60" y="40" width="680" height="420" rx="34" fill="#ffffff"/>
+  <rect x="60" y="40" width="680" height="420" rx="34" fill="none" stroke="#cdeee7" stroke-width="6"/>
+  <g fill="#e9f7f3">
+    <circle cx="120" cy="96" r="10"/><circle cx="680" cy="96" r="10"/><circle cx="120" cy="404" r="10"/><circle cx="680" cy="404" r="10"/>
+  </g>
+
+  <!-- تی‌شرت روی تخت، پشتش رو به بالا و لبه‌ی پایینش نزدیک کودک -->
+  <g transform="translate(400 96) scale(1.18)">
+    <path d="M-42 0Q0 16 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#0f9d8a" stroke="#0f9d8a" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M-42 0Q0 16 42 0" fill="none" stroke="#0b7a6b" stroke-width="8" stroke-linecap="round"/>
+    <!-- برچسب پشت یقه -->
+    <rect x="-14" y="10" width="28" height="22" rx="3" fill="#ffffff"/>
+    <path d="M-8 18H8M-8 24H4" stroke="#b9c7c4" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-92 150H92V178H-92Z" fill="#ffffff" opacity=".85"/>
+    <path d="M-92 196H92V210H-92Z" fill="#ffc24b"/>
+    <path d="M-92 244H92" stroke="#0b7a6b" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- دست‌ها از لبه‌ی پایین وارد آستین‌ها می‌شوند -->
+  <g fill="none" stroke="#ff7043" stroke-width="9" stroke-linecap="round" marker-end="url(#head)">
+    <path d="M330 470C330 420 312 330 292 236"/>
+    <path d="M470 470C470 420 488 330 508 236"/>
+  </g>
+  <!-- و بعد تی‌شرت از روی سر بالا می‌رود -->
+  <path d="M560 60C680 70 700 200 640 270" fill="none" stroke="#7c5cff" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 18" marker-start="url(#head)"/>
+  <circle cx="330" cy="470" r="14" fill="#ff7043"/>
+  <circle cx="470" cy="470" r="14" fill="#ff7043"/>
+</svg>

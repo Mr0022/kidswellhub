@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3ff"/>
+      <stop offset="1" stop-color="#fff4ea"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="700" cy="90" r="160" fill="#ffc46b" opacity=".2"/>
+  <rect y="440" width="800" height="60" fill="#dfe7ff"/>
+
+  <!-- صندلی -->
+  <rect x="150" y="166" width="16" height="150" rx="8" fill="#9ec2ff"/>
+  <rect x="150" y="300" width="138" height="16" rx="8" fill="#9ec2ff"/>
+  <rect x="156" y="316" width="12" height="124" rx="5" fill="#7aa7f5"/>
+  <rect x="270" y="316" width="12" height="124" rx="5" fill="#7aa7f5"/>
+
+  <!-- زیرپایی -->
+  <rect x="286" y="402" width="120" height="38" rx="8" fill="#ffc24b"/>
+  <rect x="286" y="402" width="120" height="10" rx="5" fill="#ffd779"/>
+
+  <!-- میز به بلندی آرنج -->
+  <rect x="300" y="236" width="360" height="16" rx="6" fill="#e7b98a"/>
+  <rect x="628" y="252" width="16" height="188" rx="6" fill="#d4a274"/>
+  <rect x="332" y="228" width="150" height="8" rx="2" fill="#ffffff"/>
+
+  <!-- سه زاویه‌ی قائمه: لگن، زانو، مچ پا (زیر اندام‌ها کشیده می‌شوند تا فقط ربع‌دایره دیده شود) -->
+  <g fill="#ff7043" fill-opacity=".28" stroke="#ff7043" stroke-width="4" stroke-linejoin="round">
+    <path d="M194 286L198.8 236.2A50 50 0 0 1 244 286Z"/>
+    <path d="M318 286L268 286A50 50 0 0 0 318 336Z"/>
+    <path d="M318 388L318 338A50 50 0 0 1 368 388Z"/>
+  </g>
+
+  <!-- کودک (نمای کناری، به شکل نشانک) -->
+  <g stroke="#3f6cff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M194 286L204 182"/>
+    <path d="M194 286H318V388H364"/>
+    <path d="M206 186L242 222H344"/>
+  </g>
+  <circle cx="210" cy="128" r="32" fill="#3f6cff"/>
+  <circle cx="352" cy="218" r="15" fill="#3f6cff"/>
+  <path d="M342 188L372 232" stroke="#ffc24b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M368 226L374 236" stroke="#3a3550" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2fbe6"/>
+      <stop offset="1" stop-color="#eefbf0"/>
+    </linearGradient>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="90" cy="440" r="150" fill="#ffd36b" opacity=".2"/>
+  <circle cx="730" cy="60" r="150" fill="#9ae6a1" opacity=".3"/>
+  <rect y="452" width="800" height="48" fill="#d5f2da"/>
+
+  <!-- پله‌ها از راست (آسان‌تر) به چپ (سخت‌تر) بالا می‌روند -->
+  <rect x="590" y="372" width="170" height="80" rx="12" fill="#9ae6a1"/>
+  <rect x="420" y="302" width="170" height="150" rx="12" fill="#6fd17e"/>
+  <rect x="250" y="232" width="170" height="220" rx="12" fill="#4cbb5f"/>
+  <rect x="80" y="162" width="170" height="290" rx="12" fill="#16a34a"/>
+  <g fill="#ffffff" opacity=".25">
+    <rect x="602" y="380" width="146" height="8" rx="4"/>
+    <rect x="432" y="310" width="146" height="8" rx="4"/>
+    <rect x="262" y="240" width="146" height="8" rx="4"/>
+    <rect x="92" y="170" width="146" height="8" rx="4"/>
+  </g>
+
+  <!-- ۱: لقمه‌های دست‌خور روی بشقاب کوچک -->
+  <g transform="translate(675 372)">
+    <ellipse cx="0" cy="-8" rx="64" ry="12" fill="#ffffff"/>
+    <ellipse cx="0" cy="-10" rx="46" ry="7" fill="#eef6f0"/>
+    <rect x="-46" y="-38" width="28" height="28" rx="6" fill="#ffd36b" transform="rotate(10 -32 -24)"/>
+    <circle cx="0" cy="-23" r="14" fill="#4cbb5f"/>
+    <circle cx="-4" cy="-27" r="4" fill="#ffffff" opacity=".35"/>
+    <rect x="18" y="-36" width="26" height="26" rx="6" fill="#ff8a50" transform="rotate(-12 31 -23)"/>
+  </g>
+
+  <!-- ۲: کاسه و قاشق با دسته‌ی کلفت -->
+  <g transform="translate(505 302)">
+    <path d="M18-28L58-98" stroke="#3f6cff" stroke-width="20" stroke-linecap="round"/>
+    <path d="M18-28L4-6" stroke="#9aa3b8" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-30" rx="54" ry="11" fill="#ffd36b"/>
+    <path d="M-54-30H54Q50 0 0 2Q-50 0-54-30Z" fill="#ff7043"/>
+    <path d="M-38-16H38" stroke="#ffffff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ۳: چنگال که در تکه‌ی هویج فرو رفته؛ نوک دندانه‌ها زیر هویج پنهان است -->
+  <g transform="translate(335 232)">
+    <ellipse cx="0" cy="-8" rx="64" ry="12" fill="#ffffff"/>
+    <ellipse cx="0" cy="-10" rx="46" ry="7" fill="#eef6f0"/>
+    <rect x="-44" y="-26" width="38" height="18" rx="8" fill="#ff8a50" transform="rotate(-8 -25 -17)"/>
+    <g transform="translate(30 -38) rotate(-28)">
+      <path d="M-11-2V22M-4-2V24M4-2V24M11-2V22" stroke="#9aa3b8" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-12-4H12" stroke="#9aa3b8" stroke-width="7" stroke-linecap="round"/>
+      <path d="M0-4V-26" stroke="#9aa3b8" stroke-width="8" stroke-linecap="round"/>
+      <rect x="-12" y="-96" width="24" height="72" rx="12" fill="#7c5cff"/>
+      <rect x="-5" y="-86" width="6" height="40" rx="3" fill="#ffffff" opacity=".35"/>
+    </g>
+    <rect x="4" y="-30" width="44" height="22" rx="9" fill="#ff7043"/>
+  </g>
+
+  <!-- ۴: لیوان باز -->
+  <g transform="translate(165 162)">
+    <ellipse cx="0" cy="-4" rx="46" ry="7" fill="#0b5d2a" opacity=".18"/>
+    <path d="M-40-110H40L32-8Q31 0 23 0H-23Q-31 0-32-8Z" fill="#ffffff" opacity=".9"/>
+    <path d="M-36-70H36L32-8Q31 0 23 0H-23Q-31 0-32-8Z" fill="#7cc8ff"/>
+    <ellipse cx="0" cy="-70" rx="36" ry="7" fill="#a9dcff"/>
+    <ellipse cx="0" cy="-110" rx="40" ry="8" fill="none" stroke="#dbe9e0" stroke-width="4"/>
+    <path d="M-26-96V-20" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <!-- پیکان پیشرفت -->
+  <path d="M700 300C640 170 470 90 250 74" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/>
+  <path d="M270 58L246 74L268 92" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <use href="#spark" transform="translate(110 70) scale(1.1)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(560 140) scale(.8)" fill="#3f6cff"/>
+</svg>

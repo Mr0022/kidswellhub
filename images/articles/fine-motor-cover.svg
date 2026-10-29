@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3e8"/>
+      <stop offset="1" stop-color="#ffe9d6"/>
+    </linearGradient>
+    <!-- گیره‌ی لباس؛ دهانه‌اش در (0,0) است و دسته رو به بالا (y منفی) -->
+    <g id="pin">
+      <rect x="-14" y="-118" width="13" height="118" rx="6.5"/>
+      <rect x="1" y="-118" width="13" height="118" rx="6.5"/>
+      <rect x="-16" y="-70" width="32" height="11" rx="5.5" fill="#8f98ad"/>
+    </g>
+    <radialGradient id="pom" cx=".38" cy=".34" r=".7">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="40" r="240" fill="#ffc46b" opacity=".28"/>
+  <circle cx="90" cy="600" r="250" fill="#ff7043" opacity=".1"/>
+  <ellipse cx="610" cy="572" rx="560" ry="34" fill="#c2410c" opacity=".07"/>
+
+  <!-- چرخ رنگ: مقوای گرد با شش برش رنگی و گیره‌ی هم‌رنگ روی هر برش -->
+  <ellipse cx="265" cy="560" rx="150" ry="18" fill="#7c2d12" opacity=".13"/>
+  <g transform="translate(265 355)">
+    <circle r="140" fill="#f0c99d"/>
+    <g stroke-width="34" fill="none">
+      <path d="M0-122A122 122 0 0 1 105.7-61" stroke="#ff7043"/>
+      <path d="M105.7-61A122 122 0 0 1 105.7 61" stroke="#ffb020"/>
+      <path d="M105.7 61A122 122 0 0 1 0 122" stroke="#16a34a"/>
+      <path d="M0 122A122 122 0 0 1-105.7 61" stroke="#3f6cff"/>
+      <path d="M-105.7 61A122 122 0 0 1-105.7-61" stroke="#7c4dff"/>
+      <path d="M-105.7-61A122 122 0 0 1 0-122" stroke="#e0409b"/>
+    </g>
+    <circle r="88" fill="#f6d7b1"/>
+    <circle r="22" fill="#ffffff" opacity=".8"/>
+    <use href="#pin" transform="rotate(30) translate(0 -112)" fill="#ff7043"/>
+    <use href="#pin" transform="rotate(90) translate(0 -112)" fill="#ffb020"/>
+    <use href="#pin" transform="rotate(150) translate(0 -112)" fill="#16a34a"/>
+    <use href="#pin" transform="rotate(-30) translate(0 -112)" fill="#e0409b"/>
+  </g>
+
+  <!-- خمیر بازی، مار خمیری و قالب ستاره -->
+  <ellipse cx="640" cy="556" rx="130" ry="16" fill="#7c2d12" opacity=".13"/>
+  <path d="M520 552c-8-66 44-114 112-116 74-2 128 42 122 116Z" fill="#ff8fb3"/>
+  <path d="M556 496c22-32 64-44 102-38" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="776" cy="540" r="18" fill="#7cd6c8"/>
+  <circle cx="808" cy="550" r="11" fill="#ffd36b"/>
+  <g transform="rotate(-6 640 586)">
+    <rect x="520" y="570" width="220" height="30" rx="15" fill="#7cd6c8"/>
+    <rect x="534" y="575" width="190" height="8" rx="4" fill="#ffffff" opacity=".4"/>
+  </g>
+  <path d="M640 252l18 38 42 6-30 29 7 42-37-20-37 20 7-42-30-29 42-6Z" fill="#ffffff" fill-opacity=".55" stroke="#3f6cff" stroke-width="10" stroke-linejoin="round" transform="rotate(-10 640 304)"/>
+
+  <!-- قیچی روی نوار کاغذ موجی -->
+  <g transform="rotate(-10 960 200)">
+    <rect x="800" y="150" width="360" height="100" rx="10" fill="#ffffff"/>
+    <path d="M800 200c30-30 60 30 90 0s60 30 90 0 60 30 90 0 60 30 90 0" fill="none" stroke="#ff7043" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(905 238) rotate(-24)">
+    <path d="M-6-9L150-30Q166-30 154-16L-6 11Z" fill="#c9d2e3"/>
+    <path d="M-6 9L150 30Q166 30 154 16L-6-11Z" fill="#a9b5cc"/>
+    <circle r="10" fill="#6b7489"/>
+    <path d="M-4-4L-52-28" stroke="#ff7043" stroke-width="18" stroke-linecap="round"/>
+    <path d="M-4 4L-52 28" stroke="#ff9a5c" stroke-width="18" stroke-linecap="round"/>
+    <ellipse cx="-86" cy="-40" rx="40" ry="27" fill="none" stroke="#ff7043" stroke-width="17"/>
+    <ellipse cx="-86" cy="40" rx="40" ry="27" fill="none" stroke="#ff9a5c" stroke-width="17"/>
+  </g>
+
+  <!-- قالب یخ با منگوله‌ها و انبرک -->
+  <ellipse cx="1000" cy="566" rx="160" ry="16" fill="#7c2d12" opacity=".13"/>
+  <rect x="850" y="440" width="300" height="120" rx="22" fill="#9ec2ff"/>
+  <g fill="#7aa7f5">
+    <rect x="868" y="458" width="78" height="38" rx="14"/>
+    <rect x="961" y="458" width="78" height="38" rx="14"/>
+    <rect x="1054" y="458" width="78" height="38" rx="14"/>
+    <rect x="868" y="506" width="78" height="38" rx="14"/>
+    <rect x="961" y="506" width="78" height="38" rx="14"/>
+    <rect x="1054" y="506" width="78" height="38" rx="14"/>
+  </g>
+  <circle cx="907" cy="472" r="22" fill="#ff7043"/><circle cx="907" cy="472" r="22" fill="url(#pom)"/>
+  <circle cx="1000" cy="520" r="22" fill="#16a34a"/><circle cx="1000" cy="520" r="22" fill="url(#pom)"/>
+  <circle cx="1093" cy="472" r="22" fill="#e0409b"/><circle cx="1093" cy="472" r="22" fill="url(#pom)"/>
+  <circle cx="907" cy="520" r="22" fill="#ffb020"/><circle cx="907" cy="520" r="22" fill="url(#pom)"/>
+  <g transform="translate(1112 300) rotate(118)">
+    <path d="M0 0L150-15" stroke="#16a34a" stroke-width="13" stroke-linecap="round"/>
+    <path d="M0 0L150 15" stroke="#22c55e" stroke-width="13" stroke-linecap="round"/>
+    <circle r="13" fill="#16a34a"/>
+  </g>
+  <circle cx="1042" cy="432" r="22" fill="#7c4dff"/><circle cx="1042" cy="432" r="22" fill="url(#pom)"/>
+
+  <use href="#spark" transform="translate(480 150) scale(1.3)" fill="#ff7043"/>
+  <use href="#spark" transform="translate(760 100) scale(.8)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(90 120) scale(1)" fill="#3f6cff"/>
+</svg>

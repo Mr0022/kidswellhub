@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2f8"/>
+      <stop offset="1" stop-color="#f1ecff"/>
+    </linearGradient>
+    <path id="star" d="M0-19L4.7-6.5L18-5.9L7.6 2.5L11.2 15.4L0 8L-11.2 15.4L-7.6 2.5L-18-5.9L-4.7-6.5Z"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="720" cy="70" r="150" fill="#ff7ab6" opacity=".12"/>
+
+  <!-- جدول تمرین هفته روی دیوار -->
+  <rect x="88" y="62" width="460" height="340" rx="24" fill="#5b3fd6" opacity=".12" transform="translate(8 10)"/>
+  <rect x="88" y="62" width="460" height="340" rx="24" fill="#ffffff"/>
+  <circle cx="318" cy="56" r="14" fill="#ff7ab6"/>
+  <!-- سرستون‌ها: هفت روز با هفت رنگ -->
+  <g>
+    <circle cx="156" cy="112" r="14" fill="#7c5cff"/>
+    <circle cx="212" cy="112" r="14" fill="#ff7ab6"/>
+    <circle cx="268" cy="112" r="14" fill="#ffc24b"/>
+    <circle cx="324" cy="112" r="14" fill="#2bb5a6"/>
+    <circle cx="380" cy="112" r="14" fill="#3f6cff"/>
+    <circle cx="436" cy="112" r="14" fill="#ff7043"/>
+    <circle cx="492" cy="112" r="14" fill="#16a34a"/>
+  </g>
+  <g stroke="#ece6ff" stroke-width="3">
+    <path d="M118 146H522M118 214H522M118 282H522M118 350H522"/>
+  </g>
+  <!-- هر سطر یک تمرین کوتاه -->
+  <g fill="#ffc24b">
+    <use href="#star" x="156" y="182"/><use href="#star" x="212" y="182"/><use href="#star" x="268" y="182"/>
+    <use href="#star" x="324" y="182"/><use href="#star" x="380" y="182"/>
+    <use href="#star" x="156" y="250"/><use href="#star" x="212" y="250"/><use href="#star" x="324" y="250"/>
+    <use href="#star" x="380" y="250"/>
+    <use href="#star" x="156" y="318"/><use href="#star" x="268" y="318"/><use href="#star" x="324" y="318"/>
+  </g>
+  <g fill="none" stroke="#e5e0f5" stroke-width="4">
+    <circle cx="436" cy="180" r="15"/><circle cx="492" cy="180" r="15"/>
+    <circle cx="268" cy="248" r="15"/><circle cx="436" cy="248" r="15"/><circle cx="492" cy="248" r="15"/>
+    <circle cx="212" cy="316" r="15"/><circle cx="380" cy="316" r="15"/><circle cx="436" cy="316" r="15"/><circle cx="492" cy="316" r="15"/>
+  </g>
+
+  <!-- زمان‌سنج آشپزخانه -->
+  <ellipse cx="650" cy="452" rx="80" ry="12" fill="#5b3fd6" opacity=".12"/>
+  <circle cx="650" cy="350" r="92" fill="#ff7043"/>
+  <circle cx="650" cy="350" r="70" fill="#ffffff"/>
+  <path d="M650 350V292" stroke="#ff7043" stroke-width="8" stroke-linecap="round"/>
+  <path d="M650 350L690 372" stroke="#3a3550" stroke-width="6" stroke-linecap="round"/>
+  <path d="M650 280A70 70 0 0 1 714 320L650 350Z" fill="#ff7043" opacity=".2"/>
+  <circle cx="650" cy="350" r="9" fill="#3a3550"/>
+  <rect x="630" y="244" width="40" height="18" rx="6" fill="#e2552c"/>
+
+  <!-- سبد وسایل تمرین -->
+  <ellipse cx="300" cy="470" rx="150" ry="14" fill="#5b3fd6" opacity=".12"/>
+  <rect x="190" y="420" width="44" height="42" rx="10" fill="#ff8fb3"/>
+  <rect x="186" y="412" width="52" height="14" rx="6" fill="#ffd36b"/>
+  <g transform="translate(270 432)">
+    <rect x="-6" y="-30" width="12" height="44" rx="6" fill="#3f6cff"/>
+    <rect x="10" y="-26" width="12" height="40" rx="6" fill="#16a34a"/>
+    <rect x="-22" y="-24" width="12" height="38" rx="6" fill="#ffc24b"/>
+  </g>
+  <circle cx="340" cy="446" r="18" fill="#7c5cff"/>
+  <circle cx="378" cy="452" r="12" fill="#2bb5a6"/>
+  <rect x="160" y="440" width="270" height="26" rx="10" fill="#c9a27a"/>
+  <path d="M172 453H418" stroke="#b08860" stroke-width="3" stroke-dasharray="10 8"/>
+</svg>

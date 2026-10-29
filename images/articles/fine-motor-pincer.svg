@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4ea"/>
+      <stop offset="1" stop-color="#fff0f6"/>
+    </linearGradient>
+    <g id="coin">
+      <ellipse rx="28" ry="12" fill="#e8a52a" transform="translate(0 4)"/>
+      <ellipse rx="28" ry="12" fill="#ffc24b"/>
+      <ellipse rx="18" ry="7" fill="none" stroke="#e8a52a" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="80" cy="60" r="150" fill="#ff7ab6" opacity=".12"/>
+  <rect y="430" width="800" height="70" fill="#ffe2c4"/>
+
+  <!-- قلک -->
+  <ellipse cx="260" cy="432" rx="150" ry="12" fill="#7c2d12" opacity=".13"/>
+  <rect x="160" y="370" width="34" height="58" rx="12" fill="#f0709f"/>
+  <rect x="300" y="370" width="34" height="58" rx="12" fill="#f0709f"/>
+  <path d="M110 300c-30-10-36 26-12 26" fill="none" stroke="#ff8fb3" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="250" cy="304" rx="148" ry="110" fill="#ff8fb3"/>
+  <path d="M310 210l30-44 18 54Z" fill="#f0709f"/>
+  <ellipse cx="396" cy="306" rx="30" ry="38" fill="#f0709f"/>
+  <ellipse cx="388" cy="294" rx="6" ry="9" fill="#c94a7c"/>
+  <ellipse cx="404" cy="318" rx="6" ry="9" fill="#c94a7c"/>
+  <circle cx="340" cy="262" r="10" fill="#3a3550"/>
+  <circle cx="343" cy="259" r="3" fill="#ffffff"/>
+  <path d="M150 240c26-30 70-44 110-40" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="14" stroke-linecap="round"/>
+  <rect x="216" y="194" width="66" height="12" rx="6" fill="#c94a7c"/>
+  <!-- سکه‌ای که در شکاف می‌رود -->
+  <rect x="241" y="138" width="16" height="62" rx="8" fill="#ffc24b"/>
+  <rect x="245" y="146" width="4" height="46" rx="2" fill="#ffe08a"/>
+  <use href="#coin" x="110" y="452"/>
+  <use href="#coin" x="430" y="456"/>
+  <use href="#coin" x="470" y="440"/>
+
+  <!-- برگه‌ی برچسب -->
+  <rect x="528" y="132" width="222" height="290" rx="18" fill="#7c2d12" opacity=".1" transform="translate(6 8)"/>
+  <rect x="528" y="132" width="222" height="290" rx="18" fill="#ffffff"/>
+  <g>
+    <circle cx="582" cy="190" r="24" fill="#ff7043"/>
+    <circle cx="640" cy="190" r="24" fill="#3f6cff"/>
+    <circle cx="698" cy="190" r="24" fill="#16a34a"/>
+    <circle cx="582" cy="254" r="24" fill="#ffc24b"/>
+    <circle cx="698" cy="254" r="24" fill="#7c4dff"/>
+    <circle cx="640" cy="318" r="24" fill="#ff7ab6"/>
+    <circle cx="698" cy="318" r="24" fill="#2bb5a6"/>
+    <circle cx="582" cy="382" r="24" fill="#3f6cff"/>
+  </g>
+  <g fill="none" stroke="#d9d2e6" stroke-width="3" stroke-dasharray="6 6">
+    <circle cx="640" cy="254" r="24"/>
+    <circle cx="582" cy="318" r="24"/>
+    <circle cx="640" cy="382" r="24"/>
+    <circle cx="698" cy="382" r="24"/>
+  </g>
+  <!-- برچسبی که نیمه‌کنده شده -->
+  <path d="M674 382a24 24 0 0 1 24-24l0 24Z" fill="#e0409b"/>
+  <path d="M698 358a24 24 0 0 1 0 48l-24-24Z" fill="#f7c4dc"/>
+</svg>

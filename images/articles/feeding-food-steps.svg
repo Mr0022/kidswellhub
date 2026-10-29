@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2fbe6"/>
+      <stop offset="1" stop-color="#fff6ef"/>
+    </linearGradient>
+    <!-- بروکلی؛ پایه‌ی ساقه در (0,0) -->
+    <g id="broc">
+      <path d="M-8 0L-6-34H6L8 0Z" fill="#9ad6a4"/>
+      <circle cx="-18" cy="-44" r="18" fill="#16a34a"/>
+      <circle cx="18" cy="-44" r="18" fill="#16a34a"/>
+      <circle cx="0" cy="-58" r="20" fill="#1fb457"/>
+      <circle cx="-6" cy="-64" r="6" fill="#ffffff" opacity=".25"/>
+    </g>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="720" cy="70" r="150" fill="#9ae6a1" opacity=".22"/>
+  <circle cx="60" cy="470" r="150" fill="#ffd36b" opacity=".22"/>
+
+  <!-- مسیر پله‌پله از راست به چپ -->
+  <path d="M700 430Q660 380 620 370L495 310L370 255L245 200L120 145Q90 120 96 84" fill="none" stroke="#9ad6a4" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>
+
+  <!-- غذای تازه روی بشقاب -->
+  <ellipse cx="726" cy="462" rx="62" ry="12" fill="#ffffff"/>
+  <ellipse cx="726" cy="460" rx="44" ry="7" fill="#eef6f0"/>
+  <use href="#broc" transform="translate(726 456) scale(.9)"/>
+
+  <!-- ۱: نگاه کردن -->
+  <g transform="translate(620 370)">
+    <circle r="50" fill="#ffffff" stroke="#ffc24b" stroke-width="6"/>
+    <path d="M-32 0Q0-28 32 0Q0 28-32 0Z" fill="#ffffff" stroke="#3a3550" stroke-width="5" stroke-linejoin="round"/>
+    <circle r="12" fill="#3f6cff"/>
+    <circle r="5" fill="#3a3550"/>
+    <circle cx="4" cy="-4" r="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- ۲: لمس کردن -->
+  <g transform="translate(495 310)">
+    <circle r="50" fill="#ffffff" stroke="#ff7ab6" stroke-width="6"/>
+    <g fill="#ffb38a">
+      <rect x="-20" y="-4" width="40" height="32" rx="14"/>
+      <rect x="-20" y="-30" width="9" height="34" rx="4.5"/>
+      <rect x="-9" y="-36" width="9" height="40" rx="4.5"/>
+      <rect x="2" y="-34" width="9" height="38" rx="4.5"/>
+      <rect x="13" y="-26" width="9" height="30" rx="4.5"/>
+      <rect x="18" y="0" width="22" height="10" rx="5" transform="rotate(-38 20 5)"/>
+    </g>
+  </g>
+
+  <!-- ۳: بو کردن -->
+  <g transform="translate(370 255)">
+    <circle r="50" fill="#ffffff" stroke="#7c5cff" stroke-width="6"/>
+    <path d="M8-30C8-12 14 2 22 12C14 20 2 20-6 14" fill="none" stroke="#3a3550" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 14Q2 10-2 13" fill="none" stroke="#3a3550" stroke-width="4" stroke-linecap="round"/>
+    <g fill="none" stroke="#7c5cff" stroke-width="4" stroke-linecap="round">
+      <path d="M-30-22Q-24-16-30-10Q-36-4-30 2"/>
+      <path d="M-18-16Q-12-10-18-4Q-24 2-18 8"/>
+    </g>
+  </g>
+
+  <!-- ۴: چشیدن با نوک زبان -->
+  <g transform="translate(245 200)">
+    <circle r="50" fill="#ffffff" stroke="#3f6cff" stroke-width="6"/>
+    <path d="M-30-8Q0 26 30-8Q0 4-30-8Z" fill="#e0409b"/>
+    <path d="M-12 6Q-12 26 0 26Q12 26 12 6Q0 10-12 6Z" fill="#ff9ccf"/>
+    <path d="M0 10V20" stroke="#e0409b" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ۵: گاز زدن -->
+  <g transform="translate(120 145)">
+    <circle r="50" fill="#ffffff" stroke="#16a34a" stroke-width="6"/>
+    <use href="#broc" transform="translate(-2 34) scale(.82)"/>
+    <!-- جای گاز: سه دایره به رنگ زمینه روی لبه‌ی گل -->
+    <g fill="#ffffff">
+      <circle cx="28" cy="-8" r="8"/>
+      <circle cx="24" cy="-21" r="8"/>
+      <circle cx="14" cy="-31" r="7"/>
+    </g>
+  </g>
+
+  <use href="#spark" transform="translate(70 70) scale(1.1)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(196 92) scale(.7)" fill="#16a34a"/>
+  <use href="#spark" transform="translate(560 180) scale(.8)" fill="#ff7ab6"/>
+</svg>

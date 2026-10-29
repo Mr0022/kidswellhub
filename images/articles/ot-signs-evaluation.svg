@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0f8"/>
+      <stop offset="1" stop-color="#f3efff"/>
+    </linearGradient>
+    <circle id="hole" r="6" fill="#d8b98f"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- میز کار (نمای از بالا) -->
+  <rect x="46" y="44" width="716" height="424" rx="40" fill="#831843" opacity=".07"/>
+  <rect x="38" y="34" width="716" height="424" rx="40" fill="#f6e4cc"/>
+  <g stroke="#efd6b6" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M70 120Q240 108 420 122T740 116M70 300Q260 288 430 302T740 294M70 420Q240 410 400 420T740 414"/>
+  </g>
+
+  <!-- برگه‌ی رونویسی شکل‌ها: نمونه‌ی خاکستری و رونوشت کودک -->
+  <g transform="translate(252 168) rotate(-4)">
+    <rect x="-118" y="-84" width="236" height="168" rx="12" fill="#ffffff"/>
+    <g fill="none" stroke="#c9c4d6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="-78" cy="-40" r="20"/>
+      <path d="M-26-60V-20M-46-40H-6"/>
+      <rect x="10" y="-58" width="36" height="36"/>
+      <path d="M78-60L98-22H58Z"/>
+    </g>
+    <path d="M-104 0H104" stroke="#f1edf7" stroke-width="3"/>
+    <g fill="none" stroke="#e0409b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-78 22C-62 22-58 40-60 50C-62 62-94 64-98 46C-100 32-92 22-78 22Z"/>
+      <path d="M-25 22L-27 62M-46 43L-5 40"/>
+      <path d="M11 24L45 26L44 60L12 58Z"/>
+      <path d="M79 22L97 60L58 58Z"/>
+    </g>
+  </g>
+
+  <!-- تخته‌میخ -->
+  <g transform="translate(564 150)">
+    <rect x="-82" y="-82" width="164" height="164" rx="18" fill="#e7c49a"/>
+    <g>
+      <use href="#hole" x="-56" y="-56"/><use href="#hole" x="-28" y="-56"/><use href="#hole" x="0" y="-56"/><use href="#hole" x="28" y="-56"/><use href="#hole" x="56" y="-56"/>
+      <use href="#hole" x="-56" y="-28"/><use href="#hole" x="-28" y="-28"/><use href="#hole" x="0" y="-28"/><use href="#hole" x="28" y="-28"/><use href="#hole" x="56" y="-28"/>
+      <use href="#hole" x="-56" y="0"/><use href="#hole" x="-28" y="0"/><use href="#hole" x="0" y="0"/><use href="#hole" x="28" y="0"/><use href="#hole" x="56" y="0"/>
+      <use href="#hole" x="-56" y="28"/><use href="#hole" x="-28" y="28"/><use href="#hole" x="0" y="28"/><use href="#hole" x="28" y="28"/><use href="#hole" x="56" y="28"/>
+      <use href="#hole" x="-56" y="56"/><use href="#hole" x="-28" y="56"/><use href="#hole" x="0" y="56"/><use href="#hole" x="28" y="56"/><use href="#hole" x="56" y="56"/>
+    </g>
+    <g>
+      <circle cx="-56" cy="-56" r="10" fill="#e0409b"/><circle cx="-28" cy="-56" r="10" fill="#ffb020"/>
+      <circle cx="0" cy="-56" r="10" fill="#3f6cff"/><circle cx="28" cy="-56" r="10" fill="#16a34a"/>
+      <circle cx="-56" cy="-28" r="10" fill="#7c5cff"/><circle cx="-28" cy="-28" r="10" fill="#e0409b"/>
+      <circle cx="-56" cy="0" r="10" fill="#ff7043"/>
+    </g>
+    <circle cx="112" cy="-40" r="10" fill="#3f6cff"/>
+    <circle cx="104" cy="-10" r="10" fill="#ffb020"/>
+  </g>
+
+  <!-- رشته‌ی مهره -->
+  <path d="M84 404C130 340 200 430 250 380S320 344 330 360" fill="none" stroke="#7c5cff" stroke-width="5" stroke-linecap="round"/>
+  <g>
+    <circle cx="112" cy="378" r="15" fill="#ff7ab6"/>
+    <rect x="140" y="370" width="28" height="28" rx="8" fill="#ffc24b" transform="rotate(20 154 384)"/>
+    <circle cx="190" cy="398" r="15" fill="#3f6cff"/>
+    <rect x="218" y="378" width="28" height="28" rx="8" fill="#16a34a" transform="rotate(-24 232 392)"/>
+  </g>
+  <circle cx="296" cy="420" r="14" fill="#e0409b"/>
+  <circle cx="326" cy="408" r="12" fill="#ff7043"/>
+
+  <!-- برگه‌ی یادداشت ارزیاب -->
+  <g transform="translate(436 344) rotate(3)">
+    <rect x="-74" y="-88" width="148" height="182" rx="14" fill="#c9a27a"/>
+    <rect x="-62" y="-70" width="124" height="152" rx="6" fill="#ffffff"/>
+    <rect x="-28" y="-98" width="56" height="22" rx="8" fill="#9aa3b8"/>
+    <g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M36-42L43-34L54-48" stroke="#16a34a"/>
+      <path d="M36-6L43 2L54-12" stroke="#16a34a"/>
+      <path d="M36 30L43 38L54 24" stroke="#16a34a"/>
+    </g>
+    <g stroke="#ece6f5" stroke-width="7" stroke-linecap="round">
+      <path d="M-48-40H20M-48-4H12M-48 32H22M-48 64H0"/>
+    </g>
+  </g>
+
+  <!-- قیچی و نوار کاغذ بریده‌شده -->
+  <g transform="translate(626 372) rotate(-8)">
+    <rect x="-96" y="-34" width="192" height="68" rx="8" fill="#ffffff"/>
+    <path d="M-96 0H-60" stroke="#e0409b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M-60 0L-40-12L-20 6L0-6" fill="none" stroke="#e0409b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0-6H96" stroke="#e9c6dc" stroke-width="4" stroke-dasharray="8 8"/>
+    <g transform="translate(16 -4) rotate(180)">
+      <path d="M0 0L-70-16M0 0L-70 16" stroke="#a7b0c4" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="22" cy="-15" r="15" fill="none" stroke="#ff7043" stroke-width="9"/>
+      <circle cx="22" cy="15" r="15" fill="none" stroke="#ff7043" stroke-width="9"/>
+      <circle r="4" fill="#55516e"/>
+    </g>
+  </g>
+</svg>

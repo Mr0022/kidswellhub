@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f0ff"/>
+      <stop offset="1" stop-color="#eef3ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="90" cy="70" r="160" fill="#9ec2ff" opacity=".22"/>
+  <rect y="430" width="800" height="70" fill="#e4e9ff"/>
+
+  <!-- تخته‌ی شیب‌دار -->
+  <ellipse cx="340" cy="436" rx="250" ry="12" fill="#1e2a6b" opacity=".1"/>
+  <path d="M460 430L568 322L568 202Z" fill="#c9a27a"/>
+  <path d="M100 430H460L568 202H208Z" fill="#e7b98a"/>
+  <path d="M100 430H460" stroke="#c9a27a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M167 403H419L492 248H240Z" fill="#ffffff"/>
+  <g stroke="#cfdcff" stroke-width="3">
+    <path d="M199 373H415M213 343H429M227 314H443M241 284H457"/>
+  </g>
+  <g fill="none" stroke="#2c3e8f" stroke-width="4" stroke-linecap="round">
+    <path d="M410 370c-10 0-10-12-20-12s-6 12-18 12-8-14-20-14-6 14-18 14-10-10-22-10"/>
+    <path d="M424 340c-12 0-8-14-20-14s-8 14-20 14"/>
+  </g>
+  <rect x="340" y="226" width="64" height="20" rx="6" fill="#8f98ad"/>
+  <rect x="352" y="214" width="40" height="14" rx="5" fill="#b8c0d2"/>
+  <g transform="translate(372 343) rotate(-128)">
+    <path d="M0 0L30-9V9Z" fill="#f6d3a1"/>
+    <path d="M0 0L10-3V3Z" fill="#3a3550"/>
+    <rect x="29" y="-9" width="150" height="18" fill="#ffc24b"/>
+    <rect x="29" y="-9" width="150" height="6" fill="#ffd779"/>
+    <path d="M179-9h12a9 9 0 0 1 0 18h-12Z" fill="#ff8fb3"/>
+  </g>
+
+  <!-- جایگزین ساده: کلاسور حلقه‌ای که رو به جلو خوابیده -->
+  <ellipse cx="690" cy="436" rx="100" ry="10" fill="#1e2a6b" opacity=".1"/>
+  <path d="M600 430H768V318Z" fill="#7c5cff"/>
+  <rect x="756" y="314" width="22" height="118" rx="9" fill="#5b3fd6"/>
+  <path d="M612 422H752V340Z" fill="#957bff"/>
+  <path d="M640 404L742 404" stroke="#ffffff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round"/>
+</svg>

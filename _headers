@@ -12,9 +12,12 @@
 /logo/*
   Cache-Control: public, max-age=2592000
 
-# صفحه‌ها باید تازه بمانند تا ویرایش محتوا زود دیده شود
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# صفحه‌ها باید تازه بمانند تا ویرایش محتوا زود دیده شود. نشانی صفحه‌ها بی‌پسوند است
+# (/about، /services/cognitive)، پس قاعده‌ی ‎/*.html به آن‌ها نمی‌رسد؛ پیش‌فرض خودِ
+# Cloudflare Pages برای آن‌ها همین است: public, max-age=0, must-revalidate
 
 /sitemap.xml
   Cache-Control: public, max-age=3600

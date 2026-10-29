@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9faf6"/>
+      <stop offset="1" stop-color="#eef3ff"/>
+    </linearGradient>
+    <!-- گیره‌ی کوچک بند رخت؛ وسطش در (0,0) -->
+    <g id="clip">
+      <rect x="-8" y="-26" width="7" height="44" rx="3.5"/>
+      <rect x="1" y="-26" width="7" height="44" rx="3.5"/>
+    </g>
+    <!-- جوراب؛ بالای ساقه در (0,0) و پنجه رو به راست -->
+    <g id="sock">
+      <path d="M-26 0H26V128Q26 148 46 148H70Q94 148 94 172Q94 196 70 196H2Q-26 196-26 168Z"/>
+      <path d="M-26 0H26V36H-26Z" fill="#ffffff" opacity=".35"/>
+      <path d="M-26 12H26M-26 24H26" stroke="#ffffff" stroke-opacity=".6" stroke-width="4"/>
+      <path d="M58 148H70Q94 148 94 172Q94 196 70 196H58Z" fill="#000000" opacity=".1"/>
+    </g>
+    <!-- کفش؛ گوشه‌ی پایین پاشنه در (0,0) و پنجه رو به راست -->
+    <g id="shoe">
+      <path d="M6-26V-96Q6-110 20-110H70Q86-110 94-98L122-64Q176-62 206-48Q228-38 228-26Z"/>
+      <path d="M0 0H206Q230 0 230-20V-28H0Z" fill="#ffffff"/>
+      <path d="M0-10H230" stroke="#d4dbe8" stroke-width="4"/>
+      <path d="M150-60Q190-56 212-44Q226-36 228-28H150Z" fill="#ffffff" opacity=".45"/>
+      <ellipse cx="44" cy="-106" rx="34" ry="8" fill="#000000" opacity=".25"/>
+      <g stroke="#ffffff" stroke-width="5" stroke-linecap="round">
+        <path d="M84-92L118-70M84-70L114-92M96-56L128-44"/>
+      </g>
+      <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round">
+        <path d="M100-92c-26-28-46-6-22 6"/>
+        <path d="M100-92c30-26 46-2 20 8"/>
+        <path d="M100-92l-14 30M100-92l22 26"/>
+      </g>
+    </g>
+    <path id="spark" d="M0-16C2-5 5-2 16 0C5 2 2 5 0 16C-2 5-5 2-16 0C-5-2-2-5 0-16Z"/>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1070" cy="560" r="250" fill="#8fe3d3" opacity=".3"/>
+  <circle cx="120" cy="40" r="220" fill="#ffc46b" opacity=".18"/>
+  <ellipse cx="600" cy="578" rx="560" ry="30" fill="#0f766e" opacity=".07"/>
+
+  <!-- بند رخت -->
+  <path d="M30 118Q600 236 1170 118" fill="none" stroke="#9a6b4f" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- تی‌شرت -->
+  <g transform="translate(320 160)">
+    <path d="M-42 0Q0 30 42 0L118 24L152 90L104 110L92 72V250H-92V72L-104 110L-152 90L-118 24Z" fill="#0f9d8a" stroke="#0f9d8a" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M-92 150H92V178H-92Z" fill="#ffffff" opacity=".85"/>
+    <path d="M-92 196H92V210H-92Z" fill="#ffc24b"/>
+    <path d="M-42 0Q0 30 42 0Q0 46-42 0Z" fill="#0b7a6b"/>
+    <use href="#clip" transform="translate(-82 2)" fill="#ff7043"/>
+    <use href="#clip" transform="translate(82 2)" fill="#ff7043"/>
+  </g>
+
+  <!-- شلوار -->
+  <g transform="translate(600 178)">
+    <path d="M-84 0H84L92 264H20L0 86L-20 264H-92Z" fill="#3f6cff" stroke="#3f6cff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M-84 0H84V28H-84Z" fill="#2c4fd8"/>
+    <path d="M-60 60c10 14 30 14 40 0M60 60c-10 14-30 14-40 0" fill="none" stroke="#2c4fd8" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="14" r="6" fill="#ffc24b"/>
+    <use href="#clip" transform="translate(-62 0)" fill="#ffb020"/>
+    <use href="#clip" transform="translate(62 0)" fill="#ffb020"/>
+  </g>
+
+  <!-- جوراب‌ها -->
+  <use href="#sock" transform="translate(850 168)" fill="#ff7ab6"/>
+  <use href="#clip" transform="translate(850 166)" fill="#7c5cff"/>
+  <use href="#sock" transform="translate(978 152)" fill="#ffb020"/>
+  <use href="#clip" transform="translate(978 150)" fill="#7c5cff"/>
+
+  <!-- کفش‌ها روی زمین -->
+  <use href="#shoe" transform="translate(690 566)" fill="#7c5cff"/>
+  <use href="#shoe" transform="translate(890 572) scale(.96)" fill="#6a46f0"/>
+
+  <use href="#spark" transform="translate(500 380) scale(1.2)" fill="#ffb020"/>
+  <use href="#spark" transform="translate(140 300) scale(1)" fill="#0f9d8a"/>
+  <use href="#spark" transform="translate(1120 360) scale(.9)" fill="#7c5cff"/>
+</svg>

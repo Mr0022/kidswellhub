@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3ff"/>
+      <stop offset="1" stop-color="#e9faf6"/>
+    </linearGradient>
+    <marker id="head" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c5cff"/>
+    </marker>
+    <!-- جای پا از بالا -->
+    <path id="foot" d="M0-38C14-38 20-24 20-6C20 14 14 38 0 38C-14 38-18 18-18 0C-18-22-14-38 0-38Z"/>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect y="0" width="800" height="500" fill="#dfe7ff" opacity=".35"/>
+
+  <!-- کاپشن باز روی زمین، آستر رو به بالا و کلاه رو به پای کودک -->
+  <g transform="translate(400 250) rotate(180)">
+    <!-- آستین‌ها -->
+    <path d="M-110-120L-210-40L-238 60L-186 76L-150-4L-120-20Z" fill="#7c5cff" stroke="#7c5cff" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M110-120L210-40L238 60L186 76L150-4L120-20Z" fill="#7c5cff" stroke="#7c5cff" stroke-width="12" stroke-linejoin="round"/>
+    <rect x="-246" y="52" width="66" height="24" rx="10" transform="rotate(14 -213 64)" fill="#5b3fd6"/>
+    <rect x="180" y="52" width="66" height="24" rx="10" transform="rotate(-14 213 64)" fill="#5b3fd6"/>
+    <!-- بدنه با آستر -->
+    <path d="M-120-128H120V150H-120Z" fill="#7c5cff" stroke="#7c5cff" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M-96-108H96V138H-96Z" fill="#ffc24b"/>
+    <path d="M-96-108H96V-60H-96Z" fill="#ffd779"/>
+    <!-- دو لبه‌ی زیپ باز -->
+    <path d="M-8-128V150M8-128V150" stroke="#5b3fd6" stroke-width="8"/>
+    <path d="M-12-120V146M12-120V146" stroke="#d9d2ff" stroke-width="4" stroke-dasharray="4 5"/>
+    <!-- کلاه -->
+    <path d="M-70-128C-70-206 70-206 70-128Z" fill="#7c5cff"/>
+    <path d="M-52-128C-52-182 52-182 52-128Z" fill="#ffc24b"/>
+  </g>
+
+  <!-- پاهای کودک کنار کلاه -->
+  <use href="#foot" transform="translate(372 458)" fill="#0f9d8a"/>
+  <use href="#foot" transform="translate(428 458) scale(-1 1)" fill="#0f9d8a"/>
+
+  <!-- دست‌ها در آستین و بعد چرخاندن کاپشن از روی سر -->
+  <path d="M640 210C720 140 690 40 560 40H240C110 40 80 140 160 210" fill="none" stroke="#7c5cff" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 18" marker-end="url(#head)"/>
+</svg>

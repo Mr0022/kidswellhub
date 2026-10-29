@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6ef"/>
+      <stop offset="1" stop-color="#eef3ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="760" cy="470" r="170" fill="#9ec2ff" opacity=".2"/>
+  <rect y="450" width="800" height="50" fill="#ffe2c4"/>
+
+  <!-- سه‌پایه‌ی نقاشی: کاغذ عمودی -->
+  <path d="M232 70V460" stroke="#c9a27a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M136 90L92 462M328 90L372 462" stroke="#b08860" stroke-width="14" stroke-linecap="round"/>
+  <rect x="98" y="70" width="268" height="276" rx="14" fill="#e7b98a"/>
+  <rect x="114" y="86" width="236" height="242" rx="6" fill="#ffffff"/>
+  <rect x="200" y="78" width="64" height="18" rx="5" fill="#ffc24b" opacity=".85"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+    <circle cx="180" cy="160" r="40" stroke="#ff7043"/>
+    <path d="M262 128L318 184M318 128L262 184" stroke="#3f6cff"/>
+    <path d="M136 268L164 236L192 268L220 236L248 268L276 236L304 268L330 236" stroke="#16a34a"/>
+  </g>
+  <rect x="92" y="344" width="280" height="18" rx="8" fill="#b08860"/>
+  <rect x="120" y="330" width="58" height="16" rx="5" fill="#ff7043"/>
+  <rect x="190" y="330" width="58" height="16" rx="5" fill="#3f6cff"/>
+  <rect x="260" y="330" width="58" height="16" rx="5" fill="#16a34a"/>
+
+  <!-- کارت نخ‌کشی -->
+  <g transform="translate(608 160)">
+    <circle r="104" fill="#7c2d12" opacity=".1" transform="translate(5 7)"/>
+    <circle r="104" fill="#ffc24b"/>
+    <circle r="78" fill="#ffd779"/>
+    <g fill="#ffffff" stroke="#e8a52a" stroke-width="3">
+      <circle cx="0" cy="-86" r="7"/><circle cx="43" cy="-74.5" r="7"/><circle cx="74.5" cy="-43" r="7"/>
+      <circle cx="86" cy="0" r="7"/><circle cx="74.5" cy="43" r="7"/><circle cx="43" cy="74.5" r="7"/>
+      <circle cx="0" cy="86" r="7"/><circle cx="-43" cy="74.5" r="7"/><circle cx="-74.5" cy="43" r="7"/>
+      <circle cx="-86" cy="0" r="7"/><circle cx="-74.5" cy="-43" r="7"/><circle cx="-43" cy="-74.5" r="7"/>
+    </g>
+    <path d="M0-86L43-74.5M74.5-43L86 0M74.5 43L43 74.5M0 86L-43 74.5" stroke="#e0409b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M-43 74.5C-80 110-130 90-150 120" fill="none" stroke="#e0409b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M-150 120l-14 20" stroke="#3a3550" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="22" fill="#ff7043" opacity=".85"/>
+  </g>
+
+  <!-- سینی نمک و رد انگشت -->
+  <ellipse cx="610" cy="452" rx="150" ry="10" fill="#1e2a6b" opacity=".12"/>
+  <rect x="470" y="330" width="280" height="118" rx="20" fill="#3f6cff"/>
+  <rect x="486" y="346" width="248" height="86" rx="12" fill="#fff4dc"/>
+  <g fill="#f0dfb8">
+    <circle cx="510" cy="362" r="2.5"/><circle cx="560" cy="420" r="2.5"/><circle cx="700" cy="364" r="2.5"/>
+    <circle cx="620" cy="358" r="2"/><circle cx="716" cy="418" r="2.5"/><circle cx="530" cy="404" r="2"/>
+  </g>
+  <path d="M510 408C548 360 584 424 620 384S690 360 712 398" fill="none" stroke="#e3c793" stroke-width="16" stroke-linecap="round"/>
+  <path d="M510 404C548 356 584 420 620 380S690 356 712 394" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"/>
+</svg>
