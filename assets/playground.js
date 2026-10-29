@@ -1,14 +1,14 @@
 /* =========================================================
-   مرکز مغز و شناخت کودکان — پس‌زمینه‌ی بازی‌گوش همه‌ی صفحه‌ها
+   مرکز مغز و شناخت کودکان — پس‌زمینه‌ی بازی‌گوش صفحه‌ی اصلی
 
-   یک بوم (canvas) پشت محتوا که با نشانگر بازی می‌کند. سه صحنه دارد و
+   یک بوم (canvas) پشت محتوای هر بخش که با نشانگر بازی می‌کند. فقط
+   index.html این فایل را بار می‌کند. سه صحنه دارد و
    فقط یکی روی سایت است؛ برای عوض کردنش DEFAULT را تغییر دهید:
      meadow  باغ پروانه‌ها: پروانه‌ها کنار نشانگرِ ایستاده جمع می‌شوند، با کلیک گل می‌روید
      shapes  شکل‌های بازیگوش: شکل‌ها از نشانگر فرار می‌کنند، با کلیک شکل تازه می‌آید
      sea     زیر دریا: ماهی‌ها دنبال نشانگر می‌آیند، با کلیک فرار می‌کنند
 
    برای امتحانِ صحنه‌ی دیگر بدون ویرایش فایل: index.html?bg=sea (یا ?bg=off)
-   صفحه‌ای که نباید پس‌زمینه داشته باشد: <body data-bg="off">
    ========================================================= */
 (function () {
   'use strict';
@@ -54,24 +54,23 @@
 
   /* ---------------------------------------------------------
      صحنه‌ها
-     هر صحنه برای یک بوم ساخته می‌شود: pal رنگ‌های همان بخش است و calm
-     یعنی صفحه‌ی متنی (مقاله، صفحه‌ی کامل بخش) که صحنه باید آرام‌تر باشد.
+     هر صحنه برای یک بوم ساخته می‌شود و pal رنگ‌های همان بخش است.
      init(W,H) از نو می‌چیند، resize(W,H) فقط اندازه را به‌روز می‌کند،
      step(dt,t,p) جلو می‌برد (p: نشانگر در مختصات همین بوم)، draw(c) می‌کشد
      و tap(x,y) پاسخ کلیک روی فضای خالی است.
      --------------------------------------------------------- */
 
   /** ۷. باغ پروانه‌ها */
-  function meadow(pal, calm) {
+  function meadow(pal) {
     const cols = [pal.a, pal.b, ...FUN];
     let W = 0, H = 0, bf = [], flowers = [];
-    const flower = (x, g) => ({ x, h: rand(.45, 1) * Math.min(H * .18, calm ? 90 : 140), g, c: pick(cols), sway: rand(0, TAU) });
+    const flower = (x, g) => ({ x, h: rand(.45, 1) * Math.min(H * .18, 140), g, c: pick(cols), sway: rand(0, TAU) });
     const roam = (b) => { b.tx = rand(20, W - 20); b.ty = rand(20, H * .75); };
 
     return {
       init(w, h) {
         W = w; H = h; bf = []; flowers = [];
-        const n = Math.round(W / (calm ? 360 : 220)) + 2;
+        const n = Math.round(W / 220) + 2;
         for (let i = 0; i < n; i++) {
           const b = { x: rand(0, W), y: rand(0, H * .7), vx: 0, vy: 0, ph: rand(0, TAU), c: pick(cols), c2: pick(FUN), s: rand(.85, 1.2) };
           roam(b);
@@ -137,7 +136,7 @@
   }
 
   /** ۵. شکل‌های بازیگوش */
-  function shapes(pal, calm) {
+  function shapes(pal) {
     const cols = [pal.a, pal.b, ...FUN];
     const kinds = ['circle', 'tri', 'square', 'star', 'heart'];
     let W = 0, H = 0, list = [];
@@ -149,7 +148,7 @@
     return {
       init(w, h) {
         W = w; H = h; list = [];
-        const n = Math.round(W * H / (calm ? 110000 : 60000)) + (calm ? 3 : 4);
+        const n = Math.round(W * H / 60000) + 4;
         for (let i = 0; i < n; i++) list.push(make(rand(40, W - 40), rand(40, H - 40)));
       },
       resize(w, h) { W = w; H = h; },
@@ -188,7 +187,7 @@
   }
 
   /** ۶. زیر دریا */
-  function sea(pal, calm) {
+  function sea(pal) {
     const cols = [pal.a, pal.b, ...FUN];
     let W = 0, H = 0, fish = [], bub = [], weeds = [], scare = 0, t0 = 0;
     const wander = (f) => { f.wx = rand(30, W - 30); f.wy = rand(H * .08, H * .78); };
@@ -196,7 +195,7 @@
     return {
       init(w, h) {
         W = w; H = h; fish = []; bub = []; weeds = []; scare = 0;
-        const n = Math.round(W / (calm ? 260 : 160)) + (calm ? 2 : 3);
+        const n = Math.round(W / 160) + 3;
         for (let i = 0; i < n; i++) {
           const f = { x: rand(0, W), y: rand(H * .1, H * .8), vx: rand(-1, 1), vy: rand(-.3, .3), s: rand(.7, 1.3), c: pick(cols), ph: rand(0, TAU) };
           wander(f);
@@ -284,41 +283,36 @@
      --------------------------------------------------------- */
 
   let choice = DEFAULT;
-  try { choice = new URLSearchParams(location.search).get('bg') || document.body.dataset.bg || DEFAULT; } catch (_) { /* نشانی نامعتبر */ }
+  try { choice = new URLSearchParams(location.search).get('bg') || DEFAULT; } catch (_) { /* نشانی نامعتبر */ }
   if (choice === 'off') return;
   const make = SCENES[choice] || SCENES[DEFAULT];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------
-     میزبان‌ها
-     صفحه‌ی اصلی: یک بوم در هر بخش، کنار لکه‌های تزئینی (z-index: -1 درون
+     میزبان‌ها: یک بوم در هر بخش، کنار لکه‌های تزئینی (z-index: -1 درون
      بخش، پس روی رنگ پس‌زمینه‌ی بخش و زیر محتوایش) با رنگ‌های همان بخش؛
      فقط بخش‌های دیده‌شده بوم واقعی دارند و جلو می‌روند.
-     صفحه‌های دیگر: یک بوم ثابت به اندازه‌ی پنجره پشت کل صفحه، آرام‌تر.
      --------------------------------------------------------- */
 
   const scroller = document.getElementById('scroller');
-  const sections = scroller ? Array.from(scroller.querySelectorAll('.sec')) : [];
-  const calm = !sections.length;
+  if (!scroller) return;
+  const sections = Array.from(scroller.querySelectorAll('.sec'));
 
   function color(cs, name, fallback) {
     const v = cs.getPropertyValue(name).trim();
     return /^#[0-9a-f]{6}$/i.test(v) ? v : fallback;
   }
 
-  const hosts = (calm ? [document.body] : sections).map((el) => {
+  const hosts = sections.map((el) => {
     const cv = document.createElement('canvas');
     cv.className = 'playground';
     cv.setAttribute('aria-hidden', 'true');
     cv.width = cv.height = 0;
-    if (calm) document.body.appendChild(cv);
-    else {
-      const blobs = el.querySelector(':scope > .blobs');
-      if (blobs) blobs.after(cv); else el.prepend(cv);
-    }
+    const blobs = el.querySelector(':scope > .blobs');
+    if (blobs) blobs.after(cv); else el.prepend(cv);
     const cs = getComputedStyle(el);
     const pal = { a: color(cs, '--a', '#7c5cff'), b: color(cs, '--b', '#ff7ab6') };
-    return { el, cv, ctx: cv.getContext('2d'), scene: make(pal, calm), W: 0, H: 0, visible: calm, ready: false, settled: false };
+    return { el, cv, ctx: cv.getContext('2d'), scene: make(pal), W: 0, H: 0, visible: false, ready: false, settled: false };
   });
 
   /** اندازه‌ی بوم با جعبه‌ی خودش؛ صحنه فقط وقتی پهنا محسوس عوض شود از نو چیده می‌شود
@@ -348,15 +342,13 @@
   }));
   hosts.forEach((h) => ro.observe(h.cv));
 
-  if (!calm) {
-    // حاشیه‌ی منفی: بخشی که فقط لبه‌به‌لبه‌ی صفحه است، دیده‌شده حساب نشود
-    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-      const h = byEl.get(en.target);
-      h.visible = en.isIntersecting;
-      if (h.visible) fit(h); else free(h);
-    }), { root: scroller, rootMargin: '-1px 0px' });
-    hosts.forEach((h) => io.observe(h.el));
-  }
+  // حاشیه‌ی منفی: بخشی که فقط لبه‌به‌لبه‌ی صفحه است، دیده‌شده حساب نشود
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+    const h = byEl.get(en.target);
+    h.visible = en.isIntersecting;
+    if (h.visible) fit(h); else free(h);
+  }), { root: scroller, rootMargin: '-1px 0px' });
+  hosts.forEach((h) => io.observe(h.el));
 
   /* ---------------------------------------------------------
      نشانگر: در کل صفحه دنبال می‌شود، حتی روی محتوا
