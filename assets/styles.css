@@ -102,6 +102,16 @@ button, input { font: inherit; color: inherit; }
   50%      { transform: translate3d(0, -26px, 0) scale(1.08); }
 }
 
+/* پس‌زمینه‌ی بازی‌گوش (assets/playground.js): در هر بخش صفحه‌ی اصلی کنار لکه‌ها،
+   و در صفحه‌های دیگر بومی ثابت پشت کل صفحه که کم‌رنگ‌تر است تا متن خوانا بماند */
+.playground {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+body > .playground { position: fixed; opacity: .6; }
+
 /* ---------------- هدر ---------------- */
 
 .site-head {
